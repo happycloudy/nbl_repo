@@ -1,0 +1,72 @@
+@mixin padding-iPhone8($param) {
+  @if $param=='absolute' {
+    left: rem(30);
+    right: rem(30);
+  } @else {
+    padding-left: rem(30);
+    padding-right: rem(30);
+  }
+}
+@mixin padding-iPadProp11($param) {
+  @if $param=='absolute' {
+    left: rem(36);
+    right: rem(23);
+  } @else {
+    padding-left: rem(36);
+    padding-right: rem(23);
+  }
+}
+@mixin padding-MacBook($param) {
+  @if $param=='absolute' {
+    left: rem(60);
+    right: rem(80);
+  } @else {
+    padding-left: rem(60);
+    padding-right: rem(80);
+  }
+}
+@mixin padding-Main($param) {
+  @if $param=='absolute' {
+    left: rem(108);
+    right: rem(108);
+  } @else {
+    padding-left: rem(108);
+    padding-right: rem(108);
+    
+  }
+}
+
+@mixin section-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@mixin back-box {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 50%;
+  display: flex;
+  
+  &-img {
+    position: absolute;
+    
+    @media (min-width: $break-iPhone8) {
+      width: rem(318);
+      height: rem(277);
+    }
+    @media (min-width: $break-iPadProp11) {
+      width: rem(487);
+      height: rem(426);
+    }
+    @media (min-width: $break-MacBook) {
+      width: rem(653);
+      height: rem(571);
+    }
+    @media (min-width: $break-Main) {
+      width: rem(650);
+      height: rem(568);
+    }
+  }
+}

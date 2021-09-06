@@ -1,0 +1,203 @@
+$headerPaddingTopS: 26;
+$headerPaddingTopM: 56;
+$headerHeightS: 24 + $headerPaddingTopS;
+$headerHeightM: 48 + $headerPaddingTopM;
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  padding-top: rem(42);
+  
+  &__menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: center;
+  }
+  
+  &__line {
+    height: rem(31);
+    display: block;
+    @media (max-width: $break-iPhone8) {
+      height: rem(13);
+    }
+  }
+}
+
+.logo--container {
+  display: flex;
+  background: url("../../resources/images/logo.png") no-repeat center/contain;
+  width: rem(145);
+  height: rem(40);
+  
+  @media (min-width: $break-MacBook) {
+    width: rem(195);
+    height: rem(53);
+  }
+  @media (min-width: $break-Main) {
+    width: rem(235);
+    height: rem(64);
+  }
+}
+
+.bred {
+  display: flex;
+  align-items: center;
+  height: rem(25);
+  padding-top: rem(16);
+  
+  &__house {
+    display: flex;
+    height: rem(14);
+    width: rem(14);
+  }
+  
+  &__item-text {
+    padding: 0 rem(10);
+    color: var(--Color-Text-Green);
+    font-size: rem(13);
+  }
+}
+
+.burger {
+  display: flex;
+  width: rem(21);
+  height: rem(14);
+  @media (min-width: $break-iPhone8) {
+    display: none;
+  }
+  &__icon{
+    height: inherit;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__line {
+    display: none;
+    border-bottom: rem(1) solid var(--Color-Line);
+    position: absolute;
+    height: rem(56);
+    color: var(--Color-Black--100);
+    left: rem(108);
+    right: rem(108);
+    
+  }
+  
+  &__item {
+    &-link {
+      display: flex;
+      color: var(--Color-Black--100);
+      position: relative;
+      font-size: rem(17);
+      line-height: rem(22);
+      font-weight: var(--FontWeight-Medium);
+  
+      @media (max-width: $break-iPhone8) {
+        display: none;
+      }
+      
+      &:hover {
+        color: var(--Color-Text-Green);
+        
+        &:after {
+          content: '';
+          height: rem(7);
+          width: rem(7);
+          background-color: var(--Color-Text-Green);
+          border-radius: 50%;
+          position: absolute;
+          bottom: rem(-20);
+          left: 50%;
+        }
+      }
+      
+      @media (max-width: $break-MacBook) {
+        font-size: rem(15);
+      }
+      @media (max-width: $break-iPadProp11) {
+        font-size: rem(11.5)
+      }
+    }
+    
+    &:hover > .submenu-list {
+      display: flex;
+    }
+    
+    &:hover > .menu-list__line {
+      display: flex;
+    }
+  }
+}
+
+.submenu-list {
+  display: none;
+  //display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  height: rem(43);
+  color: var(--Color-Black--100);
+  justify-content: center;
+  padding-top: rem(66);
+  border-bottom: rem(1) solid var(--Color-Line);
+  @include padding-iPadProp11('absolute');
+  
+  
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('absolute');
+    height: rem(55);
+    padding-top: rem(86);
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('absolute');
+  }
+  
+  &__item {
+    margin: 0 rem(20);
+    
+    &-link {
+      color: var(--Color-Text-Green);
+      font-size: rem(13.8);
+      line-height: rem(18);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      
+      &:hover {
+        font-weight: var(--FontWeight-Medium);
+        
+        &:after {
+          content: '';
+          height: rem(7);
+          width: rem(7);
+          background-color: var(--Color-Text-Green);
+          border-radius: 50%;
+          position: absolute;
+          bottom: rem(-4);
+        }
+      }
+      
+      @media (max-width: $break-iPadProp11) {
+        font-size: rem(11);
+      }
+    }
+  }
+  
+}
+

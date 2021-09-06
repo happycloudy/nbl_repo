@@ -1,0 +1,620 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-top: rem(339);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: url("../../resources/images/main-bcg.png") no-repeat center /cover;
+  
+  &:after {
+    content: '';
+    right: 0;
+    top: 0;
+    background: url("../../resources/images/circle.png") no-repeat center/cover;
+    position: absolute;
+    width: 100%;
+    height: rem(354);
+    
+    @media (min-width: $break-iPadProp11) {
+      width: rem(697);
+      height: rem(651);
+    }
+    @media (min-width: $break-MacBook) {
+      width: rem(849);
+      height: rem(792);
+    }
+    @media (min-width: $break-Main) {
+      width: rem(1023);
+      height: rem(954);
+    }
+  }
+  
+  @media (max-width: $break-iPhone8) {
+    padding-top: rem(107);
+  }
+}
+
+.effective {
+  align-content: flex-start;
+  @include padding-iPadProp11('padding');
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+  }
+  
+  .description {
+    display: flex;
+    width: 50%;
+    z-index: 3;
+    
+    @media (max-width: $break-iPhone8) {
+      order: 1;
+      width: 100%;
+    }
+  }
+  
+  .probiotic-group {
+    display: flex;
+    width: 50%;
+    z-index: 3;
+    
+    @media (max-width: $break-iPhone8) {
+      order: 0;
+      width: 100%;
+    }
+  }
+  
+  .Lab2Pro {
+    display: flex;
+    color: var(--Color-Lab2Pro);
+    font-size: rem(72);
+    text-transform: uppercase;
+    font-weight: var(--FontWeight-Medium);
+    padding-top: rem(27);
+    
+    @media (max-width: $break-iPhone8) {
+      order: 2;
+    }
+    @media (min-width: $break-iPadProp11) {
+      font-size: rem(150);
+      padding-top: rem(68);
+    }
+    @media (min-width: $break-MacBook) {
+      padding-top: rem(85);
+      font-size: rem(200);
+    }
+    @media (min-width: $break-Main) {
+      font-size: rem(230);
+    }
+  }
+}
+
+.probiotic-group {
+  height: rem(169);
+  width: 100%;
+  background: url("../../resources/images/probiotic-group-iPhone8.png") no-repeat center/contain;
+  
+  @media (max-width: $break-iPhone8) {
+    width: 50%;
+  }
+  @media (min-width: $break-iPadProp11) {
+    height: rem(197);
+    background: url("../../resources/images/probiotic-group-iPadProp11.png") no-repeat center/contain;
+  }
+  @media (min-width: $break-MacBook) {
+    height: rem(268);
+    background: url("../../resources/images/probiotic-group-macBook.png") no-repeat center/contain;
+  }
+  @media (min-width: $break-Main) {
+    height: rem(331);
+    background: url("../../resources/images/probiotic-group-main.png") no-repeat center/contain;
+  }
+}
+
+.viability {
+  @include padding-iPadProp11('padding');
+  
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+    height: rem(480);
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+    height: rem(600);
+  }
+  
+  &--number {
+    color: var(--Color-Text-Green);
+    font-size: rem(35);
+    display: none;
+    font-weight: var(--FontWeight-Medium);
+    padding-right: rem(13);
+    
+    @media (max-width: $break-iPhone8) {
+      display: flex;
+    }
+  }
+  
+  &__title {
+    @include section-title;
+  }
+  
+  &__details {
+    padding-top: rem(15);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: baseline;
+    
+    @media (max-width: $break-iPhone8) {
+      flex-direction: column;
+    }
+    @media (min-width: $break-iPadProp11) {
+      height: rem(250);
+    }
+    @media (min-width: $break-MacBook) {
+      height: rem(353);
+    }
+    @media (min-width: $break-Main) {
+      height: rem(442);
+    }
+    
+    &-title {
+      font-weight: var(--FontWeight-Medium);
+      font-size: rem(13);
+      text-transform: uppercase;
+      
+      @media (min-width: $break-MacBook) {
+        font-size: rem(15);
+      }
+      @media (min-width: $break-Main) {
+        font-size: rem(17);
+      }
+    }
+    
+    &-description {
+      color: var(--Color-Text-Green);
+      font-size: rem(11);
+      padding-top: rem(3);
+      padding-bottom: rem(10);
+      
+      @media (min-width: $break-MacBook) {
+        font-size: rem(13);
+      }
+      @media (min-width: $break-Main) {
+        font-size: rem(15);
+      }
+    }
+    
+    &-list {
+      color: var(--Color-Text-Grey);
+      font-size: rem(11);
+      padding-left: rem(15);
+      
+      & > ul li {
+        padding: rem(10) 0;
+        list-style: disc;
+      }
+      
+      @media (min-width: $break-MacBook) {
+        font-size: rem(13);
+      }
+      @media (min-width: $break-Main) {
+        font-size: rem(15);
+      }
+    }
+    
+    &-img-box {
+      @media (max-width: $break-iPhone8) {
+        order: 0;
+        position: relative;
+      }
+    }
+    
+    &-img {
+      background: url("../../resources/images/viability-probiotic-v2.png") no-repeat center/contain;
+      width: rem(236);
+      height: rem(182);
+      
+      @media (max-width: $break-iPhone8) {
+        background: url("../../resources/images/viability-probiotic-min.png") no-repeat center/contain;
+        width: rem(271);
+        height: rem(182);
+      }
+      @media (min-width: $break-iPadProp11) {
+        width: rem(255);
+        height: rem(260);
+      }
+      @media (min-width: $break-MacBook) {
+        width: rem(461);
+        height: rem(353);
+      }
+      @media (min-width: $break-Main) {
+        width: rem(577);
+        height: rem(442);
+      }
+      
+      &-min {
+        display: none;
+        @media (max-width: $break-iPhone8) {
+          background: url("../../resources/images/viability-probiotic-min.png") no-repeat center/contain;
+          display: block;
+          width: rem(271);
+          height: rem(182);
+        }
+      }
+    }
+    
+    &-item {
+      padding-top: 10%;
+    }
+    
+    &-first {
+      @media (max-width: $break-iPhone8) {
+        order: 1;
+      }
+    }
+    
+    &-second {
+      @media (max-width: $break-iPhone8) {
+        order: 2;
+      }
+    }
+    
+    &-third {
+      align-self: flex-end;
+      margin-right: 20%;
+      @media (max-width: $break-iPhone8) {
+        order: 3;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+.double-cover {
+  //height: rem(900)!important;
+  
+  @include padding-iPadProp11('padding');
+  
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+    //height: rem(480);
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+    //height: rem(600);
+  }
+  
+  &__title {
+    @include section-title;
+  }
+  
+  &__details {
+    &-tab {
+      display: none;
+      @media (min-width: $break-iPhone8) {
+        display: block;
+      }
+    }
+  }
+  
+  &__details {
+    &-accordion {
+      display: none;
+      @media (max-width: $break-iPhone8) {
+        display: block;
+      }
+    }
+  }
+}
+
+.bacterial-survival {
+  display: flex;
+  justify-content: center;
+  padding-top: rem(20);
+  flex-wrap: wrap;
+  
+  @include padding-iPadProp11('padding');
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: center;
+    height: rem(170);
+    width: 80%;
+    
+    @media (max-width: $break-iPadProp11) {
+      width: 100%;
+      height: fit-content;
+      align-items: center;
+    }
+    @media (max-width: $break-iPhone8) {
+      flex-direction: column;
+    }
+    
+    &-title {
+      width: rem(300);
+      display: flex;
+      align-items: flex-start;
+      text-align: center;
+      text-transform: uppercase
+    }
+    
+    &-info {
+      align-self: flex-end;
+      
+      @media (max-width: $break-iPhone8) {
+        padding-top: rem(8);
+        align-self: center;
+      }
+    }
+    
+    &-icon-box {
+      width: rem(45);
+      justify-content: space-around;
+      align-items: flex-end;
+      @media (max-width: $break-iPhone8) {
+        width: rem(30);
+      }
+      
+      & > span {
+        width: rem(1);
+        background: var(--Color-Text-Green);
+        
+        &:nth-child(1) {
+          height: 65%;
+        }
+        
+        &:nth-child(2) {
+          height: 75%;
+        }
+        
+        &:nth-child(3) {
+          height: 85%;
+        }
+        
+        &:nth-child(4) {
+          height: 100%;
+        }
+      }
+    }
+    
+    &-number {
+      color: var(--Color-Text-Green);
+      font-size: rem(125);
+      padding-left: rem(24);
+      line-height: rem(65);
+      font-weight: 300;
+      
+      @media (max-width: $break-iPadProp11) {
+        font-size: rem(110);
+      }
+      @media (max-width: $break-iPhone8) {
+        font-size: rem(80);
+        padding-left: rem(5);
+      }
+    }
+    
+    &-number-box {
+      height: rem(110);
+      justify-content: space-between;
+      @media (max-width: $break-iPadProp11) {
+        height: rem(100);
+      }
+      @media (max-width: $break-iPhone8) {
+        height: rem(80);
+      }
+    }
+    
+    &-text-number {
+      color: var(--Color-Text-Grey);
+      font-size: rem(20);
+      padding-left: rem(40);
+      
+      @media (max-width: $break-iPadProp11) {
+        font-size: rem(17);
+      }
+      @media (max-width: $break-iPhone8) {
+        font-size: rem(13);
+        padding-left: rem(10);
+      }
+      
+    }
+    
+    &-text-number2 {
+      color: var(--Color-Text-Grey);
+      font-size: rem(21);
+      text-transform: uppercase;
+      align-self: center;
+      padding-left: rem(14);
+      width: rem(260);
+      
+      @media (max-width: $break-iPadProp11) {
+        font-size: rem(17);
+        width: rem(196);
+      }
+      @media (max-width: $break-iPhone8) {
+        font-size: rem(11);
+        width: rem(132);
+      }
+    }
+  }
+  
+  &__body {
+    width: 100%;
+    height: rem(182);
+    
+    @media (min-width: $break-iPhone8) {
+      padding-top: rem(30);
+    }
+    
+    @media (min-width: $break-iPadProp11) {
+      padding-top: rem(40);
+      height: rem(320);
+    }
+    @media (min-width: $break-MacBook) {
+      padding-top: rem(56);
+      height: rem(500);
+    }
+    @media (min-width: $break-Main) {
+      padding-top: rem(58);
+      height: rem(600);
+    }
+    
+    & > svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.classification {
+  @include padding-iPadProp11('padding');
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+  }
+  
+  &__list {
+    display: flex;
+    
+    @media (max-width: $break-iPhone8) {
+      flex-direction: column;
+    }
+    
+    &-item {
+      flex: 1;
+      padding-top: rem(20);
+      justify-content: center;
+      
+      @media (max-width: $break-iPhone8) {
+        justify-content: flex-start;
+        
+        &:not(:last-child) {
+          padding: rem(28) 0;
+          border-bottom: rem(1) solid var(--Color-Line);
+        }
+      }
+    }
+    
+    &-number {
+      text-transform: uppercase;
+      color: var(--Color-Text-Green);
+      font-weight: var(--FontWeight-Medium);
+      margin-right: rem(26);
+      font-size: rem(50);
+      
+      @media (min-width: $break-iPhone8) {
+        font-size: rem(50);
+      }
+      @media (min-width: $break-iPadProp11) {
+        font-size: rem(70);
+      }
+      @media (min-width: $break-MacBook) {
+        font-size: rem(60);
+      }
+      @media (min-width: $break-Main) {
+        font-size: rem(70);
+      }
+    }
+    
+    &-title {
+      color: var(--Color-Text-Grey);
+      font-size: rem(15);
+      font-weight: var(--FontWeight-Medium);
+      @media (max-width: $break-MacBook) {
+        font-size: rem(13);
+      }
+    }
+    
+    &-description {
+      color: var(--Color-Text-Grey);
+      font-size: rem(15);
+      @media (max-width: $break-MacBook) {
+        font-size: rem(13);
+      }
+    }
+  }
+  
+  &__age {
+    &-title {
+      display: flex;
+      color: var(--Color-Lab2Pro);
+      font-size: rem(51);
+      text-transform: uppercase;
+      font-weight: var(--FontWeight-Medium);
+      padding-top: rem(24);
+      
+      @media (min-width: $break-iPadProp11) {
+        font-size: rem(100);
+        padding-top: rem(36);
+      }
+      @media (min-width: $break-MacBook) {
+        padding-top: rem(40);
+        font-size: rem(120);
+      }
+      @media (min-width: $break-Main) {
+        padding-top: rem(31);
+        font-size: rem(150);
+        
+      }
+      
+    }
+    
+    &-box {
+      color: var(--Color-Text-Grey);
+      position: relative;
+      
+      @media (min-width: $break-iPhone8) {
+        font-size: rem(13);
+      }
+      @media (min-width: $break-iPadProp11) {
+        font-size: rem(13);
+      }
+      @media (min-width: $break-MacBook) {
+        font-size: rem(17);
+      }
+    }
+    
+    &-img {
+      @media (min-width: $break-iPhone8) {
+        width: rem(173);
+        height: rem(140);
+      }
+      @media (min-width: $break-iPadProp11) {
+        width: rem(384);
+        height: rem(192);
+      }
+      @media (min-width: $break-MacBook) {
+        width: rem(409);
+        height: rem(258);
+      }
+      @media (min-width: $break-Main) {
+        width: rem(511);
+        height: rem(332);
+      }
+    }
+  }
+}
+
+

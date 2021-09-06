@@ -1,0 +1,525 @@
+@import './functions';
+@import './mediaQueries';
+@import './mixins';
+
+:root {
+  --BaseFontSize: 15px;
+  
+  --FontFamily: 'Idealist Sans', 'Jost', Helvetica, Arial, -apple-system,
+  system-ui, BlinkMacSystemFont, 'Segoe UI',
+  'Helvetica Neue', sans-serif;
+  
+  --FontFamilyJost: 'Jost', 'Idealist Sans', Helvetica, Arial, -apple-system,
+  system-ui, BlinkMacSystemFont, 'Segoe UI',
+  'Helvetica Neue', sans-serif;
+  
+  --FontWeight-Light: 300;
+  --FontWeight-Regular: 400;
+  --FontWeight-Medium: 600;
+  --FontWeight-Bold: 800;
+}
+
+html {
+  box-sizing: border-box;
+  
+  color: var(--Color-EbonyBlack--80);
+  fill: var(--Color-EbonyBlack--100);
+  
+  font-family: var(--FontFamily);
+  font-size: var(--BaseFontSize);
+  font-weight: var(--FontWeight-Regular);
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  line-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: var(--FontWeight-Regular);
+}
+
+p, span {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+}
+
+section, main {
+  position: relative;
+  z-index: 1;
+  padding: rem(10) 0;
+}
+
+header, footer {
+  @include padding-iPadProp11('padding');
+  @media (min-width: $break-MacBook) {
+    @include padding-MacBook('padding');
+    padding-top: rem(60);
+  }
+  @media (min-width: $break-Main) {
+    @include padding-Main('padding');
+    padding-top: rem(71);
+  }
+}
+
+//.button {
+//  padding: rem(10) rem(18) rem(14);
+//  height: rem(48);
+//  box-sizing: border-box;
+//  border-radius: rem(8);
+//  border: rem(1) solid var(--Color-CobaltBlue--80);
+//  background-color: transparent;
+//  cursor: pointer;
+//  transition-duration: .2s;
+//  transition-property: background-color, border, color;
+//
+//  color: var(--Color-CobaltBlue--80);
+//  font-size: rem(16);
+//  line-height: rem(24);
+//  letter-spacing: 0.03em;
+//
+//  @media (min-width: $break-X) {
+//    padding: rem(10) rem(27) rem(14);
+//  }
+//
+//  &:hover {
+//    background-color: var(--Color-CobaltBlue--80);
+//    border-color: var(--Color-CobaltBlue--80);
+//    color: var(--Color-Light--100);
+//  }
+//
+//  &--color {
+//    &_light {
+//      border-color: var(--Color-Light--100);
+//      color: var(--Color-Light--100);
+//    }
+//
+//    &_dark {
+//      border-color: var(--Color-CobaltBlue--80);
+//      color: var(--Color-CobaltBlue--80);
+//    }
+//  }
+//}
+//
+//.email {
+//  display: flex;
+//  align-items: center;
+//  height: rem(16);
+//  color: var(--Color-CobaltBlue--80);
+//  fill: var(--Color-CobaltBlue--80);
+//
+//  &__icon {
+//    width: rem(25);
+//    height: rem(16);
+//    margin-right: rem(12);
+//  }
+//
+//  &__text {
+//    font-weight: var(--FontWeight-Regular);
+//    font-size: rem(14);
+//    line-height: rem(14);
+//    text-transform: uppercase;
+//    @media (min-width: $break-M) {
+//      font-size: rem(16);
+//      line-height: rem(16);
+//    }
+//  }
+//}
+//
+//.section-title {
+//  font-size: rem(32);
+//  line-height: rem(38);
+//  color: var(--Color-EbonyBlack--100);
+//
+//  @media (min-width: $break-M) {
+//    font-size: rem(40);
+//    line-height: rem(48);
+//  }
+//}
+
+.hidden {
+  display: none !important;
+}
+
+.line {
+  width: 100%;
+  border-bottom: rem(1) solid var(--Color-Line);
+}
+
+.active {
+  display: flex;
+}
+
+.title {
+  text-transform: uppercase;
+  
+  &__extra {
+    font-size: rem(45);
+    line-height: rem(65);
+    
+    @media (min-width: $break-MacBook) {
+      font-size: rem(55);
+      line-height: rem(65);
+    }
+    @media (min-width: $break-Main) {
+      font-size: rem(70);
+      line-height: rem(65);
+    }
+  }
+  
+  &__main {
+    font-size: rem(25);
+    line-height: rem(35);
+    font-weight: var(--FontWeight-Medium);
+    
+    @media (min-width: $break-iPadProp11) {
+      font-size: rem(30);
+      line-height: rem(40);
+    }
+    @media (min-width: $break-MacBook) {
+      font-size: rem(45);
+      line-height: rem(60);
+    }
+    @media (min-width: $break-Main) {
+      font-size: rem(50);
+      line-height: rem(65);
+    }
+    
+    &-text {
+      font-size: rem(13);
+      line-height: rem(25);
+      color: var(--Color-Text-Grey);
+      font-weight: var(--FontWeight-Light);
+      padding-top: rem(19);
+      
+      @media (min-width: $break-MacBook) {
+        font-size: rem(15);
+        line-height: rem(30);
+        padding-top: rem(37);
+      }
+      @media (min-width: $break-Main) {
+        font-size: rem(17);
+        line-height: rem(35);
+        padding-top: rem(33);
+      }
+    }
+    
+    &-action {
+      width: fit-content;
+      font-size: rem(11);
+      cursor: pointer;
+      text-transform: uppercase;
+      color: var(--Color-Text-Green);
+      font-weight: var(--FontWeight-Medium);
+      padding-top: rem(19);
+      
+      @media (min-width: $break-iPadProp11) {
+        font-size: rem(13);
+        padding-top: rem(26);
+      }
+      
+      @media (min-width: $break-Main) {
+        padding-top: rem(42);
+      }
+    }
+  }
+  
+  &__section {
+    font-size: rem(20);
+    font-weight: var(--FontWeight-Medium);
+    
+    @media (min-width: $break-iPadProp11) {
+      font-size: rem(30);
+    }
+    @media (min-width: $break-MacBook) {
+      font-size: rem(35);
+    }
+    
+    &-text {
+      font-size: rem(13);
+      color: var(--Color-Text-Grey);
+      padding-top: rem(15);
+      
+      @media (max-width: $break-iPhone8) {
+        text-align: left;
+      }
+      @media (min-width: $break-iPadProp11) {
+        font-size: rem(15);
+        padding-top: rem(21);
+      }
+      @media (min-width: $break-MacBook) {
+        font-size: rem(15);
+        padding-top: rem(14);
+      }
+    }
+  }
+  
+  &__text {
+    font-size: rem(13);
+  }
+}
+
+.flex {
+  display: flex;
+  
+  &__wrap {
+    flex-wrap: wrap;
+  }
+  
+  &__column {
+    flex-direction: column;
+  }
+  
+  &__self {
+    &-start {
+      align-self: flex-start;
+    }
+  }
+  
+  
+  &__justify {
+    &-center {
+      justify-content: center;
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.text-align{
+  &__center{
+    text-align: center;
+  }
+}
+
+.tab {
+  &__content {
+    display: none;
+    align-items: center;
+    
+    &-description {
+      height: fit-content;
+      font-size: rem(12);
+      text-transform: uppercase;
+      color: var(--Color-Text-Grey);
+      padding-left: rem(15);
+      position: relative;
+      flex: 1;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: rem(5);
+        height: 100%;
+        border-left: 1px solid var(--Color-Text-Green);
+      }
+    }
+  }
+  
+  &__img {
+    &-container {
+      flex: 3;
+      
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  &__header {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    
+    &-links {
+      outline: none;
+      cursor: pointer;
+      color: var(--Color-Text-Green);
+      font-weight: var(--FontWeight-Medium);
+      position: relative;
+      opacity: .15;
+      
+      &-active {
+        color: var(--Color-Text-Green);
+        opacity: 1;
+      }
+    }
+  }
+  
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  .a-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: rem(5);
+    border-bottom: rem(1) solid var(--Color-Text-Green);
+    
+    &:first-child {
+      border-bottom: rem(1) solid var(--Color-Text-Green);
+    }
+    
+    .a-btn {
+      margin: 0;
+      position: relative;
+      padding: rem(30) 0;
+      width: 100%;
+      color: var(--Color-Text-Green);
+      font-weight: var(--FontWeight-Medium);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+      font-size: rem(35);
+      transition: all 0.3s ease-in-out;
+      
+      &__text {
+        opacity: .15;
+      }
+      
+      &__icon {
+        display: flex;
+        height: rem(20);
+        justify-content: center;
+        align-items: center;
+        padding-right: rem(10);
+        z-index: -1;
+        
+        &:after {
+          content: '';
+          width: rem(20);
+          height: rem(1);
+          background-color: var(--Color-Text-Green);
+          position: absolute;
+        }
+        
+        &:before {
+          content: '';
+          width: rem(20);
+          height: rem(1);
+          background-color: var(--Color-Text-Green);
+          position: absolute;
+          transform: rotate(90deg);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      
+    }
+    
+    .a-panel {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      max-height: 0;
+      position: relative;
+    }
+    
+    
+    &.active {
+      .a-btn {
+        &__text {
+          opacity: 1;
+        }
+        
+        &__icon {
+          &::before {
+            transform: rotate(0deg);
+          }
+        }
+      }
+      
+      .a-panel {
+        opacity: 1;
+        max-height: rem(220);
+        height: rem(220);
+        
+        &__text {
+          color: var(--Color-Text-Grey);
+          text-transform: uppercase;
+          font-size: rem(12);
+        }
+        
+        &__img {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.back-box {
+  @include back-box;
+  
+  &-img {
+    position: absolute;
+    
+    @media (min-width: $break-iPhone8) {
+      width: rem(318);
+      height: rem(277);
+    }
+    @media (min-width: $break-iPadProp11) {
+      width: rem(487);
+      height: rem(426);
+    }
+    @media (min-width: $break-MacBook) {
+      width: rem(653);
+      height: rem(571);
+    }
+    @media (min-width: $break-Main) {
+      width: rem(650);
+      height: rem(568);
+    }
+  }
+}

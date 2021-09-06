@@ -1,0 +1,83 @@
+:root {
+  --Easing: cubic-bezier(.43, 0, .03, 1);
+  --Duration-Fast: 0.2s;
+  --Duration-Medium: 0.5s;
+  --Duration-Slow: 1s;
+  --Animate-Fast: var(--Duration-Fast) var(--Easing);
+  --Animate-Medium: var(--Duration-Medium) var(--Easing);
+  --Animate-Slow: var(--Duration-Slow) var(--Easing);
+
+  --animate-duration: 1s;
+  --animate-delay: .1s;
+}
+
+.animate__delay-6s { animation-delay: .6s }
+.animate__delay-7s { animation-delay: .7s }
+.animate__delay-8s { animation-delay: .8s }
+.animate__delay-9s { animation-delay: .9s }
+
+.animate__fadeInUp--custom {
+  animation-name: fadeInUpCustom;
+}
+
+@keyframes fadeInUpCustom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 35%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.animate__fadeInDown--custom {
+  animation-name: fadeInUpDownCustom;
+}
+
+@keyframes fadeInUpDownCustom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -35%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+
+.animate__rotateIn--custom {
+  animation-name: rotateInCustom;
+  transform-origin: center;
+}
+
+@keyframes rotateInCustom {
+  0% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+.animate__rotateHover {
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
+  animation-delay: 0s;
+  animation-name: rotateHover;
+  transform-origin: center;
+}
+
+@keyframes rotateHover {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
