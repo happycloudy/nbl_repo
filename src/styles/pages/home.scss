@@ -619,6 +619,7 @@
 
 
 #nbl_apt {
+  background-color: black; // убрать
   .nbl_apt__recommendation {
     .nbl_apt__header {
       .nbl_atp {
@@ -650,7 +651,7 @@
       line-height: 35px;
       color: #535353;
 
-      .nbl_atp__list_item{
+      .nbl_atp__list_item {
         //margin-top: 100px; ???
       }
     }
@@ -681,5 +682,328 @@
 
   #img-wrap3 {
     background: url("../../resources/images/ginobiotic-small.png") no-repeat center /cover;
+  }
+}
+
+
+#doctor_recommendation {
+  .doctor_recommendation__header {
+    display: flex;
+    justify-content: center;
+    font-family: Mont, serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 65px;
+
+  }
+
+  .doctor_recommendation__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .doctor_recommendation__list_item {
+      margin-top: 3vh;
+      text-align: center;
+      width: 15%;
+
+
+      button {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-size: 15px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #535353;
+      }
+
+      :hover {
+        color: #005350;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .doctor_recommendation__cards {
+    margin-top: 5vh;
+    margin-left: 10vw;
+    display: flex;
+    justify-content: center;
+
+    .doctor_recommendation__card {
+      width: 35vw;
+      height: 50vh;
+      margin-left: 2vw;
+      -webkit-box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
+      -moz-box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
+      box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
+
+
+      .doctor_recommendation__img {
+        height: 70%;
+      }
+
+      .doctor_recommendation__description {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+        margin-top: 2vh;
+      }
+
+      .doctor_recommendation__card_header {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 23px;
+        color: #535353;
+      }
+
+      .doctor_recommendation__description_small {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-size: 15px;
+        line-height: 153%;
+        color: #535353;
+
+
+      }
+    }
+
+    :nth-child(1) {
+      .doctor_recommendation__img {
+        height: 100%;
+        background: url("../../resources/images/recomendation_pic1.png") no-repeat center /cover;
+      }
+    }
+
+    :nth-child(2) {
+      .doctor_recommendation__img {
+        background: url("../../resources/images/recomendation_pic2.png") no-repeat center /cover;
+      }
+    }
+
+    :nth-child(3) {
+      .doctor_recommendation__img {
+        background: url("../../resources/images/recomendation_pic3.png") no-repeat center /cover;
+      }
+    }
+  }
+}
+
+#feedback {
+  margin-top: 10vh; // TODO: поменять
+
+  .feedback__header {
+    font-family: Mont, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 186%;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+  }
+
+  .feedback__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .feedback__list_item {
+      width: 10%;
+      text-align: center;
+
+      button {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-size: 15px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #535353;
+      }
+    }
+
+    :hover {
+      color: #005350;
+      font-weight: 800;
+    }
+  }
+
+  .feedback__image_list {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .feedback__image_list_item {
+      height: 50vh;
+      width: 20vw;
+      background-color: #232323;
+      margin-left: 1vw;
+      margin-right: 1vw;
+    }
+
+    :nth-child(1) {
+      //background: url("../../resources/images/feedback1.png") no-repeat center /cover;
+    }
+
+    :nth-child(2) {
+      //background: url("../../resources/images/feedback2.png") no-repeat center /cover;
+    }
+
+    :nth-child(3) {
+      //background: url("../../resources/images/feedback3.png") no-repeat center /cover;
+    }
+
+    :nth-child(4) {
+      //background: url("../../resources/images/feedback4.png") no-repeat center /cover;
+    }
+  }
+
+  .feedback__more {
+    margin-top: 5vh;
+    text-align: center;
+
+    button {
+      font-family: Mont, serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 162%;
+      text-transform: uppercase;
+      color: #005350;
+    }
+  }
+}
+
+#science {
+  .science__header {
+    font-family: Mont, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 186%;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+  }
+
+  .science__list {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    width: 100%;
+
+    .science__item {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      justify-content: center;
+
+      .science__item_img {
+        background-color: #232323;
+        width: 200px;
+        height: 205px;
+      }
+
+      .science__item_text {
+        margin-left: 2vw;
+
+        .science__item_date {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 15px;
+          line-height: 153%;
+          text-transform: uppercase;
+          color: #005350;
+        }
+
+        .science__item_header {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 177%;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        .science__item_description {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 162%;
+          color: #535353;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 86%;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  .footer__list {
+    display: flex;
+    font-family: Mont, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000000;
+
+    .footer__item {
+      margin-left: 1vw;
+
+      .footer__icons_list {
+        position: absolute;
+        right: 0;
+        display: flex;
+        margin-right: 6%;
+
+        .footer__icons_item {
+
+        }
+      }
+    }
+  }
+
+  .footer__info {
+    display: flex;
+    width: 100%;
+    margin-top: 5vh;
+
+    .footer__info_item {
+      width: 50%;
+
+      font-family: Mont, serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 188%;
+      color: #535353;
+
+      a {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 153%;
+
+        color: #005350;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 4vh;
   }
 }
