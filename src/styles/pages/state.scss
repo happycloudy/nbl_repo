@@ -1,0 +1,177 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+@mixin iphone {
+  @media (min-width: $break-iPhone8) {
+    @content
+  }
+}
+
+@mixin iPadProp11 {
+  @media (min-width: $break-iPadProp11) {
+    @content
+  }
+}
+
+@mixin MacBook {
+  @media (min-width: $break-MacBook) {
+    @content
+  }
+}
+
+@mixin Main {
+  @media (min-width: $break-Main) {
+    @content
+  }
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+
+header {
+  .bred {
+    margin-top: 7vh;
+  }
+}
+
+main {
+  margin-top: 22vh;
+  width: 100%;
+
+  .vitamins {
+    display: flex;
+    height: 70vh;
+    width: 100%;
+
+    .vitamins__header {
+      margin-left: 5vw;
+      width: 50%;
+
+      .vitamins__text_date {
+        margin-top: 2vh;
+
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 500%;
+        display: flex;
+        align-items: center;
+        color: #000000;
+      }
+
+      .vitamins__text_big {
+        margin-top: 2vh;
+        margin-bottom: 5vh;
+
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 144%;
+        text-transform: uppercase;
+        color: #000000;
+      }
+
+      .vitamins__text_gray {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 188%;
+        color: #535353;
+      }
+
+      .vitamins__more_btn {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 500%;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: #005350;
+      }
+    }
+
+    .vitamins__image_wrap {
+      width: 50%;
+
+      .vitamins__img {
+        //TODO: добавить картинку и сделать резайз
+        background: url("../../resources/images/honey.png") no-repeat center /cover;
+        width: 499px;
+        height: 420px;
+      }
+    }
+  }
+
+  @include iphone {
+    .vitamins {
+      //flex-direction: column-reverse;
+    }
+  }
+
+
+  .states {
+    .states__wrap {
+      .row {
+        margin-left: 5vw;
+        margin-right: 5vw;
+
+        .col {
+          width: 25vw;
+        }
+      }
+
+      .state {
+        .state__image_wrap{
+          .state__image {
+            // TODO: нет картинки
+            background: url("../../resources/images/honey.png") no-repeat center /cover;
+            height: 100%;
+            width: 100px;
+          }
+        }
+
+        .state__date {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 15px;
+          line-height: 153%;
+          text-transform: uppercase;
+          color: #005350;
+        }
+
+        .state__header {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 177%;
+          text-transform: uppercase;
+          color: #000000;
+
+
+        }
+
+        .state__description {
+          font-family: Mont, serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 162%;
+          color: #535353;
+        }
+      }
+    }
+  }
+}
+
