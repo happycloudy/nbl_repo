@@ -1,4 +1,4 @@
-export const viabilityDetails = [
+export const  viabilityDetails = [
   {
     title: 'PH2.0',
     img: 'images/double-cover-1.png',

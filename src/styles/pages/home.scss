@@ -199,21 +199,7 @@
     }
 
     &-list {
-      color: var(--Color-Text-Grey);
-      font-size: rem(11);
-      padding-left: rem(15);
-
-      & > ul li {
-        padding: rem(10) 0;
-        list-style: disc;
-      }
-
-      @media (min-width: $break-MacBook) {
-        font-size: rem(13);
-      }
-      @media (min-width: $break-Main) {
-        font-size: rem(15);
-      }
+      @include list
     }
 
     &-img-box {

@@ -35,7 +35,7 @@ export const menuList = [
   },
   {
     name: 'Продукты',
-    link: '#about',
+    link: './product-detail.html',
     // subMenu: [
     //   {name: 'About us', link: '#about'},
     //   {name: 'About us', link: '#about'},

@@ -2,6 +2,8 @@
 @import './mediaQueries';
 @import './mixins';
 
+$border: rem(1) solid var(--Color-Line);
+
 :root {
   --BaseFontSize: 15px;
   
@@ -328,8 +330,8 @@ header, footer {
   position: absolute;
 }
 
-.text-align{
-  &__center{
+.text-align {
+  &__center {
     text-align: center;
   }
 }
@@ -401,10 +403,10 @@ header, footer {
     flex-direction: column;
     width: 100%;
     padding-bottom: rem(5);
-    border-bottom: rem(1) solid var(--Color-Text-Green);
+    border-bottom: rem(1) solid var(--Color-Line);
     
     &:first-child {
-      border-bottom: rem(1) solid var(--Color-Text-Green);
+      border-bottom: rem(1) solid var(--Color-Line);
     }
     
     .a-btn {
@@ -458,9 +460,7 @@ header, footer {
     .a-panel {
       width: 100%;
       transition: all 0.2s ease-in-out;
-      opacity: 0;
-      max-height: 0;
-      position: relative;
+      display: none;
     }
     
     
@@ -478,9 +478,7 @@ header, footer {
       }
       
       .a-panel {
-        opacity: 1;
-        max-height: rem(220);
-        height: rem(220);
+        display: block;
         
         &__text {
           color: var(--Color-Text-Grey);
@@ -521,5 +519,176 @@ header, footer {
       width: rem(650);
       height: rem(568);
     }
+  }
+}
+
+.table {
+  @include flex($justify: space-between);
+  padding: rem(15) rem(24);
+  white-space: break-spaces;
+  
+  :first-child, :last-child {
+    width: 50%;
+  }
+  
+  &__color {
+    &-purple {
+      background: var(--Color-Table-Purple);
+      @include text($size: 11, $transform: uppercase, $color: 'grey');
+      @include iPadProp11 {
+        @include text($size: 13, $transform: uppercase, $color: 'grey');
+      }
+      @include Main {
+        @include text($size: 15, $transform: uppercase, $color: 'grey');
+      }
+    }
+    
+    &-blue {
+      background: var(--Color-Table-Blue);
+    }
+    
+    &-yellow {
+      background: var(--Color-Table-Yellow);
+    }
+    
+    &-red {
+      background: var(--Color-Table-Red);
+    }
+  }
+  
+  &__header {
+    @include text($size: 13, $color: 'black', $weight: 'medium');
+    border-bottom: rem(1) solid var(--Color-Line);
+    margin-top: rem(21);
+    
+    @include Main {
+      @include text($size: 14, $color: 'black', $weight: 'medium');
+    }
+  }
+}
+
+.product-detail-item {
+  @include flex($direction: row, $align-items: center, $justify: center);
+  margin: rem(15) 0;
+  
+  @include iPadProp11 {
+    @include flex($direction: column);
+    width: 33.33%;
+  }
+  
+  @include MacBook{
+    //width: 100%;
+  }
+  
+  &__img-box {
+    @include flex();
+    width: rem(103);
+    height: rem(132);
+    
+    @include iPadProp11 {
+      width: 100%;
+      height: rem(245);
+    }
+    @include Main {
+      width: 100%;
+      height: rem(258);
+    }
+  }
+  
+  &__container {
+    @include flex($direction: column);
+    margin-left: rem(19);
+    margin-top: rem(20);
+    
+    @include MacBook {
+      @include flex($direction: row);
+    }
+  }
+  
+  &__text-box {
+    @include flex($direction: column);
+    
+    &-title {
+      @include text($size: 17, $color: 'black');
+      
+      @include MacBook {
+        @include text($size: 19, $color: 'black');
+      }
+    }
+    
+    &-description {
+      @include text($size: 13, $color: 'black', $weight: 'light');
+      margin-top: rem(2);
+      
+      @include MacBook {
+        @include text($size: 15, $color: 'black', $weight: 'light');
+      }
+    }
+  }
+  
+  &__button {
+    @include flex();
+    margin-top: rem(20);
+    width: rem(100);
+    height: rem(20);
+  }
+  
+}
+
+.mytabs {
+  @include flex($wrap: wrap);
+  
+}
+
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+.mytabs label {
+  padding: 25px;
+  cursor: pointer;
+  @include text($size: 17, $transform: uppercase, $weight: 'light');
+  @include MacBook{
+    @include text($size: 21,$weight: 'light');
+  }
+  @include Main{
+    @include text($size: 25,$weight: 'light');
+  }
+}
+
+.mytabs .tab {
+  width: 100%;
+  order: 1;
+  display: none;
+  border-top: rem(1) solid var(--Color-Line);
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+  @include flex();
+  border-bottom: rem(1) solid var(--Color-Line);
+}
+
+.mytabs input[type="radio"]:checked + label {
+  @include text($size: 17, $transform: uppercase, $weight: 'medium');
+  @include flex($justify: center);
+  text-align: center;
+  position: relative;
+  
+  @include MacBook{
+    @include text($size: 21,$weight: 'medium');
+  }
+  @include Main{
+    @include text($size: 25,$weight: 'medium');
+  }
+  
+  &:after {
+    content: '';
+    background-color: var(--Color-Text-Green);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3px;
+    width: rem(5);
+    height: rem(5);
+    transform: translateX(-5px);
   }
 }

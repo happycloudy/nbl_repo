@@ -1,3 +1,5 @@
+@use "functions" as *;
+
 @mixin padding-iPhone8($param) {
   @if $param=='absolute' {
     left: rem(30);
@@ -7,6 +9,7 @@
     padding-right: rem(30);
   }
 }
+
 @mixin padding-iPadProp11($param) {
   @if $param=='absolute' {
     left: rem(36);
@@ -16,6 +19,7 @@
     padding-right: rem(23);
   }
 }
+
 @mixin padding-MacBook($param) {
   @if $param=='absolute' {
     left: rem(60);
@@ -25,6 +29,7 @@
     padding-right: rem(80);
   }
 }
+
 @mixin padding-Main($param) {
   @if $param=='absolute' {
     left: rem(108);
@@ -68,5 +73,112 @@
       width: rem(650);
       height: rem(568);
     }
+  }
+}
+
+@mixin flex($wrap: false, $direction: false, $justify: false, $align-items: false, $align-content: false) {
+  display: flex;
+  @if $wrap {
+    flex-wrap: $wrap;
+  };
+  @if $justify {
+    justify-content: $justify;
+  };
+  @if $align-items {
+    align-items: $align-items;
+  };
+  @if $align-content {
+    align-content: $align-content;
+  };
+  @if $direction {
+    flex-direction: $direction;
+  };
+}
+
+@mixin iphone {
+  @media (min-width: $break-iPhone8) {
+    @content
+  }
+}
+@mixin iPadProp11 {
+  @media (min-width: $break-iPadProp11) {
+    @content
+  }
+}
+@mixin MacBook {
+  @media (min-width: $break-MacBook) {
+    @content
+  }
+}
+@mixin Main {
+  @media (min-width: $break-Main) {
+    @content
+  }
+}
+
+@mixin list($iPhone8: 13 , $iPadProp11: 15, $MacBook: 17, $Main: 15 ) {
+  color: var(--Color-Text-Grey);
+  padding-left: rem(15);
+  
+  & > ul li {
+    padding: rem(5) 0;
+    list-style: disc;
+    font-size: rem($iPhone8);
+  
+    @include iPadProp11{
+      font-size: rem($iPadProp11);
+    }
+    @include MacBook{
+      font-size: rem($MacBook);
+    }
+    @include iPadProp11{
+      font-size: rem($Main);
+    }
+  }
+}
+
+@mixin text($size: 15, $transform: false, $color: 'green', $weight: 'medium') {
+  font-size: rem($size);
+  
+  @if ($color == 'green') {
+    color: var(--Color-Text-Green);
+  } @else if ($color == 'grey') {
+    color: var(--Color-Text-Grey);
+  } @else if ($color == 'light') {
+    color: var(--Color-Light--100);
+  } @else if ($color == 'black') {
+    color: var(--Color-Black--100);
+  }
+  
+  @if ($weight == 'medium') {
+    font-weight: var(--FontWeight-Medium);
+  } @else if ($weight == 'regular') {
+    font-weight: var(--FontWeight-Regular);
+  } @else if ($weight == 'light') {
+    font-weight: var(--FontWeight-Light);
+  } @else if ($weight == 'bold') {
+    font-weight: var(--FontWeight-Bold);
+  }
+  @if ($transform) {
+    text-transform: $transform;
+  }
+}
+
+@mixin actionButton($iPhone8: 15, $iPadProp11: 17, $MacBook: 17, $Main: 19){
+  width: fit-content;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--Color-Text-Green);
+  font-weight: var(--FontWeight-Medium);
+  font-size: rem($iPhone8);
+  
+  @include iPadProp11{
+    font-size: rem($iPadProp11);
+  }
+  @include MacBook{
+    font-size: rem($MacBook);
+  }
+  @include Main{
+    font-size: rem($Main);
   }
 }

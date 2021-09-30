@@ -1,0 +1,481 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.info {
+  @include flex($direction: column);
+  margin-top: rem(150);
+  padding: 0 rem(30);
+  position: relative;
+  
+  @include iPadProp11 {
+    padding: 0 rem(76);
+  }
+  @include MacBook {
+    padding: 0 rem(86);
+  }
+  @include Main {
+    padding: 0 rem(108);
+  }
+  
+  
+  &__benefits {
+    @include flex($wrap: wrap);
+    @include iPadProp11 {
+      @include flex($direction: column);
+    }
+    
+    &-item {
+      @include flex($direction: column);
+      width: 100%;
+      margin-bottom: rem(30);
+      
+      @include iPadProp11 {
+        width: 50%;
+      }
+    }
+    
+    &-header {
+      @include flex($justify: space-between, $align-items: center);
+    }
+    
+    &-title {
+      @include text($transform: uppercase, $color: 'black');
+      width: 60%;
+      @include MacBook {
+        @include text($size: 17, $transform: uppercase, $color: 'black');
+      }
+    }
+    
+    &-description {
+      @include text($color: 'grey', $weight: 'light');
+      @include MacBook {
+        @include text($size: 17, $color: 'grey', $weight: 'light');
+      }
+      margin-top: rem(20);
+    }
+  }
+  
+  &__description {
+    &--list {
+      @include list;
+      
+      ul {
+        li {
+          line-height: rem(25);
+          
+          @include iPadProp11 {
+            line-height: rem(30);
+          }
+          @include MacBook {
+            line-height: rem(32);
+          }
+          @include Main {
+            line-height: rem(27);
+          }
+        }
+      }
+    }
+  }
+  
+  &__when-help {
+    margin-top: rem(30);
+    
+    &--title {
+      @include text($size: 17, $transform: uppercase, $color: 'black');
+      
+      @include iPadProp11 {
+        @include text($size: 25);
+      }
+      
+      @include Main {
+        @include text($size: 27);
+      }
+    }
+  }
+  
+  &__product-line {
+    @include flex($direction: column);
+    margin-top: rem(30);
+    padding: rem(40) 0;
+    border-top: $border;
+    position: relative;
+    
+    @include iPadProp11 {
+      @include flex($direction: row);
+    }
+    @include MacBook {
+      @include flex($direction: column, $align-items: center);
+      width: 35%;
+      margin-top: rem(77.95);
+      padding: rem(56) 0 rem(56) 0;
+    }
+    @include Main {
+      @include flex($direction: column, $align-items: center);
+      width: 35%;
+      margin-top: rem(81.95);
+      padding: rem(56) 0 rem(56) 0;
+    }
+    
+    &--title {
+      display: none;
+      @include MacBook {
+        @include text(17, uppercase, 'black');
+        display: block;
+        align-self: center;
+        margin-bottom: rem(20);
+      }
+    }
+  }
+  
+  &__first {
+    @include flex($direction: column);
+    margin-top: rem(20);
+    
+    @include iPadProp11 {
+      margin-top: rem(30);
+      width: 42%;
+    }
+    @include MacBook {
+      margin-top: rem(36);
+      margin-bottom: 0;
+    }
+    @include Main {
+      margin-top: rem(55);
+      margin-bottom: 10%;
+    }
+  }
+  
+  &__main {
+    border-bottom: $border;
+    @include iPadProp11 {
+      border-top: rem(1) solid var(--Color-Line);
+    }
+    
+    @include MacBook {
+      @include flex();
+      border-top: 0;
+    }
+    
+    &--accordion {
+      @include iPadProp11 {
+        display: none;
+      }
+    }
+    
+    &--tab {
+      display: none;
+      @include iPadProp11 {
+        display: flex;
+      }
+    }
+    
+    &--center-container {
+      @include MacBook {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        border-right: $border;
+      }
+    }
+    
+    &--benefits {
+      @include flex($wrap: wrap, $justify: space-between);
+      padding: rem(65) rem(30);
+      
+      & > * {
+        width: 35% !important;
+      }
+      
+      :nth-child(2n) {
+        margin-right: 5%;
+      }
+    }
+    
+    &--composition {
+      @include flex($direction: column);
+    }
+  }
+  
+  &__container {
+    //&-first {
+    //  @include flex($justify: center);
+    //  @include iPadProp11 {
+    //    @include flex($justify: end);
+    //    transform: translate(rem(80), rem(-37));
+    //
+    //  }
+    //
+    //  @include MacBook {
+    //    transform: translate(rem(130), rem(-25));
+    //    width: rem(545);
+    //    height: rem(498);
+    //  }
+    //  @include Main {
+    //    transform: translate(rem(150), rem(-12));
+    //    width: rem(700);
+    //    height: rem(600);
+    //  }
+    //}
+    
+    &-second {
+      width: 100%;
+      margin-top: rem(20);
+      @include iPadProp11 {
+        @include flex($direction: column, $justify: space-around);
+        margin-top: 0;
+      }
+    }
+  }
+  
+  &__action {
+    &-buy {
+      @include actionButton;
+      margin-top: rem(20);
+      
+      @include iPadProp11 {
+        margin-top: rem(30);
+      }
+      @include MacBook {
+        margin-top: rem(40);
+      }
+      @include Main {
+        margin-top: rem(50);
+      }
+    }
+  }
+  
+  &-iPhone8 {
+    &__box-img {
+      height: rem(255);
+      display: flex;
+      @include iPadProp11 {
+        display: none;
+      }
+    }
+    
+    &__title {
+      &-text {
+        font-weight: var(--FontWeight-Regular);
+      }
+      
+      &-sub {
+        color: var(--Color-Text-Green);
+        font-weight: var(--FontWeight-Medium);
+      }
+    }
+    
+    &__box-save {
+      @include flex;
+      width: 100%;
+      border-top: $border;
+      border-bottom: $border;
+      position: relative;
+      z-index: -1;
+      padding: rem(30) 0;
+      margin-top: rem(40);
+      
+      @include iPadProp11 {
+        @include flex($justify: center);
+        width: 35.05%;
+        margin-top: 0;
+        margin-bottom: rem(30);
+        padding: 0;
+        border: 0;
+        align-self: flex-end;
+        
+      }
+      @include MacBook {
+        transform: translateY(rem(50));
+        width: 35%;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          left: 0;
+          top: rem(-220);
+          height: rem(300);
+          border-left: $border;
+          border-radius: rem(1);
+        }
+      }
+      @include Main {
+        transform: translateY(0);
+        margin-bottom: 0;
+      }
+      
+      &-icon {
+        width: rem(49);
+        height: rem(49);
+        margin-right: rem(20);
+      }
+      
+      &-box {
+        @include flex($direction: column, $justify: space-between)
+      }
+      
+      &-text {
+        @include text($transform: uppercase, $color: 'black');
+        @include iPadProp11 {
+          @include text($size: 17, $transform: uppercase, $color: 'black');
+        }
+        @include Main {
+          @include text($size: 19, $transform: uppercase, $color: 'black');
+        }
+        
+      }
+      
+      &-arrow {
+        width: rem(93);
+        height: rem(20);
+      }
+    }
+    
+    &__accordion {
+      &-title {
+        @include text($transform: uppercase, $color: 'green');
+      }
+      
+      &-panel {
+        @include flex($direction: column);
+      }
+      
+      &-content-row {
+        @include flex();
+        width: 100%;
+        margin: rem(15) 0;
+      }
+      
+      &-content-table {
+        @include flex($direction: column);
+        width: 100%;
+        margin: rem(40) 0 rem(15) 0;
+      }
+      
+      &-content-icon {
+        @include flex();
+        height: rem(50);
+        width: rem(50);
+        padding-top: rem(15);
+      }
+      
+      &-content-box {
+        @include flex($direction: column, $justify: space-around);
+        padding: rem(10) 0;
+        margin-left: rem(20);
+      }
+      
+      &-content-title {
+        @include text($transform: uppercase, $color: 'black')
+      }
+      
+      &-content-description {
+        @include text($color: 'grey', $weight: 'light')
+      }
+    }
+  }
+  
+  &-iPadProp11 {
+    &__box-img {
+      position: absolute;
+      display: none;
+      right: 0;
+      
+      @include iPadProp11 {
+        background: url("../../resources/images/probiotic-gold-iPad-gold.png") no-repeat center/cover;
+        display: flex;
+        width: 40%;
+        height: rem(406);
+      }
+      @include MacBook {
+        height: rem(498);
+      }
+      @include MacBook {
+        height: rem(498);
+      }
+      @include MacBook {
+        height: rem(574);
+      }
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+}
+
+
+footer {
+  width: 86%;
+  margin-left: 3%;
+  margin-right: 3%;
+  
+  .footer__list {
+    display: flex;
+    font-family: Mont, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000000;
+    
+    .footer__item {
+      margin-left: 1vw;
+      
+      .footer__icons_list {
+        position: absolute;
+        right: 0;
+        display: flex;
+        margin-right: 6%;
+        
+        .footer__icons_item {
+        
+        }
+      }
+    }
+  }
+  
+  .footer__info {
+    display: flex;
+    width: 100%;
+    margin-top: 5vh;
+    
+    .footer__info_item {
+      width: 50%;
+      
+      font-family: Mont, serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 188%;
+      color: #535353;
+      
+      a {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 153%;
+        
+        color: #005350;
+      }
+    }
+  }
+  
+  img {
+    width: 100%;
+    height: 4vh;
+  }
+}
+
+.accordion .a-container .a-btn__text {
+  opacity: 1;
+  font-weight: var(--FontWeight-Light) !important;
+}
+
+.accordion .a-container.active .a-btn__text {
+  font-weight: var(--FontWeight-Medium) !important;
+}
