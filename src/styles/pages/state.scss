@@ -2,174 +2,128 @@
 @import '../includes/header';
 @import '../includes/footer';
 
-@mixin iphone {
-  @media (min-width: $break-iPhone8) {
-    @content
-  }
-}
-
-@mixin iPadProp11 {
-  @media (min-width: $break-iPadProp11) {
-    @content
-  }
-}
-
-@mixin MacBook {
-  @media (min-width: $break-MacBook) {
-    @content
-  }
-}
-
-@mixin Main {
-  @media (min-width: $break-Main) {
-    @content
-  }
-}
-
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
 
 header {
   .bred {
-    margin-top: 7vh;
+    margin-top: rem(0);
   }
 }
 
-main {
-  margin-top: 22vh;
+
+.vitamins {
+  margin-top: rem(150);
   width: 100%;
+  margin-left: rem(30);
+  display: flex;
+  flex-direction: column;
 
-  .vitamins {
-    display: flex;
-    height: 70vh;
+  @include iPadProp11 {
+    flex-direction: row-reverse;
+  }
+
+  .vitamins__image_wrap {
     width: 100%;
+    display: flex;
+    justify-content: center;
 
-    .vitamins__header {
-      margin-left: 5vw;
+    @include iPadProp11 {
+      flex-direction: row-reverse;
       width: 50%;
+    }
 
-      .vitamins__text_date {
-        margin-top: 2vh;
+    .vitamins__img {
+      width: 100%;
 
-        font-family: Mont, serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 500%;
-        display: flex;
-        align-items: center;
-        color: #000000;
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__header {
+    margin-top: rem(27);
+
+    @include iPadProp11 {
+        width: 50%;
+    }
+
+    &-text-date {
+      //
+    }
+
+    &-text-big {
+      @include headerUpperCase();
+      margin-top: rem(20);
+    }
+
+    &-description {
+      @include description();
+      margin-top: rem(8);
+    }
+
+    &-description-iphone-only {
+      @include iPadProp11 {
+        display: none;
+      }
+    }
+
+    &-more-btn {
+      @include actionButton();
+      margin-top: rem(25);
+    }
+  }
+}
+
+
+.states {
+  .states__wrap {
+    .row {
+      margin-left: 5vw;
+      margin-right: 5vw;
+
+      .col {
+        width: 25vw;
+      }
+    }
+
+    .state {
+      .state__image_wrap {
+        .state__image {
+          height: 100%;
+          width: 100px;
+        }
       }
 
-      .vitamins__text_big {
-        margin-top: 2vh;
-        margin-bottom: 5vh;
-
+      .state__date {
         font-family: Mont, serif;
         font-style: normal;
-        font-weight: 600;
-        font-size: 45px;
-        line-height: 144%;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 153%;
         text-transform: uppercase;
-        color: #000000;
+        color: #005350;
       }
 
-      .vitamins__text_gray {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 17px;
-        line-height: 188%;
-        color: #535353;
-      }
-
-      .vitamins__more_btn {
+      .state__header {
         font-family: Mont, serif;
         font-style: normal;
         font-weight: 600;
         font-size: 13px;
-        line-height: 500%;
-        display: flex;
-        align-items: center;
+        line-height: 177%;
         text-transform: uppercase;
-        color: #005350;
-      }
-    }
-
-    .vitamins__image_wrap {
-      width: 50%;
-
-      .vitamins__img {
-        //TODO: добавить картинку и сделать резайз
-        background: url("../../resources/images/honey.png") no-repeat center /cover;
-        width: 499px;
-        height: 420px;
-      }
-    }
-  }
-
-  @include iphone {
-    .vitamins {
-      //flex-direction: column-reverse;
-    }
-  }
+        color: #000000;
 
 
-  .states {
-    .states__wrap {
-      .row {
-        margin-left: 5vw;
-        margin-right: 5vw;
-
-        .col {
-          width: 25vw;
-        }
       }
 
-      .state {
-        .state__image_wrap {
-          .state__image {
-            // TODO: нет картинки
-            background: url("../../resources/images/honey.png") no-repeat center /cover;
-            height: 100%;
-            width: 100px;
-          }
-        }
-
-        .state__date {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 800;
-          font-size: 15px;
-          line-height: 153%;
-          text-transform: uppercase;
-          color: #005350;
-        }
-
-        .state__header {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 13px;
-          line-height: 177%;
-          text-transform: uppercase;
-          color: #000000;
-
-
-        }
-
-        .state__description {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 13px;
-          line-height: 162%;
-          color: #535353;
-        }
+      .state__description {
+        font-family: Mont, serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 162%;
+        color: #535353;
       }
     }
   }
