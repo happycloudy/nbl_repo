@@ -3,6 +3,79 @@
 @import '../includes/footer';
 
 
+.products-detail {
+  @include flex($direction: column);
+  border-bottom: $border;
+  margin: rem(150) rem(30) 0 rem(30);
+  
+  @include iPadProp11 {
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
+  @include MacBook {
+    @include flex($direction: row);
+    margin-top: rem(200);
+  }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
+  
+  &__left {
+    @include flex($direction: column);
+    width: 100%;
+    
+    
+    @include MacBook {
+      width: 65%;
+      border-right: $border;
+    }
+  }
+  
+  &__right {
+    @include flex($direction: column);
+    width: 100%;
+    position: relative;
+    padding: rem(40) 0;
+    
+    @include iPadProp11 {
+      @include flex($direction: row);
+      margin-top: 0;
+      padding: rem(68) 0;
+    }
+    
+    @include MacBook {
+      @include flex($direction: column, $align-items: center);
+      width: 35%;
+      margin-top: 42%;
+      padding: 0 0 rem(56) 0;
+    }
+    @include Main {
+      @include flex($direction: column, $align-items: center);
+      margin-top: 50%;
+      //margin-top: 35%;
+    }
+    @media (min-width: 1800px) {
+      margin-top: 600px;
+    }
+    
+    &__box-save {
+      display: none;
+      
+      @include MacBook {
+        display: flex;
+        margin-bottom: rem(47);
+      }
+      @include Main {
+        display: none;
+      }
+    }
+  }
+  
+  
+}
+
+
 .info {
   @include flex($direction: column);
   margin-top: rem(150);
@@ -58,8 +131,28 @@
   }
   
   &__description {
+    width: 100%;
+    
+    @include iPadProp11 {
+      width: 60%;
+    }
+    
     &--list {
       @include list;
+      margin-top: rem(17);
+      //padding-bottom: rem(60);
+      
+      @include iPadProp11 {
+        margin-top: rem(25);
+      }
+      @include MacBook {
+        padding-right: rem(57);
+        margin-top: rem(44);
+      }
+      @include Main {
+        padding-right: rem(107);
+        margin-top: rem(28);
+      }
       
       ul {
         li {
@@ -97,9 +190,8 @@
   
   &__product-line {
     @include flex($direction: column);
-    margin-top: rem(30);
-    padding: rem(40) 0;
-    border-top: $border;
+    width: 100%;
+    padding-top: rem(40);
     position: relative;
     
     @include iPadProp11 {
@@ -107,15 +199,11 @@
     }
     @include MacBook {
       @include flex($direction: column, $align-items: center);
-      width: 35%;
-      margin-top: rem(77.95);
-      padding: rem(56) 0 rem(56) 0;
+      padding-top: rem(100);
     }
     @include Main {
       @include flex($direction: column, $align-items: center);
-      width: 35%;
-      margin-top: rem(81.95);
-      padding: rem(56) 0 rem(56) 0;
+      padding-top: rem(44);
     }
     
     &--title {
@@ -131,19 +219,38 @@
   
   &__first {
     @include flex($direction: column);
-    margin-top: rem(20);
+    width: 100%;
     
     @include iPadProp11 {
-      margin-top: rem(30);
-      width: 42%;
+      @include flex($direction: row, $align-items: flex-end);
+      margin-bottom: 5%;
     }
     @include MacBook {
-      margin-top: rem(36);
-      margin-bottom: 0;
+      @include flex($direction: row, $align-items: flex-end);
     }
     @include Main {
-      margin-top: rem(55);
       margin-bottom: 10%;
+    }
+    
+    &__box-save {
+      @include flex;
+      width: 100%;
+      border-top: $border;
+      border-bottom: $border;
+      position: relative;
+      padding: rem(30) 0;
+      margin-top: rem(40);
+      
+      @include iPadProp11 {
+        display: flex;
+        border: 0;
+        width: rem(350);
+        margin: 0;
+        padding: 0;
+      }
+      @include MacBook {
+        display: none;
+      }
     }
   }
   
@@ -173,16 +280,32 @@
     
     &--center-container {
       @include MacBook {
-        width: 65%;
-        display: flex;
-        flex-direction: column;
-        border-right: $border;
+        @include flex($direction: column);
+      }
+      @include Main {
+        padding-top: rem(20);
       }
     }
     
     &--benefits {
       @include flex($wrap: wrap, $justify: space-between);
       padding: rem(65) rem(30);
+      position: relative;
+      border: 0 !important;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-top: $border;
+        
+        @include MacBook {
+          width: 150%;
+        }
+      }
       
       & > * {
         width: 35% !important;
@@ -199,26 +322,6 @@
   }
   
   &__container {
-    //&-first {
-    //  @include flex($justify: center);
-    //  @include iPadProp11 {
-    //    @include flex($justify: end);
-    //    transform: translate(rem(80), rem(-37));
-    //
-    //  }
-    //
-    //  @include MacBook {
-    //    transform: translate(rem(130), rem(-25));
-    //    width: rem(545);
-    //    height: rem(498);
-    //  }
-    //  @include Main {
-    //    transform: translate(rem(150), rem(-12));
-    //    width: rem(700);
-    //    height: rem(600);
-    //  }
-    //}
-    
     &-second {
       width: 100%;
       margin-top: rem(20);
@@ -242,6 +345,80 @@
       }
       @include Main {
         margin-top: rem(50);
+      }
+    }
+  }
+  
+  &-iPad {
+    &__box-img {
+      display: none;
+      position: absolute;
+      @include iPadProp11 {
+        display: flex;
+        right: 0;
+        top: rem(60);
+      }
+      @include MacBook {
+        display: none;
+      }
+    }
+  }
+  
+  &-MacBook {
+    &__box-img {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      @include MacBook {
+        display: flex;
+        right: 0;
+        top: rem(93);
+      }
+      @include Main {
+        display: none;
+      }
+    }
+  }
+  
+  &-Main {
+    &__box-img {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      @include Main {
+        display: flex;
+        right: 0;
+        top: rem(118);
+      }
+      @media (min-width: 1800px) {
+        display: none;
+      }
+    }
+  }
+  &-Desktop {
+    &__box-img {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      @media (min-width: 1800px) {
+        display: flex;
+        right: 0;
+        top: rem(118);
+      }
+    }
+  }
+  
+  &-desktop {
+    &__box-save {
+      display: none;
+      
+      @include Main {
+        display: flex;
+        position: absolute;
+        width: rem(300);
+        z-index: 3;
+        right: 0;
+        transform: translate(0, -20%);
       }
     }
   }
@@ -272,7 +449,6 @@
       border-top: $border;
       border-bottom: $border;
       position: relative;
-      z-index: -1;
       padding: rem(30) 0;
       margin-top: rem(40);
       
@@ -349,8 +525,14 @@
       
       &-content-table {
         @include flex($direction: column);
-        width: 100%;
         margin: rem(40) 0 rem(15) 0;
+        
+        @include MacBook{
+          padding-right: rem(57);
+        }
+        @include Main{
+          padding-right: rem(48);
+        }
       }
       
       &-content-icon {

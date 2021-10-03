@@ -76,7 +76,6 @@ p, span {
 section, main {
   position: relative;
   z-index: 1;
-  padding: rem(10) 0;
 }
 
 header, footer {
@@ -577,7 +576,10 @@ header, footer {
   }
   
   @include MacBook{
-    //width: 100%;
+    width: 50%;
+  }
+  @include Main{
+    margin: rem(35) 0;
   }
   
   &__img-box {
@@ -601,12 +603,15 @@ header, footer {
     margin-top: rem(20);
     
     @include MacBook {
-      @include flex($direction: row);
+      @include flex($direction: row, $justify: space-between);
+      width: 100%;
+      margin-left: 0;
     }
   }
   
   &__text-box {
     @include flex($direction: column);
+    white-space: nowrap;
     
     &-title {
       @include text($size: 17, $color: 'black');
@@ -631,6 +636,10 @@ header, footer {
     margin-top: rem(20);
     width: rem(100);
     height: rem(20);
+    @include MacBook{
+      height: rem(5);
+      width: 100%;
+    }
   }
   
 }

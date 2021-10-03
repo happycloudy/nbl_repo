@@ -1,0 +1,218 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.products {
+  margin-top: rem(250);
+  
+  &__first {
+    @include flex($direction: column-reverse);
+    padding: 0 rem(29);
+    
+    @include iPadProp11 {
+      @include flex($direction: row);
+      padding: 0 rem(41);
+    }
+    @include MacBook {
+      padding: 0 rem(93);
+    }
+    @include Main {
+      padding: 0 rem(108);
+    }
+    
+    &--description-container {
+      @include flex($direction: column);
+      margin-top: rem(18);
+      
+      @include iPadProp11 {
+        margin-top: rem(20);
+      }
+      @include MacBook {
+        margin-top: rem(41);
+      }
+      @include Main {
+        margin-top: rem(26);
+      }
+    }
+    
+    &--title-container {
+      width: 100%;
+      @include iPadProp11 {
+        width: 50%;
+      }
+      @include Main {
+        width: 40%;
+      }
+    }
+    
+    &--img-container {
+      @include flex($justify: center);
+      height: rem(169);
+      width: 100%;
+      margin-bottom: rem(42);
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      
+      @include iPadProp11 {
+        width: 50%;
+        height: rem(197);
+      }
+      @include MacBook {
+        width: 60%;
+        height: rem(268);
+      }
+      @include Main {
+        width: 60%;
+        height: rem(331);
+      }
+    }
+    
+    &--description {
+      @include description;
+    }
+    
+    &--action {
+      @include actionButton;
+    }
+  }
+  
+  &__second {
+    @include flex($direction: column);
+    margin-top: 5%;
+    margin-left: rem(29);
+    
+    @include iPadProp11 {
+      margin-left: rem(41);
+    }
+    @include MacBook {
+      margin-left: rem(93);
+    }
+    @include Main {
+      margin-left: rem(108);
+    }
+  }
+  
+  &__item {
+    @include flex();
+    padding: rem(49) 0;
+    position: relative;
+    
+   &--someimg {
+     display: none;
+     @include iPadProp11{
+       display: block;
+       position: absolute;
+       height: 100%;
+       right: rem(-8);
+       bottom: 0;
+       top: 0;
+     }
+    }
+    
+    &:not(:last-child){
+      border-bottom: $border;
+    }
+    &:not(:first-child){
+      margin-right: rem(29);
+      @include iPadProp11 {
+        margin-right: rem(41);
+      }
+      @include MacBook {
+        margin-right: rem(93);
+      }
+      @include Main {
+        margin-right: rem(108);
+      }
+  }
+    &--img {
+      width: rem(106);
+      
+      @include iPadProp11 {
+        width: rem(115);
+      }
+      @include MacBook {
+        width: rem(157);
+      }
+      @include Main {
+        width: rem(194);
+      }
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    &--title {
+      @include text($size: 17, $transform: uppercase, $color: 'black');
+      
+      @include iPadProp11 {
+        @include text($size: 25, $transform: uppercase, $color: 'black');
+      }
+      @include Main {
+        @include text($size: 27, $transform: uppercase, $color: 'black');
+      }
+    }
+    
+    &--description {
+      @include description;
+      margin-top: rem(14);
+      
+      @include iPadProp11 {
+        margin-top: rem(23);
+      }
+      @include MacBook {
+        margin-top: rem(10);
+      }
+      @include Main {
+        margin-top: rem(12);
+      }
+    }
+    
+    &--arrow {
+      width: rem(55);
+      height: rem(4);
+      
+      @include iPadProp11 {
+        width: rem(75);
+        margin-top: rem(28);
+      }
+      @include MacBook {
+        width: rem(93);
+        margin-top: rem(29);
+      }
+      @include Main {
+        width: rem(93);
+        margin-top: rem(13);
+      }
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    &--description-container {
+      @include flex($direction: column, $justify: center, $align-items: flex-start);
+      margin-left: rem(20);
+      width: 100%;
+      
+      @include iPadProp11 {
+        margin-left: rem(22);
+        width: 40%;
+      }
+      @include MacBook {
+        margin-left: rem(30);
+        width: 40%;
+      }
+      @include MacBook {
+        margin-left: rem(37);
+        width: 40%;
+      }
+    }
+  }
+}
