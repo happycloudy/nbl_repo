@@ -1,0 +1,266 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+body {
+  overflow-x: hidden;
+}
+
+.honey_img__wrap {
+  @include flex($justify: center);
+
+  .honey_img {
+    width: rem(315);
+    height: rem(166);
+    margin-top: rem(170);
+
+    @include iPadProp11 {
+      width: 95%;
+      height: rem(322);
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    @include MacBook {
+      height: rem(445)
+    }
+
+    @include Main {
+      height: rem(600);
+    }
+  }
+}
+
+header {
+  .bred {
+    @include MacBook {
+      margin-left: rem(10);
+    }
+
+    @include Main {
+      margin-top: rem(650);
+    }
+  }
+}
+
+
+main {
+
+  @include MacBook {
+    @include flex();
+  }
+
+  .vertical-hr {
+
+    @include MacBook{
+      height: rem(900);
+      width: rem(3);
+      background: rgba(85, 85, 85, 0.2);
+      margin-right: rem(100);
+    }
+  }
+
+
+  .state {
+    margin-top: rem(27);
+    margin-left: rem(30);
+    width: 100%;
+
+    @include iPadProp11 {
+      margin-left: rem(40);
+    }
+
+    @include MacBook {
+      margin-left: rem(70);
+    }
+
+    @include Main {
+      margin-left: rem(100);
+    }
+
+    &__header {
+      margin-top: rem(108);
+
+      @include iPadProp11 {
+        margin-top: rem(90+57);
+      }
+
+      &-text-date {
+        ///
+      }
+
+      &-text-big {
+        @include headerUpperCase();
+        margin-top: rem(20);
+        line-height: rem(35);
+
+        @include iPadProp11 {
+          margin-top: rem(31);
+        }
+
+        @include MacBook {
+          margin-top: rem(32);
+        }
+      }
+
+      &-description {
+        @include description();
+        margin-top: rem(8);
+        line-height: rem(25);
+
+        @include iPadProp11 {
+          margin-top: rem(27);
+        }
+
+        @include MacBook {
+          margin-top: rem(53);
+        }
+      }
+
+      &-description-iphone-only {
+        @include iPadProp11 {
+          display: none;
+        }
+      }
+    }
+
+    .vitamin {
+      margin-top: rem(25);
+
+      &__header {
+        @include text($size: 17, $color: 'black')
+      }
+
+      &__list {
+        @include list;
+        width: 80%;
+
+        ul {
+          li {
+            line-height: rem(25);
+          }
+        }
+      }
+    }
+  }
+
+  .states {
+    margin-top: rem(35);
+    margin-left: rem(41);
+
+    @include MacBook {
+      margin-right: rem(51);
+    }
+
+    @include Main {
+      margin-right: rem(104);
+    }
+
+    &__nbl_atp_wrap {
+      @include flex();
+
+      @include MacBook {
+        display: block;
+        transform: translateY(rem(-200));
+      }
+
+
+
+      &_img {
+        width: rem(103);
+        height: rem(133);
+
+        @include iPadProp11 {
+          width: rem(178);
+          height: rem(231);
+        }
+
+        @include MacBook {
+          width: rem(265);
+          height: rem(344);
+        }
+
+        @include Main {
+          width: rem(297);
+          height: rem(386);
+        }
+      }
+
+      &_header {
+        margin-left: rem(27);
+        @include flex($direction: column, $justify: center, $align-items: center);
+
+        @include MacBook {
+          margin-top: rem(18);
+          margin-right: rem(230);
+          flex-direction: row;
+
+        }
+
+        &__text {
+          width: rem(100);
+
+          &_big {
+            @include text($size: 17, $transform: uppercase, $color: 'black');
+          }
+
+          &_small {
+            @include text($size: 13, $color: 'black', $weight: 'light');
+            margin-top: rem(2);
+          }
+        }
+
+        &__arrow {
+          margin-top: rem(16);
+          margin-left: rem(15);
+          width: rem(100);
+          height: rem(5);
+        }
+      }
+    }
+
+
+    &__state {
+      @include flex($direction: column);
+      margin-top: rem(73);
+      width: 90%;
+
+      @include iPadProp11 {
+        flex-direction: row;
+        margin-top: 0;
+      }
+
+      @include MacBook {
+        flex-direction: column;
+      }
+
+      &_wrap {
+        img {
+          height: rem(153);
+        }
+      }
+
+      &_text {
+        margin-top: rem(24);
+        margin-left: rem(10);
+        width: 70%;
+
+        &_date {
+          @include text($size: 15, $color: 'green', $weight: 'bold');
+        }
+
+        &_big {
+          @include text($size: 13, $color: 'black', $weight: 'medium');
+          margin-top: rem(7);
+        }
+
+        &_small {
+          @include text($size: 13, $color: 'grey', $weight: 'medium');
+          margin-top: rem(3);
+        }
+      }
+    }
+  }
+}
+
+
