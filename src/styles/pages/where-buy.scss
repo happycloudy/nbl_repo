@@ -28,12 +28,15 @@
   width: 100%;
   overflow: hidden;
   
+  &:not(:last-child){
+    border-bottom: $border;
+  }
+  
   &-label {
     @include flex($justify: space-between, $direction: column);
     cursor: pointer;
     position: relative;
     padding: rem(15) 0 rem(15) 0;
-    border-bottom: $border;
     
     &::after {
       content: "\276D";
@@ -82,7 +85,7 @@ input:checked {
   
   ~ .tab-content {
     max-height: 100vh;
-    padding-top: rem(20);
+    padding-bottom: rem(20);
     opacity: 1;
   }
   
@@ -109,7 +112,6 @@ input:checked {
   cursor: pointer;
   position: relative;
   padding: rem(15) 0 rem(15) 0;
-  border-bottom: $border;
   
   &:after {
     content: '';
@@ -135,4 +137,8 @@ input:checked {
 
 .sub-tabs {
   width: 70%;
+}
+
+.border{
+  border-bottom: $border;
 }
