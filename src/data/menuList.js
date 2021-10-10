@@ -18,7 +18,7 @@ export const menuList = [
     name: 'О нас',
     link: './about-us.html',
     subMenu: [
-      {name: 'Сферы применения', link: 'pp.html'},
+      {name: 'Сферы применения', link: './about-us__scope-application.html'},
       {name: 'Документы', link: '#about'},
       {name: 'Вопросы-ответы', link: '#about'},
       {name: 'Статьи', link: '#about'},
