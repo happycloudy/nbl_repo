@@ -1,0 +1,42 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.questions {
+  @include section-margin;
+  
+  &__title {
+    @include headerUpperCase
+  }
+  
+  &__container {
+    @include flex($wrap: wrap, $justify: space-between);
+    margin-top: rem(10);
+  }
+}
+
+.a-btn__text {
+  @include text($size: 27, $transform: uppercase, $color: 'black');
+}
+
+.a-panel {
+  @include text($size: 17, $color: 'grey');
+  border-top: $border;
+  line-height: rem(35);
+  padding: 0;
+}
+
+.accordion .a-container .a-btn__text {
+  @include text($size: 27, $transform: uppercase, $color: 'black', $weight: 'light');
+  opacity: 1;
+}
+
+.accordion .a-container.active .a-btn__text {
+  @include text($size: 27, $transform: uppercase, $color: 'black');
+}
+
+.accordion .a-container.active .a-panel {
+  padding-bottom: rem(20);
+  padding-top: rem(20);
+}

@@ -458,8 +458,9 @@ header {
     
     .a-panel {
       width: 100%;
+      opacity: 0;
+      height: 0;
       transition: all 0.2s ease-in-out;
-      display: none;
     }
     
     
@@ -477,7 +478,9 @@ header {
       }
       
       .a-panel {
-        display: block;
+        opacity: 1;
+        height: auto;
+        transition: all 0.2s ease-in-out;
         
         &__text {
           color: var(--Color-Text-Grey);
