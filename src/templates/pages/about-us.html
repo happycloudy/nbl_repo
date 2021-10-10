@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>about-us</title>
+</head>
+<body>
+<header class="header">
+    <div id="menu" class="header__menu"></div>
+    <span class="header__line line"></span>
+    <div class="bred">
+        <div class="bred__house">
+            <svg>
+                <use href="#house"/>
+            </svg>
+        </div>
+        <div class="bred__item-text">О нас</div>
+    </div>
+</header>
+
+
+<section class="about-us">
+    <div class="about-us__title">О нас</div>
+    <div class="about-us__container">
+        <div class="about-us__item">
+            <svg class="about-us__item--svg">
+                <use href="#applications"/>
+            </svg>
+            <div class="about-us__item--title">Сферы применения</div>
+        </div>
+        <div class="about-us__item">
+            <svg class="about-us__item--svg">
+                <use href="#questions"/>
+            </svg>
+            <div class="about-us__item--title">Вопросы-ответы</div>
+        </div>
+        <div class="about-us__item">
+            <svg class="about-us__item--svg">
+                <use href="#documents"/>
+            </svg>
+            <div class="about-us__item--title">Документы </div>
+        </div>
+        <div class="about-us__item">
+            <svg class="about-us__item--svg">
+                <use href="#articles"/>
+            </svg>
+            <div class="about-us__item--title">Статьи</div>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('../includes/footer.html').default)() %>
+
+</body>
+</html>
+

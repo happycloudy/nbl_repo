@@ -209,3 +209,22 @@
     @include text($size: 45, $color: 'black', $weight: 'medium', $transform: uppercase);
   }
 }
+
+@mixin section-margin{
+  margin: rem(150) rem(30) 0 rem(30);
+  
+  @include iphone{
+    margin-top: rem(200);
+  }
+  @include iPadProp11 {
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
+  @include MacBook {
+    margin-top: rem(200);
+  }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
+}

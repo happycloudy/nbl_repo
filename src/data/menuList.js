@@ -16,7 +16,7 @@ export const menuList = [
   },
   {
     name: 'О нас',
-    link: './pp.html',
+    link: './about-us.html',
     subMenu: [
       {name: 'Сферы применения', link: 'pp.html'},
       {name: 'Документы', link: '#about'},
