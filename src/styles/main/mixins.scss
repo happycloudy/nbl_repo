@@ -187,12 +187,15 @@
 }
 
 @mixin description {
+  line-height: rem(25);
   @include text($size: 13, $color: 'grey', $weight: 'light');
   @include MacBook {
     @include text($size: 15, $color: 'grey', $weight: 'light');
+    line-height: rem(30);
   }
   @include Main {
     @include text($size: 17, $color: 'grey', $weight: 'light');
+    line-height: rem(32);
   }
 }
 

@@ -26,12 +26,7 @@ export const menuList = [
   },
   {
     name: 'Где купить',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './where-buy.html',
   },
   {
     name: 'Продукты',

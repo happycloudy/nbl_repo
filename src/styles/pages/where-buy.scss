@@ -1,0 +1,153 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+.where-buy {
+  margin: rem(150) rem(30) 0 rem(30);
+  
+  @include iphone {
+    margin-top: rem(200);
+  }
+  @include iPadProp11 {
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
+  @include MacBook {
+    margin-top: rem(200);
+  }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
+  
+  &__title {
+    @include headerUpperCase
+  }
+  
+  &__container {
+    overflow: hidden;
+    margin-top: rem(20);
+  }
+  
+  
+}
+
+
+.tab-label__main-title {
+  @include text($size: 25, $transform: uppercase);
+  line-height: rem(50);
+}
+
+
+.tab {
+  width: 100%;
+  overflow: hidden;
+  
+  &-label {
+    @include flex($justify: space-between, $direction: column);
+    cursor: pointer;
+    position: relative;
+    padding: rem(15) 0 rem(15) 0;
+    border-bottom: $border;
+    
+    &::after {
+      content: "\276D";
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transform: rotate(-90deg);
+      transition: all .35s;
+      font-size: rem(30);
+      color: var(--Color-Text-Green);
+    }
+  }
+  
+  &-content {
+    max-height: 0;
+    opacity: 0;
+    transition: all .35s;
+  }
+  
+  &-close {
+    @include flex($justify: flex-end);
+    cursor: pointer;
+  }
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    
+    &::after {
+      transform: rotate(90deg);
+    }
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  ~ .tab-content {
+    max-height: 100vh;
+    padding-top: rem(20);
+    opacity: 1;
+  }
+  
+  + .tab-label__sub-title {
+    
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.tab-label__main-title {
+  @include text($size: 25, $transform: uppercase);
+  line-height: rem(50);
+}
+
+.tab-label__main-subtitle {
+  @include text($size: 19, $color: 'grey', $weight: 'light')
+}
+
+.tab-label__sub-title {
+  @include text($size: 21, $color: 'black', $weight: 'light');
+  @include flex($justify: center, $direction: column);
+  cursor: pointer;
+  position: relative;
+  padding: rem(15) 0 rem(15) 0;
+  border-bottom: $border;
+  
+  &:after {
+    content: '';
+    width: rem(20);
+    height: rem(1);
+    background-color: var(--Color-Text-Green);
+    position: absolute;
+    right: 0;
+  }
+  
+  &:before {
+    content: '';
+    background-color: var(--Color-Text-Green);
+    width: rem(20);
+    height: rem(1);
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+  }
+  
+}
+
+.sub-tabs {
+  width: 70%;
+}

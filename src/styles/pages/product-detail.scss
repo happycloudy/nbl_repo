@@ -8,6 +8,9 @@
   border-bottom: $border;
   margin: rem(150) rem(30) 0 rem(30);
   
+  @include iphone{
+    margin-top: rem(200);
+  }
   @include iPadProp11 {
     margin-left: rem(76);
     margin-right: rem(76);
@@ -115,7 +118,9 @@
     
     &-title {
       @include text($transform: uppercase, $color: 'black');
+      line-height: rem(25);
       width: 60%;
+      
       @include MacBook {
         @include text($size: 17, $transform: uppercase, $color: 'black');
       }
@@ -123,6 +128,8 @@
     
     &-description {
       @include text($color: 'grey', $weight: 'light');
+      line-height: rem(32);
+      
       @include MacBook {
         @include text($size: 17, $color: 'grey', $weight: 'light');
       }
@@ -572,7 +579,6 @@
         @include flex();
         height: rem(50);
         width: rem(50);
-        padding-top: rem(15);
       }
       
       &-content-box {
@@ -586,7 +592,8 @@
       }
       
       &-content-description {
-        @include text($color: 'grey', $weight: 'light')
+        @include text($color: 'grey', $weight: 'light');
+        line-height: rem(32);
       }
     }
   }
