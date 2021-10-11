@@ -1,0 +1,53 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+
+
+.scope-application{
+  @include section-margin;
+  
+  &__title {
+    @include headerUpperCase
+  }
+  &__container {
+    @include flex($wrap: wrap, $justify: space-between);
+    margin-top: rem(57);
+  }
+  
+  &__item {
+    @include flex($align-items: center);
+    flex: 1 1 100%;
+    height: rem(70);
+    
+    
+    @include iphone {
+      flex: 1 1 50%;
+      margin-bottom: rem(54);
+      height: rem(90);
+    }
+    
+    &--svg {
+      @include flex();
+      width: rem(40);
+      height: 100%;
+      
+      @include iphone {
+        width: rem(80);
+        
+      }
+    }
+    
+    &--title {
+      @include text($size: 17, $transform: uppercase);
+      
+      margin-left: rem(45);
+      
+      @include iphone{
+        @include text($size: 27, $transform: uppercase);
+        
+      }
+    }
+  }
+}
