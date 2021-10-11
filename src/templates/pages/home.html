@@ -163,39 +163,60 @@
         </div>
     </section>
 
-    <section id="nbl_apt" class="flex flex__justify-center w-100">
-        <div class="nbl_apt__recommendation">
-            <div class="nbl_apt__header">
-                <div class="nbl_atp">
-                    NBL ATP
-                </div>
-
-                <div class="nbl_atp__blue_text">
-                    рекомендовано при:
-                </div>
+    <section class="nbl_atp">
+        <div class="nbl_atp__about">
+            <div class="nbl_atp__about_big_text">NBL ATP</div>
+            <div class="nbl_atp__about_small_text">рекомендовано при:</div>
+            <div class="nbl_atp__about_list">
+                <ul>
+                    <li class="nbl_atp__about_list_item">Атопический дерматит;</li>
+                    <li class="nbl_atp__about_list_item">Аллергический ринит;</li>
+                    <li class="nbl_atp__about_list_item">Бронхиальная астма;</li>
+                    <li class="nbl_atp__about_list_item">Крапивница;</li>
+                    <li class="nbl_atp__about_list_item">Себорейный дерматит;</li>
+                    <li class="nbl_atp__about_list_item">Частые простудные заболевания;</li>
+                    <li class="nbl_atp__about_list_item">Проблемы со стулом (запоры, поносы);</li>
+                    <li class="nbl_atp__about_list_item">Метеоризм;</li>
+                </ul>
             </div>
-            <ul class="nbl_atp__list">
-                <li class="nbl_atp__about_list_item">Атопический дерматит;</li>
-                <li class="nbl_atp__list-item">Аллергический ринит;</li>
-                <li class="nbl_atp__list-item">Бронхиальная астма;</li>
-                <li class="nbl_atp__list-item">Крапивница;</li>
-                <li class="nbl_atp__list-item">Себорейный дерматит;</li>
-                <li class="nbl_atp__list-item">Частые простудные заболевания;</li>
-                <li class="nbl_atp__list-item">Проблемы со стулом (запоры, поносы);</li>
-                <li class="nbl_atp__list-item">Метеоризм;</li>
-            </ul>
-            <button class="nbl_apt__recommendation__button ">
-                Подробнее
-            </button>
+            <div class="nbl_atp__about_btn">Подробнее</div>
         </div>
-        <div class="nbl_apt__big-image-wrap flex flex__justify-center"></div>
-        <div class="nbl_apt__images">
-            <div id="img-wrap1" class="img-wrap"></div>
-            <div id="img-wrap2" class="img-wrap"></div>
-            <div id="img-wrap3" class="img-wrap"></div>
+
+        <div class="nbl_atp__image_wrap">
+            <img
+                    class="nbl_atp__image_wrap_big"
+                    src="./src/resources/images/probiotic-atp-large.png"
+                    alt="nbl_atp__image_big"
+            />
+            <div class="nbl_atp__image_wrap_bg"></div>
+            <div class="nbl_atp__image_wrap_bg"></div>
+        </div>
+
+        <div class="nbl_atp__arrow">
+            <svg>
+                <use href="#Arrow-2"/>
+            </svg>
+        </div>
+
+        <div class="nbl_atp__images">
+            <img
+                    class="nbl_atp__image_small"
+                    src="./src/resources/images/probiotic-atp-small.png"
+                    alt="nbl_atp__image_big"
+            />
+            <img
+                    class="nbl_atp__image_small"
+                    src="./src/resources/images/probiotic-gold-small.png"
+                    alt="nbl_atp__image_big"
+            />
+            <img
+                    class="nbl_atp__image_small"
+                    src="./src/resources/images/ginobiotic-small.png"
+                    alt="nbl_atp__image_big"
+            />
         </div>
     </section>
-    <section id="doctor_recommendation" class="w-100">
+    <section class="doctor_recommendation w-100">
         <div class="doctor_recommendation__header">
             Доктора рекомендуют
         </div>
@@ -225,7 +246,14 @@
 
         <div class="doctor_recommendation__cards">
             <div class="doctor_recommendation__card">
-                <div class="doctor_recommendation__img"></div>
+                <div class="doctor_recommendation__img">
+                    <img
+                            class="nbl_atp__image_small"
+                            src="./src/resources/images/recomendation_pic1.png"
+                            alt="nbl_atp__image_big"
+                    />
+                    <div class="doctor_recommendation_bg"></div>
+                </div>
                 <div class="doctor_recommendation__description">
                     <div class="doctor_recommendation__card_header">
                         Доктор иммунолог-аллерголог Арман Байдилов
@@ -235,29 +263,43 @@
                     </div>
                 </div>
             </div>
-            <div class="doctor_recommendation__card">
-                <div class="doctor_recommendation__img"></div>
-                <div class="doctor_recommendation__description">
-                    <div class="doctor_recommendation__card_header">
+            <div class="doctor_recommendation__small_cards">
+                <div class="doctor_recommendation__card">
+                    <div class="doctor_recommendation__img">
+                        <img
+                                class="nbl_atp__image_small"
+                                src="./src/resources/images/recomendation_pic2.png"
+                                alt="nbl_atp__image_big"
+                        />
                     </div>
-                    <div class="doctor_recommendation__description_small">
-                        Зачем нужны пробиотики?
+                    <div class="doctor_recommendation__description">
+                        <div class="doctor_recommendation__card_header">
+                        </div>
+                        <div class="doctor_recommendation__description_small">
+                            Зачем нужны пробиотики?
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="doctor_recommendation__card">
-                <div class="doctor_recommendation__img"></div>
-                <div class="doctor_recommendation__description">
-                    <div class="doctor_recommendation__card_header">
+                <div class="doctor_recommendation__card">
+                    <div class="doctor_recommendation__img">
+                        <img
+                                class="nbl_atp__image_small"
+                                src="./src/resources/images/recomendation_pic3.png"
+                                alt="nbl_atp__image_big"
+                        />
                     </div>
-                    <div class="doctor_recommendation__description_small">
-                        Почему NBL?
+                    <div class="doctor_recommendation__description">
+                        <div class="doctor_recommendation__card_header">
+                        </div>
+                        <div class="doctor_recommendation__description_small">
+                            Почему NBL?
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="feedback">
+    <section class="feedback">
         <div class="feedback__header">
             Отзывы
         </div>
@@ -275,21 +317,33 @@
                 <button>Вконтакте</button>
             </li>
             <li class="feedback__list_item">
-                <button>Whatsupp</button>
+                <button>Whatsapp</button>
             </li>
         </ul>
         <ul class="feedback__image_list">
             <li class="feedback__image_list_item">
-
+                <img
+                        src="./src/resources/images/feedback1.png"
+                        alt="nbl_atp__image_big"
+                />
             </li>
             <li class="feedback__image_list_item">
-
+                <img
+                        src="./src/resources/images/feedback2.png"
+                        alt="nbl_atp__image_big"
+                />
             </li>
             <li class="feedback__image_list_item">
-
+                <img
+                        src="./src/resources/images/feedback3.png"
+                        alt="nbl_atp__image_big"
+                />
             </li>
             <li class="feedback__image_list_item">
-
+                <img
+                        src="./src/resources/images/feedback4.png"
+                        alt="nbl_atp__image_big"
+                />
             </li>
         </ul>
         <div class="feedback__more">
@@ -298,45 +352,64 @@
             </button>
         </div>
     </section>
-    <section id="science">
-        <div class="science__header">
-            Наука
+    <section class="states">
+        <div class="states__img_wrap">
+            <img
+                    src="./src/resources/images/science.png"
+                    alt="Science"
+                    class="states__science_picture"
+            />
+            <div class="states__img_wrap_header">
+                <div class="states__img_wrap_header_text">
+                    Наука
+                </div>
+            </div>
         </div>
-        <ul class="science__list">
-            <li class="science__item">
-                <div class="science__item_img"></div>
-                <div class="science__item_text">
-                    <div class="science__item_date">
-                        03.06
-                    </div>
-                    <div class="science__item_header">
-                        Пробиотики и пребиотики:<br/>
-                        какие бактерии полезны
-                    </div>
-                    <div class="science__item_description">
-                        Диетологи называют кишечник<br/>
-                        вторым мозгом, хотя он скорее ...
-                    </div>
-                </div>
-            </li>
-
-            <li class="science__item">
-                <div class="science__item_img"></div>
-                <div class="science__item_text">
-                    <div class="science__item_date">
-                        08.06
-                    </div>
-                    <div class="science__item_header">
-                        Что такое про- и пребиотики</br>
-                        и зачем они нужны организму?
-                    </div>
-                    <div class="science__item_description">
-                        Пробиотики — это полезные бактерии,</br>
-                        которые живут в кишечнике ...
+        <div class="states__wrap">
+            <div class="row">
+                <div class="col">
+                    <div class="state">
+                        <div class="state__image_wrap">
+                            <img
+                                    class="state__image"
+                                    src="./src/resources/images/state1.png"
+                                    alt="state1"
+                            />
+                        </div>
+                        <div class="text">
+                            <div class="state__date">03.06</div>
+                            <div class="state__header">Пробиотики и пребиотики:
+                                какие бактерии полезны
+                            </div>
+                            <div class="state__description">Диетологи называют кишечник
+                                вторым мозгом, хотя он скорее ...
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
+                <div class="col">
+                    <div class="state">
+                        <div class="state__image_wrap">
+                            <img
+                                    class="state__image"
+                                    src="./src/resources/images/state2.png"
+                                    alt="state2"
+                            />
+                        </div>
+                        <div class="text">
+                            <div class="state__date">08.06</div>
+                            <div class="state__header">Что такое про- и пребиотики
+                                и зачем они нужны организму?
+                            </div>
+                            <div class="state__description">Пробиотики — это полезные бактерии, которые живут в
+                                кишечнике
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <footer>
         <ul class="footer__list">
