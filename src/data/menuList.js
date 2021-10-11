@@ -39,12 +39,7 @@ export const menuList = [
   },
   {
     name: 'Доставка и оплата ',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './delivery.html',
   },
   {
     name: 'Контакты',

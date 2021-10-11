@@ -1,0 +1,123 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.delivery {
+  @include section-margin;
+  
+  &__title {
+    @include headerUpperCase
+  }
+  
+  &__container {
+    line-height: rem(35);
+    margin-top: rem(47);
+    
+    &--list {
+      @include list($Main: 17);
+      
+      p {
+        line-height: rem(35);
+      }
+      
+      ul {
+        margin-left: rem(17);
+      }
+      
+      ul li {
+        line-height: rem(35);
+      }
+    }
+    
+    &--list-title {
+      @include text($size: 27, $transform: uppercase, $color: 'black');
+      margin-bottom: rem(22);
+    }
+  }
+}
+
+.payment {
+  @include section-margin;
+  
+  &__title {
+    @include headerUpperCase
+  }
+  
+  &__container {
+    overflow: hidden;
+    margin-top: rem(20);
+    @include iPadProp11 {
+      margin-top: rem(80);
+    }
+  }
+}
+
+.mytabs {
+  display: none;
+  
+  @include iPadProp11 {
+    @include flex();
+  }
+}
+
+.tab {
+  @include list($Main: 17);
+  border-bottom: 0 !important;
+  padding-top: rem(42) !important;
+  line-height: rem(35) !important;
+}
+
+.tab ul {
+  margin-left: rem(17) !important;
+  li{
+    line-height: rem(35) !important;
+  }
+}
+
+.mytabs label {
+  padding-top: rem(15) !important;
+  padding-bottom: rem(15) !important;
+}
+
+
+.accordion {
+  @include flex();
+  
+  @include iPadProp11 {
+    display: none;
+  }
+}
+
+.accordion .a-container .a-btn__text {
+  opacity: 1 !important;
+  font-weight: var(--FontWeight-Light) !important;
+}
+
+.accordion .a-container.active .a-btn__text {
+  font-weight: var(--FontWeight-Medium) !important;
+}
+
+.a-panel {
+  @include list($Main: 17);
+  padding-bottom: rem(10);
+  border-bottom: 0 !important;
+  line-height: rem(35) !important;
+  
+}
+
+.a-btn__text {
+  @include text($transform: uppercase);
+  
+  @include iPadProp11 {
+    @include text($size: 17, $transform: uppercase)
+  }
+  
+  @include MacBook {
+    @include text($size: 21, $transform: uppercase)
+  }
+  
+  @include Main {
+    @include text($size: 25, $transform: uppercase)
+  }
+}
