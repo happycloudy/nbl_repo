@@ -52,11 +52,6 @@ export const menuList = [
   },
   {
     name: 'Стать дилером',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './dealer.html',
   },
 ]

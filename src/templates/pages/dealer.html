@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>delivery</title>
+</head>
+<body>
+<header class="header">
+    <div id="menu" class="header__menu"></div>
+    <span class="header__line line"></span>
+    <div class="bred">
+        <div class="bred__house">
+            <svg>
+                <use href="#house"/>
+            </svg>
+        </div>
+        <div class="bred__item-text">О нас</div>
+    </div>
+</header>
+
+<section class="dealer">
+    <div class="dealer__title">Стать дилером</div>
+    <div class="dealer__container">
+        <div>Стать нашим партнером может любая компания из России или стран СНГ, заинтересованная в надежном
+            <br>
+            поставщике
+            компьютерного оборудования. Свяжитесь с нами, любым доступным способом: по телефону,<br>
+            по электронной почте или заполните анкету.
+        </div>
+        <div class="dealer__form">
+            <div class="dealer__form--title">анкета </div>
+            <%= _.template(require('../includes/questionnaire.html').default)() %>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('../includes/footer.html').default)() %>
+
+</body>
+</html>
+
