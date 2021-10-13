@@ -31,37 +31,17 @@ export const menuList = [
   {
     name: 'Продукты',
     link: './product.html',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
   },
   {
     name: 'Доставка и оплата ',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './delivery.html',
   },
   {
     name: 'Контакты',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './contacts.html',
   },
   {
     name: 'Стать дилером',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './dealer.html',
   },
 ]

@@ -1,0 +1,31 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.dealer {
+  @include section-margin;
+  margin-bottom: rem(216);
+  
+  &__title {
+    @include headerUpperCase
+  }
+  
+  &__container {
+    line-height: rem(35);
+    margin-top: rem(47);
+  }
+  
+  &__form {
+    width: 100%;
+    padding-top: rem(62);
+    
+    @include iPadProp11 {
+      width: 70%;
+    }
+    
+    &--title{
+      @include text($size: 27, $transform: uppercase, $color: 'black');
+    }
+  }
+}
