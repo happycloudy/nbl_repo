@@ -17,7 +17,7 @@
 }
 
 .a-btn__text {
-  @include text($size: 27, $transform: uppercase, $color: 'black');
+  @include text(27, uppercase, 'black');
 }
 
 .a-panel {
@@ -28,12 +28,12 @@
 }
 
 .accordion .a-container .a-btn__text {
-  @include text($size: 27, $transform: uppercase, $color: 'black', $weight: 'light');
+  @include text(27, uppercase, 'black', 'light');
   opacity: 1;
 }
 
 .accordion .a-container.active .a-btn__text {
-  @include text($size: 27, $transform: uppercase, $color: 'black');
+  @include text(27, uppercase, 'black');
 }
 
 .accordion .a-container.active .a-panel {

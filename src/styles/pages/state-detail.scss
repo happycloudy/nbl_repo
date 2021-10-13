@@ -201,7 +201,7 @@ main {
           width: rem(100);
 
           &_big {
-            @include text($size: 17, $transform: uppercase, $color: 'black');
+            @include text(17, uppercase, 'black');
           }
 
           &_small {
@@ -226,12 +226,12 @@ main {
       width: 90%;
 
       @include iPadProp11 {
-        flex-direction: row;
+        @include flex($direction: row);
         margin-top: 0;
       }
 
       @include MacBook {
-        flex-direction: column;
+        @include flex($direction: column);
       }
 
       &_wrap {

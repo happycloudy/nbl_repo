@@ -13,13 +13,11 @@
     overflow: hidden;
     margin-top: rem(20);
   }
-  
-  
 }
 
 
 .tab-label__main-title {
-  @include text($size: 25, $transform: uppercase);
+  @include text(25, uppercase);
   line-height: rem(50);
 }
 
@@ -132,7 +130,6 @@ input:checked {
     transform: rotate(90deg);
     transition: all 0.3s ease-in-out;
   }
-  
 }
 
 .sub-tabs {

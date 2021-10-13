@@ -1,13 +1,13 @@
 export const menuList = [
   {
     name: 'logo',
-    link: '',
+    link: './',
     subMenu: [
       {name: 'Эффективность', link: '#effective'},
       {name: 'Жизнеспособность', link: '#effective1'},
       {name: 'Покрытие', link: '#effective2'},
       {name: 'Выживаемость', link: '#effective3'},
-      {name: 'Классификация', link: '#effective4'},
+      {name: 'Классификация ', link: '#effective4'},
       {name: 'Продукты', link: '#effective5'},
       {name: 'Мнение докторов', link: '#effective6'},
       {name: 'Отзывы', link: '#effective7'},
@@ -19,9 +19,9 @@ export const menuList = [
     link: './about-us.html',
     subMenu: [
       {name: 'Сферы применения', link: './about-us__scope-application.html'},
-      {name: 'Документы', link: '#about'},
+      {name: 'Документы', link: './documents.html'},
       {name: 'Вопросы-ответы', link: './about-us__questions.html'},
-      {name: 'Статьи', link: '#about'},
+      {name: 'Статьи', link: './state.html'},
     ]
   },
   {

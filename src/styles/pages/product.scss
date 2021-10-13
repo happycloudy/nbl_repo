@@ -169,13 +169,13 @@
     }
     
     &--title {
-      @include text($size: 17, $transform: uppercase, $color: 'black');
+      @include text(17, uppercase, 'black');
       
       @include iPadProp11 {
-        @include text($size: 25, $transform: uppercase, $color: 'black');
+        @include text(25, uppercase, 'black');
       }
       @include Main {
-        @include text($size: 27, $transform: uppercase, $color: 'black');
+        @include text(27, uppercase, 'black');
       }
     }
     
@@ -225,7 +225,7 @@
     }
     
     &--description-container {
-      @include flex($direction: column, $justify: center, $align-items: flex-start);
+      @include flex(no-wrap, column, center, flex-start);
       width: 100%;
       
       @include iPadProp11 {
