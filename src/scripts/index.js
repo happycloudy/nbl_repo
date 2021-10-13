@@ -3,6 +3,7 @@
 import WOW from 'wowjs/dist/wow.min';
 import {scroll, scrolling} from "./utils/scroll";
 import {initAcc} from "./includes/accordion";
+import {contactsSlider} from "./includes/contactsSlider";
 
 /**
  * Загрузка svg иконок для возможность использования через use
@@ -51,8 +52,8 @@ const contentLoaded = () => {
     /**
      * Функционал Слайдер контактов
      */
-    // contactsSlider()
-    
+    contactsSlider()
+
     /**
      * При загрузке страницы произвести скроллинг по указанному хешу
      */

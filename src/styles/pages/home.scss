@@ -1,10 +1,10 @@
 @import '../main/index';
 @import '../includes/header';
 @import '../includes/footer';
-
+@import '../includes/reviews';
 
 .main {
-  display: flex;
+  @include flex();
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
@@ -55,7 +55,7 @@
   }
 
   .description {
-    display: flex;
+    @include flex();
     width: 50%;
     z-index: 3;
 
@@ -66,7 +66,7 @@
   }
 
   .probiotic-group {
-    display: flex;
+    @include flex();
     width: 50%;
     z-index: 3;
 
@@ -77,7 +77,7 @@
   }
 
   .Lab2Pro {
-    display: flex;
+    @include flex();
     color: var(--Color-Lab2Pro);
     font-size: rem(72);
     text-transform: uppercase;
@@ -143,7 +143,7 @@
     padding-right: rem(13);
 
     @media (max-width: $break-iPhone8) {
-      display: flex;
+      @include flex();
     }
   }
 
@@ -153,7 +153,7 @@
 
   &__details {
     padding-top: rem(15);
-    display: flex;
+    @include flex();
     justify-content: space-between;
     position: relative;
     align-items: baseline;
@@ -308,7 +308,7 @@
 }
 
 .bacterial-survival {
-  display: flex;
+  @include flex();
   justify-content: center;
   padding-top: rem(20);
   flex-wrap: wrap;
@@ -322,7 +322,7 @@
   }
 
   &__header {
-    display: flex;
+    @include flex();
     justify-content: center;
     height: rem(170);
     width: 80%;
@@ -338,7 +338,7 @@
 
     &-title {
       width: rem(300);
-      display: flex;
+      @include flex();
       align-items: flex-start;
       text-align: center;
       text-transform: uppercase
@@ -482,7 +482,7 @@
   }
 
   &__list {
-    display: flex;
+    @include flex();
 
     @media (max-width: $break-iPhone8) {
       flex-direction: column;
@@ -544,7 +544,7 @@
 
   &__age {
     &-title {
-      display: flex;
+      @include flex();
       color: var(--Color-Lab2Pro);
       font-size: rem(51);
       text-transform: uppercase;
@@ -603,328 +603,635 @@
   }
 }
 
+.nbl_atp {
+  @include flex();
+  margin-top: rem(49);
+  margin-left: rem(25);
+  width: 100%;
+  flex-direction: column-reverse;
 
-#nbl_apt {
-  background-color: black; // убрать
-  .nbl_apt__recommendation {
-    .nbl_apt__header {
-      .nbl_atp {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 75px;
-        line-height: 65px;
-        text-transform: uppercase;
+  @include iPadProp11 {
+    margin-top: rem(65);
+    margin-left: rem(35);
+    flex-direction: row;
+  }
+
+  @include MacBook {
+    margin-top: rem(83);
+    margin-left: rem(81);
+  }
+
+  @include Main {
+    margin-top: rem(98);
+    margin-left: rem(200);
+  }
+
+  &__about {
+    @include iPadProp11 {
+      width: rem(200);
+    }
+    @include MacBook {
+      width: rem(250);
+      margin-top: rem(37);
+    }
+
+    @include Main {
+      margin-top: rem(50);
+    }
+
+    &_big_text {
+      @include text($size: 50, $color: 'black', $weight: 'bold', $transform: uppercase);
+      @include MacBook {
+        @include text($size: 55, $color: 'black', $weight: 'bold', $transform: uppercase);
       }
 
-      .nbl_atp__blue_text {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 17px;
-        line-height: 21px;
-        color: #005350;
+      @include Main {
+        @include text($size: 60, $color: 'black', $weight: 'bold', $transform: uppercase);
       }
     }
 
-    .nbl_atp__list {
-      margin-top: 50px;
+    &_small_text {
+      @include text($size: 13, $color: 'green',);
+      margin-top: rem(7);
+      @include MacBook {
+        @include text($size: 15, $color: 'green');
+      }
 
-      font-family: Mont, serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 35px;
-      color: #535353;
+      @include Main {
+        @include text($size: 17, $color: 'green');
+        margin-top: rem(10);
+      }
+    }
 
-      .nbl_atp__about_list_item {
-        //margin-top: 100px; ???
+    &_list {
+      @include list;
+      margin-top: rem(10);
+
+      &_item {
+        ///
+      }
+    }
+
+    &_btn {
+      @include actionButton($iPhone8: 11, $iPadProp11: 13, $MacBook: 13, $Main: 13);
+      margin-top: rem(20);
+
+      @include MacBook {
+        margin-top: rem(25);
       }
     }
   }
 
-  .nbl_apt__big-image-wrap {
-    background: url("../../resources/images/probiotic-atp-large.png") no-repeat center /cover;
-    width: 553px;
-    height: 553px;
+  &__image_wrap {
+    position: relative;
+    height: rem(300);
+    width: rem(340);
+
+
+    @include iPadProp11 {
+      margin-left: rem(30);
+      height: rem(400);
+      width: rem(400);
+    }
+
+    @include MacBook {
+      margin-left: rem(200);
+      height: rem(500);
+      width: rem(500);
+    }
+
+    @include Main {
+      margin-left: rem(240);
+      height: rem(700);
+      width: rem(700);
+    }
+
+    &_big {
+      position: absolute;
+      z-index: 10;
+      width: rem(340);
+      height: rem(300);
+
+      @include iPadProp11 {
+        height: rem(400);
+        width: rem(400);
+      }
+
+      @include MacBook {
+        height: rem(500);
+        width: rem(500);
+      }
+
+      @include Main {
+        height: rem(700);
+        width: rem(700);
+      }
+    }
+
+    &_bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.1);
+
+      display: none;
+
+      @include iPadProp11 {
+        display: block;
+      }
+    }
+
+    &_bg:nth-child(2) {
+      z-index: 9;
+      transform: translate(rem(10), rem(10));
+
+    }
+
+    &_bg:nth-child(3) {
+      z-index: 8;
+      transform: translate(rem(20), rem(20));
+    }
   }
 
-  .nbl_apt__images {
-    margin-left: rem(300);
+  &__arrow {
+    display: none;
+
+    @include iPadProp11 {
+      display: block;
+    }
+
+    svg {
+      @include iPadProp11 {
+        width: rem(100);
+      }
+
+      @include MacBook {
+        width: rem(200);
+      }
+
+      @include Main {
+        width: rem(350);
+      }
+    }
   }
 
-  .img-wrap {
-    width: 125px;
-    height: 163px;
-  }
+  &__images {
+    @include flex($direction: column, $justify: space-around);
+    display: none;
 
-  #img-wrap1 {
-    background: url("../../resources/images/probiotic-atp-small.png") no-repeat center /cover;
-  }
+    @include iPadProp11 {
+      @include flex();
+      margin-left: rem(16);
+    }
 
-  #img-wrap2 {
-    background: url("../../resources/images/probiotic-gold-small.png") no-repeat center /cover;
-  }
+    @include MacBook {
+      margin-left: rem(83);
+    }
 
-  #img-wrap3 {
-    background: url("../../resources/images/ginobiotic-small.png") no-repeat center /cover;
+    @include Main {
+      margin-left: rem(26);
+    }
+
+    img {
+      @include iPadProp11 {
+        width: rem(75);
+        height: rem(97);
+      }
+
+      @include MacBook {
+        width: rem(100);
+        height: rem(131);
+      }
+
+      @include Main {
+        //margin-top: rem(46);
+        width: rem(125);
+        height: rem(163);
+      }
+    }
   }
 }
 
+.doctor_recommendation {
+  margin-top: rem(50);
+  @include iPadProp11 {
+    margin-top: rem(150);
+  }
 
-#doctor_recommendation {
+  @include MacBook {
+    margin-top: rem(206);
+  }
+
+  @include Main {
+    margin-top: rem(256);
+  }
+
   .doctor_recommendation__header {
-    display: flex;
+    @include flex();
     justify-content: center;
-    font-family: Mont, serif;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2.4rem;
-    line-height: 65px;
+    @include text($size: 20, $color: 'black', $transform: uppercase);
 
+    @include iPadProp11 {
+      @include text($size: 30, $color: 'black', $transform: uppercase);
+    }
+
+    @include MacBook {
+      @include text($size: 35, $color: 'black', $transform: uppercase);
+    }
   }
 
   .doctor_recommendation__list {
-    display: flex;
+    @include flex();
     justify-content: center;
-    width: 100%;
+    width: 90%;
+    margin-left: rem(20);
+    flex-wrap: wrap;
+
+    @include iPadProp11 {
+      width: 100%;
+      margin-left: 0;
+    }
+
 
     .doctor_recommendation__list_item {
-      margin-top: 3vh;
       text-align: center;
-      width: 15%;
+      width: 25%;
+      flex-wrap: wrap;
+      margin-top: rem(12);
+      @include text($size: 11, $color: 'grey');
 
-
-      button {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-size: 15px;
-        line-height: 21px;
-        text-transform: uppercase;
-        color: #535353;
+      @include iPadProp11 {
+        margin-top: rem(31);
+        @include text($size: 13, $color: 'grey');
       }
 
-      :hover {
-        color: #005350;
-        font-weight: 800;
+      @include MacBook {
+        width: 15%;
+        margin-top: rem(25);
+        @include text($size: 15, $color: 'grey');
+
       }
+
+      @include Main {
+        margin-top: rem(14);
+      }
+
     }
   }
 
   .doctor_recommendation__cards {
-    margin-top: 5vh;
-    margin-left: 10vw;
-    display: flex;
+    @include flex();
     justify-content: center;
+    flex-direction: column;
+    margin-top: rem(23);
+    margin-left: rem(25);
+    width: 100%;
+
+    @include iPadProp11 {
+      flex-direction: row;
+      margin-top: rem(53);
+      margin-left: rem(35);
+    }
+
+    @include MacBook {
+      margin-top: rem(70);
+      margin-left: rem(81);
+    }
+
+    @include Main {
+      margin-top: rem(75);
+      margin-left: rem(107);
+    }
 
     .doctor_recommendation__card {
-      width: 35vw;
-      height: 50vh;
-      margin-left: 2vw;
-      -webkit-box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
-      -moz-box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
-      box-shadow: 0 0 30px 0 rgba(50, 50, 50, 0.3);
-
-
-      .doctor_recommendation__img {
-        height: 70%;
+      @include iPadProp11 {
+        margin-left: rem(5);
       }
 
+      @include MacBook {
+        margin-left: rem(7);
+      }
+
+      @include Main {
+        margin-left: rem(10);
+      }
+
+      .doctor_recommendation__img {
+        width: 100%;
+
+        @include iPadProp11 {
+          margin-top: rem(20);
+        }
+
+        @include MacBook {
+          margin-top: rem(25);
+        }
+
+        @include Main {
+          margin-top: rem(50);
+        }
+
+        &_wrap{
+          img {
+            z-index: 4;
+            $multi: 1.1;
+            width: rem(153*$multi);
+            height: rem(106*$multi);
+            @include iPadProp11 {
+              $multi: 1.2;
+              width: rem(240*$multi);
+              height: rem(164*$multi);
+            }
+
+            @include MacBook {
+              $multi: 1.2;
+              width: rem(321*$multi);
+              height: rem(221*$multi);
+            }
+
+            @include Main {
+              $multi: 1.4;
+              width: rem(400*$multi);
+              height: rem(277.25*$multi);
+            }
+          }
+        }
+      }
+
+
       .doctor_recommendation__description {
-        display: flex;
+        @include flex();
         flex-direction: column;
-        margin-left: 3vw;
-        margin-top: 2vh;
+
+        margin-left: rem(14);
+        margin-top: rem(30);
+
+        @include iPadProp11 {
+          margin-left: rem(22);
+        }
+
+        @include MacBook {
+          margin-left: rem(32);
+        }
+
+        @include Main {
+          margin-left: rem(40);
+        }
       }
 
       .doctor_recommendation__card_header {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 23px;
-        color: #535353;
+        @include text($size: 13, $color: 'black');
+
+        @include Main {
+          @include text($size: 15, $color: 'black');
+        }
       }
 
       .doctor_recommendation__description_small {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-size: 15px;
-        line-height: 153%;
-        color: #535353;
+        @include text($size: 13, $color: 'black', $weight: 'light');
 
-
+        @include Main {
+          @include text($size: 15, $color: 'black', $weight: 'light');
+        }
       }
     }
 
-    :nth-child(1) {
-      .doctor_recommendation__img {
-        height: 100%;
-        background: url("../../resources/images/recomendation_pic1.png") no-repeat center /cover;
-      }
-    }
+    .doctor_recommendation__card:hover {
+      transform: scale(1.1,1.1);
+      .doctor_recommendation__img{
+        position: relative;
+        &_wrap{
+          img{
+            position: absolute;
+          }
+        }
+        .doctor_recommendation__img_bg{
+          background: #000;
+          opacity: 0.5;
+          z-index: 0;
 
-    :nth-child(2) {
-      .doctor_recommendation__img {
-        background: url("../../resources/images/recomendation_pic2.png") no-repeat center /cover;
-      }
-    }
+          //position: absolute;
 
-    :nth-child(3) {
-      .doctor_recommendation__img {
-        background: url("../../resources/images/recomendation_pic3.png") no-repeat center /cover;
+          $multi: 1.1;
+          width: rem(153*$multi);
+          height: rem(106*$multi);
+          @include iPadProp11 {
+            $multi: 1.2;
+            width: rem(240*$multi);
+            height: rem(164*$multi);
+          }
+
+          @include MacBook {
+            $multi: 1.2;
+            width: rem(321*$multi);
+            height: rem(221*$multi);
+          }
+
+          @include Main {
+            $multi: 1.4;
+            width: rem(400*$multi);
+            height: rem(277.25*$multi);
+          }
+        }
       }
+
     }
   }
 }
 
-#feedback {
-  margin-top: 10vh; // TODO: поменять
 
-  .feedback__header {
-    font-family: Mont, serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 186%;
-    text-transform: uppercase;
-    color: #000000;
-    text-align: center;
+
+.states {
+  width: 100%;
+  margin-top: rem(38);
+
+  @include iPadProp11 {
+    margin-top: rem(64);
   }
 
-  .feedback__list {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    .feedback__list_item {
-      width: 10%;
-      text-align: center;
-
-      button {
-        font-family: Mont, serif;
-        font-style: normal;
-        font-size: 15px;
-        line-height: 140%;
-        text-transform: uppercase;
-        color: #535353;
-      }
-    }
-
-    :hover {
-      color: #005350;
-      font-weight: 800;
-    }
+  @include MacBook {
+    margin-top: rem(86);
   }
 
-  .feedback__image_list {
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    .feedback__image_list_item {
-      height: 50vh;
-      width: 20vw;
-      background-color: #232323;
-      margin-left: 1vw;
-      margin-right: 1vw;
-    }
-
-    :nth-child(1) {
-      //background: url("../../resources/images/feedback1.png") no-repeat center /cover;
-    }
-
-    :nth-child(2) {
-      //background: url("../../resources/images/feedback2.png") no-repeat center /cover;
-    }
-
-    :nth-child(3) {
-      //background: url("../../resources/images/feedback3.png") no-repeat center /cover;
-    }
-
-    :nth-child(4) {
-      //background: url("../../resources/images/feedback4.png") no-repeat center /cover;
-    }
+  @include Main {
+    margin-top: rem(84);
   }
 
-  .feedback__more {
-    margin-top: 5vh;
-    text-align: center;
+  .states__img_wrap {
+    @include flex();
+    position: relative;
 
-    button {
-      font-family: Mont, serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 162%;
-      text-transform: uppercase;
-      color: #005350;
-    }
-  }
-}
-
-#science {
-  .science__header {
-    font-family: Mont, serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 186%;
-    text-transform: uppercase;
-    color: #000000;
-    text-align: center;
-  }
-
-  .science__list {
-    display: flex;
-    justify-content: center;
-    margin-top: 5vh;
-    width: 100%;
-
-    .science__item {
-      display: flex;
-      align-items: center;
-      width: 50%;
+    &_header {
+      position: absolute;
+      @include flex();
       justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
 
-      .science__item_img {
-        background-color: #232323;
-        width: 200px;
-        height: 205px;
+      &_text {
+        @include text($size: 20, $transform: uppercase, $color: 'black');
+
+        @include iPadProp11 {
+          @include text($size: 25, $transform: uppercase, $color: 'black');
+        }
+
+        @include MacBook {
+          @include text($size: 35, $transform: uppercase, $color: 'black');
+        }
+      }
+    }
+
+    .states__science_picture {
+      width: rem(355);
+      margin-left: rem(30);
+      @include iPadProp11 {
+        width: rem(704);
+        margin-left: rem(40);
       }
 
-      .science__item_text {
-        margin-left: 2vw;
+      @include MacBook {
+        width: rem(890);
+        margin-left: rem(69);
+      }
 
-        .science__item_date {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 800;
-          font-size: 15px;
-          line-height: 153%;
-          text-transform: uppercase;
-          color: #005350;
+      @include Main {
+        width: rem(1179);
+        margin-left: rem(108);
+      }
+    }
+  }
+
+
+  &__wrap {
+    margin-left: rem(30);
+    @include iPadProp11 {
+      transform: translateY(rem(-100));
+      margin-left: rem(40);
+    }
+
+    @include MacBook {
+      transform: translateY(rem(-120));
+      margin-left: rem(69);
+    }
+
+    @include Main {
+      transform: translateY(rem(-140));
+      margin-left: rem(108);
+    }
+
+    .row {
+      @include flex($direction: column);
+      width: 100%;
+      margin-top: rem(21);
+
+      @include iPadProp11 {
+        flex-direction: row;
+        margin-top: rem(43);
+      }
+
+      @include MacBook {
+        margin-top: rem(50);
+      }
+
+      @include Main {
+        margin-top: rem(70);
+      }
+
+      .col {
+        margin-top: rem(21);
+
+        @include iPadProp11 {
+          $margin: rem(30);
+          margin-left: $margin;
+          margin-right: $margin;
         }
 
-        .science__item_header {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 13px;
-          line-height: 177%;
-          text-transform: uppercase;
-          color: #000000;
+        @include MacBook {
+          $margin: rem(92);
+          margin-left: $margin;
+          margin-right: $margin;
         }
 
-        .science__item_description {
-          font-family: Mont, serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 13px;
-          line-height: 162%;
-          color: #535353;
+        @include Main {
+          $margin: rem(185);
+          margin-left: $margin;
+          margin-right: $margin;
+        }
+      }
+    }
+
+
+    .state {
+      @include flex($direction: column);
+
+      @include iPadProp11 {
+        flex-direction: row;
+      }
+
+      .state__image_wrap {
+        .state__image {
+          width: rem(311);
+          height: rem(153);
+
+          @include iPadProp11 {
+            width: rem(145);
+            height: rem(146);
+          }
+
+          @include MacBook {
+            width: rem(159);
+            height: rem(164);
+          }
+
+          @include Main {
+            width: rem(200);
+            height: rem(205);
+          }
+        }
+
+        @include iPadProp11 {
+          margin-right: rem(28);
+        }
+
+        @include MacBook {
+          margin-right: rem(37);
+        }
+
+        @include Main {
+          margin-right: rem(46);
+        }
+      }
+
+      .text {
+        @include flex($direction: column, $justify: center);
+        width: rem(300);
+
+        .state__date {
+          @include text($size: 15, $color: 'green', $weight: 'bold');
+        }
+
+        .state__header {
+          font-size: rem(13);
+          @include text($size: 13, $color: 'black', $weight: 'medium', $transform: uppercase);
+          line-height: rem(23);
+        }
+
+        .state__description {
+          font-size: rem(13);
+          color: var(--Color-Text-Grey);
+        }
+
+        @include iPadProp11 {
+          width: rem(170);
+        }
+
+        @include MacBook {
+          width: rem(215);
+        }
+
+        @include Main {
+          width: rem(220);
         }
       }
     }
@@ -937,7 +1244,7 @@ footer {
   margin-right: 3%;
 
   .footer__list {
-    display: flex;
+    @include flex();
     font-family: Mont, serif;
     font-style: normal;
     font-weight: 600;
@@ -951,7 +1258,7 @@ footer {
       .footer__icons_list {
         position: absolute;
         right: 0;
-        display: flex;
+        @include flex();
         margin-right: 6%;
 
         .footer__icons_item {
@@ -962,7 +1269,7 @@ footer {
   }
 
   .footer__info {
-    display: flex;
+    @include flex();
     width: 100%;
     margin-top: 5vh;
 
