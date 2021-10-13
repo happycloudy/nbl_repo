@@ -1,0 +1,92 @@
+@import '../main/index';
+
+.reviews {
+  margin: rem(72) rem(30) 0 rem(30);
+  @include iPadProp11 {
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
+
+  &__title {
+    @include headerUpperCase;
+    @include flex($justify: flex-start);
+    margin-bottom: rem(11);
+
+    @include iPadProp11 {
+      @include flex($justify: center);
+    }
+  }
+
+  &__table {
+    justify-content: flex-start;
+    @include iPadProp11 {
+      justify-content: center;
+    }
+
+    & label {
+      padding: rem(10) !important;
+    }
+
+    &--body {
+      @include flex($direction: column, $align-items: flex-start);
+      border: 0 !important;
+
+      @include iPadProp11 {
+        @include flex($direction: column, $align-items: center);
+      }
+    }
+
+    &--content {
+      @include flex($wrap: wrap, $justify: space-between);
+      margin-top: rem(50);
+    }
+
+    &--item {
+      @include flex();
+      height: rem(189);
+      width: 49%;
+      margin: rem(4) 0;
+
+      @include iPadProp11 {
+        height: rem(299);
+        width: 32%;
+      }
+      @include MacBook {
+        height: rem(292);
+        width: 100%;
+      }
+      @include Main {
+        height: rem(364);
+      }
+    }
+
+    &--fetch-more {
+      @include actionButton(11, 13, 13, 13);
+      @include flex($justify: flex-start);
+      margin-top: rem(32);
+
+      @include iPadProp11 {
+        @include flex($justify: center);
+        margin-top: rem(56);
+      }
+    }
+  }
+}
+
+.reviews__slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+
+  .slide {
+    user-select: none;
+  }
+}

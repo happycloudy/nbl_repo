@@ -221,137 +221,110 @@
             Доктора рекомендуют
         </div>
 
-        <ul class="doctor_recommendation__list">
-            <li class="doctor_recommendation__list_item">
-                <button>
-                    Иммунолог – аллерголог
-                </button>
-            </li>
-            <li class="doctor_recommendation__list_item">
-                <button>
-                    Педиатр
-                </button>
-            </li>
-            <li class="doctor_recommendation__list_item">
-                <button>
-                    Косметолог
-                </button>
-            </li>
-            <li class="doctor_recommendation__list_item">
-                <button>
-                    Гинеколог
-                </button>
-            </li>
-        </ul>
 
-        <div class="doctor_recommendation__cards">
-            <div class="doctor_recommendation__card">
-                <div class="doctor_recommendation__img">
-                    <img
-                            class="nbl_atp__image_small"
-                            src="./src/resources/images/recomendation_pic1.png"
-                            alt="nbl_atp__image_big"
-                    />
-                    <div class="doctor_recommendation_bg"></div>
-                </div>
-                <div class="doctor_recommendation__description">
-                    <div class="doctor_recommendation__card_header">
-                        Доктор иммунолог-аллерголог Арман Байдилов
+        <div class="doctor_recommendation__list mytabs">
+            <input type="radio" id="tabimmun" name="mytabs" checked>
+            <label class="doctor_recommendation__list_item" for="tabimmun">
+                Иммунолог – аллерголог
+            </label>
+            <div class="tab">
+                <div class="doctor_recommendation__cards ">
+                    <div class="doctor_recommendation__card">
+                        <div class="doctor_recommendation__img">
+                            <div class="doctor_recommendation__img_wrap">
+                                <img
+                                        src="./src/resources/images/recomendation_pic1.png"
+                                        alt="nbl_atp__image_big"
+                                />
+                            </div>
+
+                            <div class="doctor_recommendation__img_bg"></div>
+                        </div>
+                        <div class="doctor_recommendation__description">
+                            <div class="doctor_recommendation__card_header">
+                                Доктор иммунолог-аллерголог Арман Байдилов
+                            </div>
+                            <div class="doctor_recommendation__description_small">
+                                Зачем нужны пробиотики?
+                            </div>
+                        </div>
                     </div>
-                    <div class="doctor_recommendation__description_small">
-                        Зачем нужны пробиотики?
+                    <div class="doctor_recommendation__card">
+
+                        <div class="doctor_recommendation__img">
+                            <div class="doctor_recommendation__img_wrap">
+                                <img
+                                        class="nbl_atp__image_small"
+                                        src="./src/resources/images/recomendation_pic2.png"
+                                        alt="nbl_atp__image_big"
+                                />
+                            </div>
+                            <div class="doctor_recommendation__img_bg"></div>
+                        </div>
+                        <div class="doctor_recommendation__description">
+                            <div class="doctor_recommendation__card_header">
+                            </div>
+                            <div class="doctor_recommendation__description_small">
+                                Зачем нужны пробиотики?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor_recommendation__card">
+                        <div class="doctor_recommendation__img">
+                            <div class="doctor_recommendation__img_wrap">
+                                <img
+                                        src="./src/resources/images/recomendation_pic1.png"
+                                        alt="nbl_atp__image_big"
+                                />
+                            </div>
+                            <div class="doctor_recommendation__img_bg"></div>
+                        </div>
+                        <div class="doctor_recommendation__description">
+                            <div class="doctor_recommendation__card_header">
+                            </div>
+                            <div class="doctor_recommendation__description_small">
+                                Почему NBL?
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="doctor_recommendation__small_cards">
-                <div class="doctor_recommendation__card">
-                    <div class="doctor_recommendation__img">
-                        <img
-                                class="nbl_atp__image_small"
-                                src="./src/resources/images/recomendation_pic2.png"
-                                alt="nbl_atp__image_big"
-                        />
-                    </div>
-                    <div class="doctor_recommendation__description">
-                        <div class="doctor_recommendation__card_header">
-                        </div>
-                        <div class="doctor_recommendation__description_small">
-                            Зачем нужны пробиотики?
-                        </div>
-                    </div>
-                </div>
-                <div class="doctor_recommendation__card">
-                    <div class="doctor_recommendation__img">
-                        <img
-                                class="nbl_atp__image_small"
-                                src="./src/resources/images/recomendation_pic3.png"
-                                alt="nbl_atp__image_big"
-                        />
-                    </div>
-                    <div class="doctor_recommendation__description">
-                        <div class="doctor_recommendation__card_header">
-                        </div>
-                        <div class="doctor_recommendation__description_small">
-                            Почему NBL?
-                        </div>
-                    </div>
-                </div>
+
+
+            <input type="radio" id="tabped" name="mytabs">
+            <label class="doctor_recommendation__list_item" for="tabped">
+                Педиатр
+            </label>
+            <div class="tab">
+                2
+            </div>
+
+
+            <input type="radio" id="tabcosm" name="mytabs">
+            <label class="doctor_recommendation__list_item" for="tabcosm">
+                Косметолог
+            </label>
+            <div class="tab">
+                3
+            </div>
+
+            <input type="radio" id="tabgin" name="mytabs">
+            <label class="doctor_recommendation__list_item" for="tabgin">
+                Гинеколог
+            </label>
+            <div class="tab">
+                4
             </div>
         </div>
     </section>
-    <section class="feedback">
-        <div class="feedback__header">
-            Отзывы
-        </div>
-        <ul class="feedback__list">
-            <li class="feedback__list_item">
-                <button>Все</button>
-            </li>
-            <li class="feedback__list_item">
-                <button>Instagram</button>
-            </li>
-            <li class="feedback__list_item">
-                <button>Facebook</button>
-            </li>
-            <li class="feedback__list_item">
-                <button>Вконтакте</button>
-            </li>
-            <li class="feedback__list_item">
-                <button>Whatsapp</button>
-            </li>
-        </ul>
-        <ul class="feedback__image_list">
-            <li class="feedback__image_list_item">
-                <img
-                        src="./src/resources/images/feedback1.png"
-                        alt="nbl_atp__image_big"
-                />
-            </li>
-            <li class="feedback__image_list_item">
-                <img
-                        src="./src/resources/images/feedback2.png"
-                        alt="nbl_atp__image_big"
-                />
-            </li>
-            <li class="feedback__image_list_item">
-                <img
-                        src="./src/resources/images/feedback3.png"
-                        alt="nbl_atp__image_big"
-                />
-            </li>
-            <li class="feedback__image_list_item">
-                <img
-                        src="./src/resources/images/feedback4.png"
-                        alt="nbl_atp__image_big"
-                />
-            </li>
-        </ul>
-        <div class="feedback__more">
-            <button>
-                Смотреть все
-            </button>
-        </div>
-    </section>
+
+
+
+    <%= _.template(require('../includes/reviews.html').default)() %>
+
+
+
     <section class="states">
         <div class="states__img_wrap">
             <img
