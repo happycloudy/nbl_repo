@@ -1,0 +1,95 @@
+@import './src/styles/main/mixins';
+@import './src/styles/main/mediaQueries';
+@import './src/styles/main/mixins';
+@import './src/styles/main/base';
+
+
+footer {
+  margin: rem(72) rem(30) 0 rem(30);
+  
+  @include iPadProp11 {
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
+  
+  .footer__list {
+    @include flex($direction: column, $justify: space-between);
+    border-bottom: $border;
+    border-top: $border;
+    padding: rem(10);
+    
+    @include iPadProp11 {
+      @include flex($direction: row, $justify: space-between, $align-items: center);
+      padding: 0;
+    }
+  }
+  
+  .footer__info {
+    @include flex($direction: column);
+    margin-top: rem(26);
+    
+    @include iphone {
+      @include flex($direction: row, $justify: space-between);
+    }
+    
+    &--item {
+      @include description;
+      padding: 0;
+      margin-top: rem(38);
+      line-height: rem(19);
+      
+      &:last-child {
+        @include iphone {
+          padding-left: rem(20);
+        }
+      }
+      
+      @include iphone {
+        margin-top: 0;
+      }
+      @include iPadProp11 {
+        margin-top: 0;
+        line-height: rem(25);
+      }
+      @include MacBook {
+        margin-top: 0;
+        line-height: rem(30);
+      }
+      @include Main {
+        margin-top: 0;
+        line-height: rem(32);
+      }
+      
+      a {
+        @include text($size: 13);
+        
+        @include MacBook {
+          @include text($size: 15);
+        }
+        @include Main {
+          @include text($size: 17);
+        }
+      }
+    }
+  }
+  
+  img {
+    width: 100%;
+    height: rem(40);
+    margin: rem(35) 0;
+    
+    @include iPadProp11 {
+      height: rem(90);
+    }
+    @include MacBook {
+      height: rem(120);
+    }
+    @include Main {
+      height: rem(150);
+    }
+  }
+}

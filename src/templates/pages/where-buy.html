@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>where-buy</title>
+</head>
+<body>
+<header class="header">
+    <div id="menu" class="header__menu"></div>
+    <span class="header__line line"></span>
+    <div class="bred">
+        <div class="bred__house">
+            <svg>
+                <use href="#house"/>
+            </svg>
+        </div>
+        <div class="bred__item-text">О нас</div>
+    </div>
+</header>
+
+
+<section class="where-buy">
+    <div class="where-buy__title">Где купить?</div>
+    <div class="where-buy__container">
+        <div class="tab">
+            <input type="checkbox" id="chck-1">
+            <label class="tab-label" for="chck-1">
+                <span class="tab-label__main-title">На сайте</span>
+            </label>
+            <div class="tab-content">
+                <span class="tab-label__main-subtitle">Онлайн на нашем сайте с доставкой по РФ</span>
+            </div>
+        </div>
+        <div class="tab">
+            <input type="checkbox" id="chck-2">
+            <label class="tab-label" for="chck-2">
+                <span class="tab-label__main-title">Точка выдачи</span>
+            </label>
+            <div class="tab-content">
+                <span class="tab-label__main-subtitle">Шоурум в Москве</span>
+            </div>
+        </div>
+
+        <div class="tab">
+            <input type="checkbox" id="chck-3">
+            <label class="tab-label border" for="chck-3">
+                <span class="tab-label__main-title">У дилеров</span>
+                <span class="tab-label__main-subtitle">Список дилеров в России</span>
+            </label>
+            <div class="tab-content">
+                <div class="tabs sub-tabs">
+                    <div class="tab">
+                        <input type="checkbox" id="chck3-1">
+                        <label class="tab-label__sub-title" for="chck3-1">Чувашия</label>
+                        <div class="tab-content">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                        </div>
+                    </div>
+                    <div class="tab border">
+                        <input type="checkbox" id="chck3-2">
+                        <label class="tab-label__sub-title" for="chck3-2">Татарстан</label>
+                        <div class="tab-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<%= _.template(require('../includes/footer.html').default)() %>
+
+</body>
+</html>
+

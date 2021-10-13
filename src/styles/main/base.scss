@@ -78,7 +78,7 @@ section, main {
   z-index: 1;
 }
 
-header, footer {
+header {
   @include padding-iPadProp11('padding');
   @media (min-width: $break-MacBook) {
     @include padding-MacBook('padding');
@@ -458,8 +458,9 @@ header, footer {
     
     .a-panel {
       width: 100%;
+      opacity: 0;
+      height: 0;
       transition: all 0.2s ease-in-out;
-      display: none;
     }
     
     
@@ -477,7 +478,9 @@ header, footer {
       }
       
       .a-panel {
-        display: block;
+        opacity: 1;
+        height: auto;
+        transition: all 0.2s ease-in-out;
         
         &__text {
           color: var(--Color-Text-Grey);
@@ -575,10 +578,10 @@ header, footer {
     width: 33.33%;
   }
   
-  @include MacBook{
+  @include MacBook {
     width: 50%;
   }
-  @include Main{
+  @include Main {
     margin: rem(35) 0;
   }
   
@@ -636,7 +639,7 @@ header, footer {
     margin-top: rem(20);
     width: rem(100);
     height: rem(20);
-    @include MacBook{
+    @include MacBook {
       height: rem(5);
       width: 100%;
     }
@@ -657,11 +660,11 @@ header, footer {
   padding: 25px;
   cursor: pointer;
   @include text($size: 17, $transform: uppercase, $weight: 'light');
-  @include MacBook{
-    @include text($size: 21,$weight: 'light');
+  @include MacBook {
+    @include text($size: 21, $weight: 'light');
   }
-  @include Main{
-    @include text($size: 25,$weight: 'light');
+  @include Main {
+    @include text($size: 25, $weight: 'light');
   }
 }
 
@@ -683,11 +686,11 @@ header, footer {
   text-align: center;
   position: relative;
   
-  @include MacBook{
-    @include text($size: 21,$weight: 'medium');
+  @include MacBook {
+    @include text($size: 21, $weight: 'medium');
   }
-  @include Main{
-    @include text($size: 25,$weight: 'medium');
+  @include Main {
+    @include text($size: 25, $weight: 'medium');
   }
   
   &:after {
@@ -698,6 +701,99 @@ header, footer {
     bottom: -3px;
     width: rem(5);
     height: rem(5);
-    transform: translateX(-5px);
   }
 }
+
+
+.tab-menu {
+  @include flex($wrap: wrap);
+  
+}
+
+.tab-menu input[type="radio"] {
+  display: none;
+}
+
+.tab-menu label {
+  @include text($size: 16, $color: 'black', $weight: 'medium');
+  padding: rem(10) rem(20) rem(10) 0;
+  cursor: pointer;
+  
+  @include iPadProp11 {
+    @include flex($align-items: flex-start);
+    padding: rem(15) rem(20) rem(15) 0;
+  }
+  @include MacBook {
+    padding: rem(25) rem(20) rem(25) 0;
+  }
+}
+
+.tab-menu .tab-menu__body {
+  width: 100%;
+  order: 1;
+  display: none;
+  padding-bottom: rem(20);
+  
+  
+  &:hover {
+    @include flex($direction: column, $wrap: wrap);
+  }
+  
+  & a {
+    @include text($size: 16, $color: 'black', $weight: 'light');
+    @include flex($align-items: center);
+    margin-right: rem(10);
+    
+    flex: 1 1 50%;
+    
+    @include iPadProp11 {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.tab-menu input[type='radio']:hover + label + .tab-menu__body {
+  @include flex($direction: column, $wrap: wrap);
+  
+  @include iPadProp11 {
+    @include flex($direction: row);
+  }
+}
+
+.tab-menu input[type="radio"]:hover + label {
+  @include text($size: 16);
+  @include flex($justify: center);
+  text-align: center;
+  position: relative;
+  
+  &:after {
+    content: '';
+    background-color: var(--Color-Text-Green);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    width: rem(5);
+    height: rem(5);
+    
+    @include iPadProp11 {
+      bottom: rem(15);
+    }
+  }
+}
+
+.social-list {
+  @include flex();
+  margin-top: rem(10);
+  
+  @include iPadProp11 {
+    margin: 0;
+  }
+  
+  & svg {
+    @include flex();
+    margin: 0 rem(5);
+    width: rem(15);
+    height: rem(15);
+  }
+}
+

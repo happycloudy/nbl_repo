@@ -98,25 +98,29 @@
   
   &__item {
     @include flex();
-    padding: rem(49) 0;
     position: relative;
-    
-   &--someimg {
-     display: none;
-     @include iPadProp11{
-       display: block;
-       position: absolute;
-       height: 100%;
-       right: rem(-8);
-       bottom: 0;
-       top: 0;
-     }
+    padding: rem(35) 0;
+    @include iPadProp11{
+      padding: rem(49) 0;
     }
     
-    &:not(:last-child){
+    &--someimg {
+      display: none;
+      @include iPadProp11 {
+        display: block;
+        position: absolute;
+        height: 100%;
+        right: rem(-8);
+        bottom: 0;
+        top: 0;
+      }
+    }
+    
+    &:not(:last-child) {
       border-bottom: $border;
     }
-    &:not(:first-child){
+    
+    &:not(:first-child) {
       margin-right: rem(29);
       @include iPadProp11 {
         margin-right: rem(41);
@@ -127,9 +131,11 @@
       @include Main {
         margin-right: rem(108);
       }
-  }
+    }
+    
     &--img {
-      width: rem(106);
+      @include flex($direction: column);
+      width: 45%;
       
       @include iPadProp11 {
         width: rem(115);
@@ -144,6 +150,21 @@
       svg {
         width: 100%;
         height: 100%;
+      }
+    }
+  
+    &--img-arrow {
+      @include flex();
+      height: rem(4);
+      width: 50%;
+      margin-top: rem(27);
+    
+      @include iPadProp11 {
+        display: none;
+      }
+      
+      svg {
+        width: 100%;
       }
     }
     
@@ -176,8 +197,15 @@
     &--arrow {
       width: rem(55);
       height: rem(4);
+      display: none;
+      
+      @include iphone{
+        width: rem(75);
+        margin-top: rem(28);
+      }
       
       @include iPadProp11 {
+        @include flex();
         width: rem(75);
         margin-top: rem(28);
       }
@@ -198,19 +226,9 @@
     
     &--description-container {
       @include flex($direction: column, $justify: center, $align-items: flex-start);
-      margin-left: rem(20);
       width: 100%;
       
       @include iPadProp11 {
-        margin-left: rem(22);
-        width: 40%;
-      }
-      @include MacBook {
-        margin-left: rem(30);
-        width: 40%;
-      }
-      @include MacBook {
-        margin-left: rem(37);
         width: 40%;
       }
     }
