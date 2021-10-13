@@ -6,15 +6,15 @@ $border: rem(1) solid var(--Color-Line);
 
 :root {
   --BaseFontSize: 15px;
-  
+
   --FontFamily: 'Idealist Sans', 'Jost', Helvetica, Arial, -apple-system,
   system-ui, BlinkMacSystemFont, 'Segoe UI',
   'Helvetica Neue', sans-serif;
-  
+
   --FontFamilyJost: 'Jost', 'Idealist Sans', Helvetica, Arial, -apple-system,
   system-ui, BlinkMacSystemFont, 'Segoe UI',
   'Helvetica Neue', sans-serif;
-  
+
   --FontWeight-Light: 300;
   --FontWeight-Regular: 400;
   --FontWeight-Medium: 600;
@@ -23,14 +23,14 @@ $border: rem(1) solid var(--Color-Line);
 
 html {
   box-sizing: border-box;
-  
+
   color: var(--Color-EbonyBlack--80);
   fill: var(--Color-EbonyBlack--100);
-  
+
   font-family: var(--FontFamily);
   font-size: var(--BaseFontSize);
   font-weight: var(--FontWeight-Regular);
-  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,7 +41,7 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
     box-shadow: none;
@@ -180,11 +180,11 @@ header, footer {
 
 .title {
   text-transform: uppercase;
-  
+
   &__extra {
     font-size: rem(45);
     line-height: rem(65);
-    
+
     @media (min-width: $break-MacBook) {
       font-size: rem(55);
       line-height: rem(65);
@@ -194,12 +194,12 @@ header, footer {
       line-height: rem(65);
     }
   }
-  
+
   &__main {
     font-size: rem(25);
     line-height: rem(35);
     font-weight: var(--FontWeight-Medium);
-    
+
     @media (min-width: $break-iPadProp11) {
       font-size: rem(30);
       line-height: rem(40);
@@ -212,14 +212,14 @@ header, footer {
       font-size: rem(50);
       line-height: rem(65);
     }
-    
+
     &-text {
       font-size: rem(13);
       line-height: rem(25);
       color: var(--Color-Text-Grey);
       font-weight: var(--FontWeight-Light);
       padding-top: rem(19);
-      
+
       @media (min-width: $break-MacBook) {
         font-size: rem(15);
         line-height: rem(30);
@@ -231,7 +231,7 @@ header, footer {
         padding-top: rem(33);
       }
     }
-    
+
     &-action {
       width: fit-content;
       font-size: rem(11);
@@ -240,34 +240,34 @@ header, footer {
       color: var(--Color-Text-Green);
       font-weight: var(--FontWeight-Medium);
       padding-top: rem(19);
-      
+
       @media (min-width: $break-iPadProp11) {
         font-size: rem(13);
         padding-top: rem(26);
       }
-      
+
       @media (min-width: $break-Main) {
         padding-top: rem(42);
       }
     }
   }
-  
+
   &__section {
     font-size: rem(20);
     font-weight: var(--FontWeight-Medium);
-    
+
     @media (min-width: $break-iPadProp11) {
       font-size: rem(30);
     }
     @media (min-width: $break-MacBook) {
       font-size: rem(35);
     }
-    
+
     &-text {
       font-size: rem(13);
       color: var(--Color-Text-Grey);
       padding-top: rem(15);
-      
+
       @media (max-width: $break-iPhone8) {
         text-align: left;
       }
@@ -281,7 +281,7 @@ header, footer {
       }
     }
   }
-  
+
   &__text {
     font-size: rem(13);
   }
@@ -289,22 +289,22 @@ header, footer {
 
 .flex {
   display: flex;
-  
+
   &__wrap {
     flex-wrap: wrap;
   }
-  
+
   &__column {
     flex-direction: column;
   }
-  
+
   &__self {
     &-start {
       align-self: flex-start;
     }
   }
-  
-  
+
+
   &__justify {
     &-center {
       justify-content: center;
@@ -339,7 +339,7 @@ header, footer {
   &__content {
     display: none;
     align-items: center;
-    
+
     &-description {
       height: fit-content;
       font-size: rem(12);
@@ -348,7 +348,7 @@ header, footer {
       padding-left: rem(15);
       position: relative;
       flex: 1;
-      
+
       &:before {
         content: '';
         position: absolute;
@@ -358,23 +358,23 @@ header, footer {
       }
     }
   }
-  
+
   &__img {
     &-container {
       flex: 3;
-      
+
       & > img {
         width: 100%;
         height: 100%;
       }
     }
   }
-  
+
   &__header {
     overflow: hidden;
     display: flex;
     justify-content: space-around;
-    
+
     &-links {
       outline: none;
       cursor: pointer;
@@ -382,32 +382,32 @@ header, footer {
       font-weight: var(--FontWeight-Medium);
       position: relative;
       opacity: .15;
-      
+
       &-active {
         color: var(--Color-Text-Green);
         opacity: 1;
       }
     }
   }
-  
+
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+
   .a-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: rem(5);
     border-bottom: rem(1) solid var(--Color-Line);
-    
+
     &:first-child {
       border-bottom: rem(1) solid var(--Color-Line);
     }
-    
+
     .a-btn {
       margin: 0;
       position: relative;
@@ -422,11 +422,11 @@ header, footer {
       align-items: center;
       font-size: rem(35);
       transition: all 0.3s ease-in-out;
-      
+
       &__text {
         opacity: .15;
       }
-      
+
       &__icon {
         display: flex;
         height: rem(20);
@@ -434,7 +434,7 @@ header, footer {
         align-items: center;
         padding-right: rem(10);
         z-index: -1;
-        
+
         &:after {
           content: '';
           width: rem(20);
@@ -442,7 +442,7 @@ header, footer {
           background-color: var(--Color-Text-Green);
           position: absolute;
         }
-        
+
         &:before {
           content: '';
           width: rem(20);
@@ -453,38 +453,38 @@ header, footer {
           transition: all 0.3s ease-in-out;
         }
       }
-      
+
     }
-    
+
     .a-panel {
       width: 100%;
       transition: all 0.2s ease-in-out;
       display: none;
     }
-    
-    
+
+
     &.active {
       .a-btn {
         &__text {
           opacity: 1;
         }
-        
+
         &__icon {
           &::before {
             transform: rotate(0deg);
           }
         }
       }
-      
+
       .a-panel {
         display: block;
-        
+
         &__text {
           color: var(--Color-Text-Grey);
           text-transform: uppercase;
           font-size: rem(12);
         }
-        
+
         &__img {
           display: flex;
           justify-content: center;
@@ -498,10 +498,10 @@ header, footer {
 
 .back-box {
   @include back-box;
-  
+
   &-img {
     position: absolute;
-    
+
     @media (min-width: $break-iPhone8) {
       width: rem(318);
       height: rem(277);
@@ -525,11 +525,11 @@ header, footer {
   @include flex($justify: space-between);
   padding: rem(15) rem(24);
   white-space: break-spaces;
-  
+
   :first-child, :last-child {
     width: 50%;
   }
-  
+
   &__color {
     &-purple {
       background: var(--Color-Table-Purple);
@@ -541,25 +541,25 @@ header, footer {
         @include text($size: 15, $transform: uppercase, $color: 'grey');
       }
     }
-    
+
     &-blue {
       background: var(--Color-Table-Blue);
     }
-    
+
     &-yellow {
       background: var(--Color-Table-Yellow);
     }
-    
+
     &-red {
       background: var(--Color-Table-Red);
     }
   }
-  
+
   &__header {
     @include text($size: 13, $color: 'black', $weight: 'medium');
     border-bottom: rem(1) solid var(--Color-Line);
     margin-top: rem(21);
-    
+
     @include Main {
       @include text($size: 14, $color: 'black', $weight: 'medium');
     }
@@ -569,24 +569,24 @@ header, footer {
 .product-detail-item {
   @include flex($direction: row, $align-items: center, $justify: center);
   margin: rem(15) 0;
-  
+
   @include iPadProp11 {
     @include flex($direction: column);
     width: 33.33%;
   }
-  
-  @include MacBook{
+
+  @include MacBook {
     width: 50%;
   }
-  @include Main{
+  @include Main {
     margin: rem(35) 0;
   }
-  
+
   &__img-box {
     @include flex();
     width: rem(103);
     height: rem(132);
-    
+
     @include iPadProp11 {
       width: 100%;
       height: rem(245);
@@ -596,57 +596,57 @@ header, footer {
       height: rem(258);
     }
   }
-  
+
   &__container {
     @include flex($direction: column);
     margin-left: rem(19);
     margin-top: rem(20);
-    
+
     @include MacBook {
       @include flex($direction: row, $justify: space-between);
       width: 100%;
       margin-left: 0;
     }
   }
-  
+
   &__text-box {
     @include flex($direction: column);
     white-space: nowrap;
-    
+
     &-title {
       @include text($size: 17, $color: 'black');
-      
+
       @include MacBook {
         @include text($size: 19, $color: 'black');
       }
     }
-    
+
     &-description {
       @include text($size: 13, $color: 'black', $weight: 'light');
       margin-top: rem(2);
-      
+
       @include MacBook {
         @include text($size: 15, $color: 'black', $weight: 'light');
       }
     }
   }
-  
+
   &__button {
     @include flex();
     margin-top: rem(20);
     width: rem(100);
     height: rem(20);
-    @include MacBook{
+    @include MacBook {
       height: rem(5);
       width: 100%;
     }
   }
-  
+
 }
 
 .mytabs {
   @include flex($wrap: wrap);
-  
+
 }
 
 .mytabs input[type="radio"] {
@@ -657,11 +657,11 @@ header, footer {
   padding: 25px;
   cursor: pointer;
   @include text($size: 17, $transform: uppercase, $weight: 'light');
-  @include MacBook{
-    @include text($size: 21,$weight: 'light');
+  @include MacBook {
+    @include text($size: 21, $weight: 'light');
   }
-  @include Main{
-    @include text($size: 25,$weight: 'light');
+  @include Main {
+    @include text($size: 25, $weight: 'light');
   }
 }
 
@@ -682,14 +682,14 @@ header, footer {
   @include flex($justify: center);
   text-align: center;
   position: relative;
-  
-  @include MacBook{
-    @include text($size: 21,$weight: 'medium');
+
+  @include MacBook {
+    @include text($size: 21, $weight: 'medium');
   }
-  @include Main{
-    @include text($size: 25,$weight: 'medium');
+  @include Main {
+    @include text($size: 25, $weight: 'medium');
   }
-  
+
   &:after {
     content: '';
     background-color: var(--Color-Text-Green);
@@ -701,3 +701,10 @@ header, footer {
     transform: translateX(-5px);
   }
 }
+
+
+
+
+
+
+
