@@ -382,57 +382,9 @@
             </div>
         </div>
     </section>
-    <footer>
-        <ul class="footer__list">
-            <li class="footer__item">Применение</li>
-            <li class="footer__item"> Документы</li>
-            <li class="footer__item"> Инструкции</li>
-            <li class="footer__item">Условия хранения</li>
-            <li class="footer__item">Стать дилером</li>
-            <li class="footer__item">Статьи</li>
-            <li class="footer__item">
-                <ul class="footer__icons_list">
-                    <li class="footer__icons_item">И1</li>
-                    <li class="footer__icons_item">И2</li>
-                    <li class="footer__icons_item">И3</li>
-                    <li class="footer__icons_item">И4</li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul class="footer__info">
-            <li class="footer__info_item">
-                Производитель: Cell Biotech Co., Ltd, Южная Корея, 397,<br/>
-                Aegibong-ro, Wolgot-myeon, Gimpo-si, Gyeonggi-do, 415-872<br/>
-                <br/>
-                Импортер/Адрес организации, принимающей<br/>
-                на территории Республики Казахстан претензии<br/>
-                от потребителей по качеству продукции<br/>
-                <br/>
-                <a>
-                    Политика конфиденциальности
-                </a>
-
-
-            </li>
-            <li class="footer__info_item">
-                АО «Нобел Алматинская Фармацевтическая Фабрика»<br/>
-                Республика Казахстан, 050008, г. Алматы, ул. Шевченко, 162 Е.<br/>
-                тел: +7 (727) 399-50-50, факс: +7 (727) 399-60-60<br/>
-                <br/>
-                Лицензия № ИПОР 64604515Р от 09.09.2003 г.<br/>
-                ISO 9001: 2015 от 10.05.18 г.<br/>
-                <br/>
-                <a>
-                    Пользовательское соглашение
-                </a>
-
-            </li>
-        </ul>
-
-        <img src="" alt="Не лекарственное средство">
-    </footer>
 </main>
+
+<%= _.template(require('../includes/footer.html').default)() %>
 </body>
 </html>
 

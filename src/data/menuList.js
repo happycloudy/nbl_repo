@@ -19,7 +19,7 @@ export const menuList = [
     link: './about-us.html',
     subMenu: [
       {name: 'Сферы применения', link: './about-us__scope-application.html'},
-      {name: 'Документы', link: './documents.html'},
+      {name: 'Документы', link: './doc.html'},
       {name: 'Вопросы-ответы', link: './about-us__questions.html'},
       {name: 'Статьи', link: './state.html'},
     ]
