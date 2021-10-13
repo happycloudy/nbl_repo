@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>contacts</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div id="menu" class="header__menu"></div>
+    <span class="header__line line"></span>
+    <div class="bred">
+        <div class="bred__house">
+            <svg>
+                <use href="#house"/>
+            </svg>
+        </div>
+        <div class="bred__item-text">О нас</div>
+    </div>
+</header>
+
+
+<section class="contacts">
+    <div class="contacts__title">АО «Нобел Алматинская <br>
+        Фармацевтическая Фабрика»
+    </div>
+    <div class="contacts__container">
+        <div class="сontact-details">
+            <div class="сontact-details__item">
+                <strong>Адрес:</strong> Республика Казахстан, 050008, <br>
+                г. Алматы, ул. Шевченко, 162 Е.
+            </div>
+            <div class="сontact-details__item">
+                <strong>тел:</strong> +7 (727) 399 50 50 <br>
+                <strong>факс:</strong> +7 (727) 399 60 60
+            </div>
+            <div class="сontact-details__item">
+                Лицензия № ИПОР 64604515Р от 09.09.2003 г. ISO <br>
+                9001: 2015 от 10.05.18 г.
+            </div>
+        </div>
+        <div class="contacts__form">
+            <div class="contacts__form--title">Свяжитесь с нами</div>
+            <%= _.template(require('../includes/contacts-form.html').default)() %>
+        </div>
+    </div>
+</section>
+
+<section class="map">
+    <img
+            class="map__img"
+            src="./src/resources/images/map.png"
+            alt="map"
+    />
+</section>
+
+<section class="contacts">
+    <div class="contacts__form--title">Список дилеров в России</div>
+    <div class="contacts__container">
+        <div class="accordion">
+            <div class="a-container active">
+                <p class="a-btn">
+                    <span class="a-btn__text">Чувашия</span>
+                    <span class="a-btn__icon"></span>
+                </p>
+                <div class="a-panel">
+                    ...
+                </div>
+            </div>
+            <div class="a-container">
+                <p class="a-btn">
+                    <span class="a-btn__text">Татарстан</span>
+                    <span class="a-btn__icon"></span>
+                </p>
+                <div class="a-panel">
+                    ...
+                </div>
+            </div>
+            <div class="a-container">
+                <p class="a-btn">
+                    <span class="a-btn__text">Нижний Новгород</span>
+                    <span class="a-btn__icon"></span>
+                </p>
+                <div class="a-panel">
+                    ...
+                </div>
+            </div>
+            <div class="a-container">
+                <p class="a-btn">
+                    <span class="a-btn__text">Ульяновск</span>
+                    <span class="a-btn__icon"></span>
+                </p>
+                <div class="a-panel">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('../includes/footer.html').default)() %>
+
+</body>
+</html>
+

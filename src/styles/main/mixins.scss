@@ -201,12 +201,15 @@
 
 @mixin headerUpperCase {
   @include text($size: 25, $color: 'black', $weight: 'medium', $transform: uppercase);
+  line-height: rem(40);
+  
   @include iPadProp11 {
     @include text($size: 30, $color: 'black', $weight: 'medium', $transform: uppercase);
   }
   
   @include MacBook {
     @include text($size: 45, $color: 'black', $weight: 'medium', $transform: uppercase);
+    line-height: rem(65);
   }
 }
 

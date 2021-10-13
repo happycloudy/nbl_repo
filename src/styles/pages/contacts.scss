@@ -1,0 +1,117 @@
+@import '../main/index';
+@import '../includes/header';
+@import '../includes/footer';
+
+
+.contacts {
+  @include section-margin;
+  margin-bottom: rem(100);
+  
+  &__title {
+    @include headerUpperCase;
+  }
+  
+  &__container {
+    line-height: rem(35);
+    margin-top: rem(47);
+  }
+  
+  &__form {
+    width: 70%;
+    padding-top: rem(62);
+    
+    @include iPadProp11 {
+      width: 70%;
+    }
+    
+    &--title {
+      @include text($size: 27, $transform: uppercase, $color: 'black');
+    }
+  }
+}
+
+.сontact-details {
+  @include flex($direction: column);
+  
+  @include iPadProp11 {
+    @include flex($wrap: wrap, $direction: row);
+  }
+  
+  &__item {
+    @include text($size: 17, $color: 'black', $weight: 'light');
+    line-height: rem(45);
+    flex: 1 1 50%;
+    margin-bottom: rem(32);
+    
+    @include iPadProp11 {
+      @include text($size: 27, $color: 'black', $weight: 'light');
+    }
+    
+    &:last-child {
+      @include text($size: 17, $color: 'black', $weight: 'light');
+    }
+  }
+}
+
+.map {
+  @include flex;
+  width: 100%;
+  height: rem(233);
+  
+  &__img {
+    width: 100%;
+  }
+}
+
+
+.accordion {
+  @include flex();
+  
+  @include iPadProp11 {
+    display: none;
+  }
+}
+
+.accordion .a-container .a-btn__text {
+  opacity: 1 !important;
+  font-weight: var(--FontWeight-Light) !important;
+  color: var(--Color-Black--100);
+}
+
+.accordion .a-container {
+  &:first-child {
+    border-top: $border;
+  }
+}
+
+.accordion .a-container.active .a-btn__text {
+  font-weight: var(--FontWeight-Medium) !important;
+}
+
+.a-panel {
+  @include list($Main: 17);
+  padding-bottom: rem(10);
+  border-bottom: 0 !important;
+  line-height: rem(35) !important;
+  
+}
+
+.a-btn__text {
+  @include text($transform: uppercase);
+  
+  @include iPadProp11 {
+    @include text($size: 17, $transform: uppercase)
+  }
+  
+  @include MacBook {
+    @include text($size: 21, $transform: uppercase)
+  }
+  
+  @include Main {
+    @include text($size: 25, $transform: uppercase)
+  }
+}
+
+strong {
+  font-weight: var(--FontWeight-Bold);
+}
