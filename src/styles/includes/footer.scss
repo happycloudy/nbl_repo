@@ -17,13 +17,13 @@ footer {
   }
   
   .footer__list {
-    @include flex($direction: column, $justify: space-between);
+    @include flex(no-wrap, column, space-between);
     border-bottom: $border;
     border-top: $border;
     padding: rem(10);
     
     @include iPadProp11 {
-      @include flex($direction: row, $justify: space-between, $align-items: center);
+      @include flex(no-wrap, row, space-between, center);
       padding: 0;
     }
   }
@@ -33,7 +33,7 @@ footer {
     margin-top: rem(26);
     
     @include iphone {
-      @include flex($direction: row, $justify: space-between);
+      @include flex(no-wrap, row, space-between);
     }
     
     &--item {
@@ -65,13 +65,13 @@ footer {
       }
       
       a {
-        @include text($size: 13);
+        @include text(13);
         
         @include MacBook {
-          @include text($size: 15);
+          @include text(15);
         }
         @include Main {
-          @include text($size: 17);
+          @include text(17);
         }
       }
     }

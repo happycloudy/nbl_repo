@@ -3,14 +3,13 @@
 @import '../includes/footer';
 
 
-
-
-.scope-application{
+.scope-application {
   @include section-margin;
   
   &__title {
     @include headerUpperCase
   }
+  
   &__container {
     @include flex($wrap: wrap, $justify: space-between);
     margin-top: rem(57);
@@ -35,18 +34,15 @@
       
       @include iphone {
         width: rem(80);
-        
       }
     }
     
     &--title {
-      @include text($size: 17, $transform: uppercase);
-      
+      @include text(17, uppercase);
       margin-left: rem(45);
       
-      @include iphone{
-        @include text($size: 27, $transform: uppercase);
-        
+      @include iphone {
+        @include text(27, uppercase);
       }
     }
   }

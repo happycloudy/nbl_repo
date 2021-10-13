@@ -16,14 +16,13 @@ header {
 
 
 .vitamins {
+  @include flex(no-wrap, column);
   margin-top: rem(150);
   width: 100%;
   margin-left: rem(30);
-  display: flex;
-  flex-direction: column;
 
   @include iPadProp11 {
-    flex-direction: row-reverse;
+    @include flex(no-wrap, row-reverse);
     margin-left: rem(40);
   }
 
@@ -36,12 +35,11 @@ header {
   }
 
   .vitamins__image_wrap {
+    @include flex($justify: center);
     width: 100%;
-    display: flex;
-    justify-content: center;
 
     @include iPadProp11 {
-      flex-direction: row-reverse;
+      @include flex($direction: row-reverse);
       width: 50%;
     }
 
@@ -184,7 +182,7 @@ header {
       margin-top: rem(21);
 
       @include iPadProp11 {
-        flex-direction: row;
+        @include flex($direction: row);
         margin-top: rem(43);
       }
 
@@ -224,7 +222,7 @@ header {
       @include flex($direction: column);
 
       @include iPadProp11 {
-        flex-direction: row;
+        @include flex($direction: row);
       }
 
       .state__image_wrap {
@@ -271,7 +269,7 @@ header {
 
         .state__header {
           font-size: rem(13);
-          @include text($size: 13, $color: 'black', $weight: 'medium', $transform: uppercase);
+          @include text(13, uppercase, 'black', 'medium');
           line-height: rem(23);
         }
 
@@ -320,16 +318,15 @@ header {
 
 
 .nbl_atp {
-  @include flex();
+  @include flex($direction: column-reverse);
   margin-top: rem(49);
   margin-left: rem(25);
   width: 100%;
-  flex-direction: column-reverse;
 
   @include iPadProp11 {
+    @include flex($direction: row);
     margin-top: rem(65);
     margin-left: rem(35);
-    flex-direction: row;
   }
 
   @include MacBook {
@@ -356,13 +353,13 @@ header {
     }
 
     &_big_text {
-      @include text($size: 50, $color: 'black', $weight: 'bold', $transform: uppercase);
+      @include text(50, uppercase, 'black', 'bold');
       @include MacBook {
-        @include text($size: 55, $color: 'black', $weight: 'bold', $transform: uppercase);
+        @include text(55, uppercase, 'black', 'bold');
       }
 
       @include Main {
-        @include text($size: 60, $color: 'black', $weight: 'bold', $transform: uppercase);
+        @include text(60, uppercase, 'black', 'bold');
       }
     }
 
@@ -492,7 +489,7 @@ header {
   }
 
   &__images {
-    @include flex($direction: column, $justify: space-around);
+    @include flex(no-wrap, column, space-around);
     display: none;
 
     @include iPadProp11 {

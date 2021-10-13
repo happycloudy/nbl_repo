@@ -15,7 +15,10 @@
     line-height: rem(35);
     margin-top: rem(47);
   }
-  
+  &__description{
+    @include text($size: 17, $color: 'grey', $weight: 'light');
+    
+  }
   &__form {
     width: 100%;
     padding-top: rem(62);
