@@ -9,7 +9,7 @@ body {
 header {
   .bred {
     @include iPadProp11 {
-      margin-top: rem(72);
+      margin-top: rem(62);
     }
 
     @include MacBook {
@@ -21,7 +21,6 @@ header {
 
 .vitamins {
   margin-top: rem(160);
-  width: 100% - rem(30);
   margin-left: rem(30);
   display: flex;
   flex-direction: column;
@@ -57,7 +56,7 @@ header {
         margin-top: rem(55);
       }
 
-      @include MacBook{
+      @include MacBook {
         margin-top: rem(75);
       }
 
@@ -68,6 +67,7 @@ header {
 
         @include iPadProp11 {
           height: rem(322);
+          width: auto;
           float: right;
         }
 
@@ -88,7 +88,7 @@ header {
     @include iPadProp11 {
       width: 50%;
       //margin-top: rem(90+57);
-      margin-top: rem(90+33);
+      margin-top: rem(90+13);
     }
 
     @include MacBook {
@@ -146,7 +146,7 @@ header {
       margin-top: rem(35);
 
       @include iPadProp11 {
-        margin-top: rem(50);
+        margin-top: rem(35);
       }
 
       @include MacBook {
@@ -159,47 +159,49 @@ header {
 
 .states {
   width: 100%;
-  margin-left: rem(30);
   margin-top: rem(38);
 
-
   @include iPadProp11 {
-    margin-left: rem(40);
     margin-top: rem(64);
   }
 
   @include MacBook {
-    margin-left: rem(69);
     margin-top: rem(86);
   }
 
   @include Main {
-    margin-left: rem(108);
     margin-top: rem(84);
   }
 
   .states__science_picture {
     width: rem(355);
+    margin-top: rem(38);
+    margin-left: rem(30);
     @include iPadProp11 {
       width: rem(704);
+      margin-top: rem(64) ;
+      margin-left: rem(40) ;
     }
 
     @include MacBook {
       width: rem(890);
+      margin-top: rem(86) ;
     }
 
     @include Main {
       width: rem(1179);
+      margin-left: rem(108);
     }
   }
 
   &__wrap {
+    transform: translateY(rem(-50));
     @include iPadProp11 {
       transform: translateY(rem(-100));
     }
 
     @include MacBook {
-      transform: translateY(rem(-120));
+      transform: translateY(rem(-100));
     }
 
     @include Main {
@@ -210,9 +212,11 @@ header {
       @include flex($direction: column);
       width: 100%;
       margin-top: rem(21);
+      justify-content: center;
 
       @include iPadProp11 {
         flex-direction: row;
+        justify-content: space-around;
         margin-top: rem(43);
       }
 
@@ -226,43 +230,30 @@ header {
 
       .col {
         margin-top: rem(21);
-
-        @include iPadProp11 {
-          $margin: rem(30);
-          margin-left: $margin;
-          margin-right: $margin;
-        }
-
-        @include MacBook {
-          $margin: rem(92);
-          margin-left: $margin;
-          margin-right: $margin;
-        }
-
-        @include Main {
-          $margin: rem(185);
-          margin-left: $margin;
-          margin-right: $margin;
-        }
       }
     }
 
 
     .state {
-      @include flex($direction: column);
-
+      @include flex($direction: column, $justify: center);
+      align-items: center;
       @include iPadProp11 {
         flex-direction: row;
       }
 
       .state__image_wrap {
+        width: rem(311);
+        @include iPadProp11{
+          width: auto;
+        }
+
         .state__image {
           width: rem(311);
           height: rem(153);
 
           @include iPadProp11 {
             width: rem(145);
-            height: rem(146);
+            height: rem(149);
           }
 
           @include MacBook {
@@ -295,6 +286,17 @@ header {
 
         .state__date {
           @include text($size: 15, $color: 'green', $weight: 'bold');
+          line-height: rem(23);
+
+          @include iPadProp11 {
+            @include text($size: 13, $color: 'green', $weight: 'bold');
+            line-height: rem(23);
+          }
+
+          @include MacBook {
+            @include text($size: 15, $color: 'green', $weight: 'bold');
+            line-height: rem(23);
+          }
         }
 
         .state__header {
@@ -325,7 +327,7 @@ header {
 
   .states__load_more_wrap {
     @include flex($justify: center);
-    width: 80%;
+    width: 100%;
     margin-top: rem(15);
 
     @include iPadProp11 {
