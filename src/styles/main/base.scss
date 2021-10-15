@@ -625,3 +625,54 @@ header {
 }
 
 
+.new-accordion {
+  &__button {
+    @include flex($align-items: center);
+    @include text($transform: uppercase);
+    border-bottom: $border;
+    cursor: pointer;
+    padding: rem(10);
+    width: 100%;
+    outline: none;
+    transition: 0.4s;
+    
+    &:first-child {
+      border-top: $border;
+    }
+    
+    &:after {
+      content: '';
+      width: rem(20);
+      height: rem(1);
+      background-color: var(--Color-Text-Green);
+      position: absolute;
+      right: 0;
+    }
+    
+    &:before {
+      content: '';
+      width: rem(20);
+      height: rem(1);
+      background-color: var(--Color-Text-Green);
+      position: absolute;
+      transform: rotate(90deg);
+      transition: all 0.3s ease-in-out;
+      right: 0;
+    }
+    
+    &--active {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+}
+
+
+
