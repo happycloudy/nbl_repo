@@ -8,16 +8,20 @@ body {
 
 header {
   .bred {
-    @include iPadProp11{
+    @include iPadProp11 {
       margin-top: rem(72);
+    }
+
+    @include MacBook {
+      margin-top: rem(80);
     }
   }
 }
 
 
 .vitamins {
-  margin-top: rem(150);
-  width: 100%;
+  margin-top: rem(160);
+  width: 100% - rem(30);
   margin-left: rem(30);
   display: flex;
   flex-direction: column;
@@ -25,10 +29,12 @@ header {
   @include iPadProp11 {
     flex-direction: row-reverse;
     margin-left: rem(40);
+    margin-top: rem(130);
   }
 
   @include MacBook {
     margin-left: rem(69);
+    margin-top: rem(150);
   }
 
   @include Main {
@@ -47,16 +53,30 @@ header {
 
     .vitamins__img {
       width: 100%;
+      @include iPadProp11 {
+        margin-top: rem(55);
+      }
 
-      @include iPadProp11{
+      @include MacBook{
         margin-top: rem(75);
       }
 
       img {
-        width: 85%;
-        height: 100%;
-        @include iPadProp11{
-          width: 100%;
+        height: rem(166);
+        width: rem(315);
+        // width: 315px; // это ок отображается
+
+        @include iPadProp11 {
+          height: rem(322);
+          float: right;
+        }
+
+        @include MacBook {
+          height: rem(420);
+        }
+
+        @include Main {
+          height: rem(470);
         }
       }
     }
@@ -67,16 +87,24 @@ header {
 
     @include iPadProp11 {
       width: 50%;
-      margin-top: rem(90+57);
+      //margin-top: rem(90+57);
+      margin-top: rem(90+33);
+    }
+
+    @include MacBook {
+      margin-top: rem(90+55);
+    }
+    @include Main {
+      margin-top: rem(90+50);
     }
 
     &-text-date {
       @include text($size: 13, $color: 'black');
-      @include iPadProp11{
+      @include iPadProp11 {
         @include text($size: 15, $color: 'black');
       }
 
-      @include MacBook{
+      @include MacBook {
         @include text($size: 17, $color: 'black');
       }
     }
@@ -90,7 +118,7 @@ header {
       }
 
       @include MacBook {
-        margin-top: rem(32);
+        margin-top: rem(43);
       }
     }
 
@@ -115,14 +143,14 @@ header {
 
     &-more-btn {
       @include actionButton();
-      margin-top: rem(25);
+      margin-top: rem(35);
 
       @include iPadProp11 {
-        margin-top: rem(54);
+        margin-top: rem(50);
       }
 
       @include MacBook {
-        margin-top: rem(82);
+        margin-top: rem(42);
       }
     }
   }
@@ -452,7 +480,7 @@ header {
 
       display: none;
 
-      @include iPadProp11{
+      @include iPadProp11 {
         display: block;
       }
     }
@@ -472,20 +500,20 @@ header {
   &__arrow {
     display: none;
 
-    @include iPadProp11{
+    @include iPadProp11 {
       display: block;
     }
 
     svg {
-      @include iPadProp11{
+      @include iPadProp11 {
         width: rem(100);
       }
 
-      @include MacBook{
+      @include MacBook {
         width: rem(200);
       }
 
-      @include Main{
+      @include Main {
         width: rem(350);
       }
     }
