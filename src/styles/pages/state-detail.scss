@@ -2,23 +2,34 @@
 @import '../includes/header';
 @import '../includes/footer';
 
+
 body {
   overflow-x: hidden;
 }
 
 .honey_img__wrap {
-  @include flex($justify: center);
+
+  width: 100%;
+  margin-top: rem(90+25);
+  margin-left: rem(30);
+
+  @include iPadProp11 {
+    margin-left: 0;
+    margin-top: rem(140);
+  }
+
+  @include MacBook {
+    margin-top: rem(170);
+  }
 
   .honey_img {
     width: rem(315);
     height: rem(166);
-    margin-top: rem(170);
 
     @include iPadProp11 {
       width: 95%;
       height: rem(322);
-      margin-left: auto;
-      margin-right: 0;
+      float: right;
     }
 
     @include MacBook {
@@ -26,67 +37,115 @@ body {
     }
 
     @include Main {
-      height: rem(600);
+      height: rem(566);
     }
   }
 }
 
 header {
+  padding: 0 !important;
+
   .bred {
+    margin-left: rem(30);
+
+    @include iPadProp11 {
+      margin-left: rem(40);
+      margin-top: rem(370+22);
+    }
+
     @include MacBook {
-      margin-left: rem(10);
+      margin-top: rem(510+25);
+      margin-left: rem(70);
     }
 
     @include Main {
-      margin-top: rem(650);
+      margin-top: rem(650+16);
+      margin-left: rem(100);
     }
+
   }
 }
 
 
-main {
+.horizontal_line {
+  width: 90%;
+  border: 1px solid rgba(85, 85, 85, 0.2);
+}
+
+.ipad_only {
+  display: none;
+
+  @include iPadProp11 {
+    display: block;
+  }
 
   @include MacBook {
+    display: none;
+  }
+}
+
+main {
+  margin-left: rem(30);
+
+  @include iPadProp11 {
+    margin-left: rem(40);
+  }
+
+  @include MacBook {
+    width: 100%;
+    margin-left: rem(70);
     @include flex();
   }
 
-  .vertical-hr {
+  @include Main {
+    margin-left: rem(100);
+  }
 
-    @include MacBook{
-      height: rem(900);
-      width: rem(3);
+  .vertical-hr {
+    @include MacBook {
+      height: 100%;
+      width: rem(1);
       background: rgba(85, 85, 85, 0.2);
-      margin-right: rem(100);
     }
   }
 
 
   .state {
     margin-top: rem(27);
-    margin-left: rem(30);
     width: 100%;
 
     @include iPadProp11 {
-      margin-left: rem(40);
+      padding-top: rem(210+61);
     }
 
     @include MacBook {
-      margin-left: rem(70);
-    }
-
-    @include Main {
-      margin-left: rem(100);
+      padding-top: 0;
     }
 
     &__header {
-      margin-top: rem(108);
-
       @include iPadProp11 {
         margin-top: rem(90+57);
       }
 
+      @include MacBook {
+        margin-top: rem(10+80);
+      }
+
+      @include Main {
+        margin-top: rem(35+80);
+      }
+
       &-text-date {
-        ///
+        @include text($size: 13, $color: 'black');
+        line-height: rem(85);
+        @include iPadProp11 {
+          @include text($size: 15, $color: 'black');
+        }
+
+        @include MacBook {
+          @include text($size: 17, $color: 'black');
+        }
+
       }
 
       &-text-big {
@@ -142,28 +201,45 @@ main {
         }
       }
     }
+
+    .horizontal_line {
+      @include iPadProp11 {
+        margin-top: rem(50);
+      }
+
+      @include MacBook {
+        margin-top: rem(75);
+      }
+
+      @include Main {
+        margin-top: rem(75);
+      }
+    }
   }
 
   .states {
     margin-top: rem(35);
-    margin-left: rem(41);
 
-    @include MacBook {
-      margin-right: rem(51);
+
+    @include iPadProp11 {
+      margin-left: 0;
     }
 
-    @include Main {
-      margin-right: rem(104);
+    @include MacBook {
+      margin-left: rem(41);
     }
 
     &__nbl_atp_wrap {
       @include flex();
 
+      @include iPadProp11 {
+
+      }
+
       @include MacBook {
         display: block;
         transform: translateY(rem(-200));
       }
-
 
 
       &_img {
@@ -190,11 +266,18 @@ main {
         margin-left: rem(27);
         @include flex($direction: column, $justify: center, $align-items: center);
 
+        @include iPadProp11 {
+          flex-direction: row;
+          margin-left: 0;
+        }
+
         @include MacBook {
           margin-top: rem(18);
-          margin-right: rem(230);
-          flex-direction: row;
+          margin-right: rem(120);
+        }
 
+        @include Main {
+          margin-right: rem(230);
         }
 
         &__text {
@@ -227,16 +310,27 @@ main {
 
       @include iPadProp11 {
         flex-direction: row;
-        margin-top: 0;
+        margin-top: rem(70);
       }
 
       @include MacBook {
         flex-direction: column;
+        margin-right: rem(120);
+        margin-top: 0;
       }
 
       &_wrap {
         img {
           height: rem(153);
+
+          @include iPadProp11 {
+            height: rem(149);
+            width: rem(145);
+          }
+          @include MacBook {
+            height: auto;
+            width: auto;
+          }
         }
       }
 
@@ -245,6 +339,14 @@ main {
         margin-left: rem(10);
         width: 70%;
 
+        @include iPadProp11 {
+          width: 30%;
+        }
+
+        @include MacBook {
+          width: 70%;
+        }
+
         &_date {
           @include text($size: 15, $color: 'green', $weight: 'bold');
         }
@@ -252,12 +354,40 @@ main {
         &_big {
           @include text($size: 13, $color: 'black', $weight: 'medium');
           margin-top: rem(7);
+
+          @include iPadProp11{
+
+          }
+
+          @include MacBook{
+
+          }
+
+          @include Main{
+
+          }
         }
 
         &_small {
           @include text($size: 13, $color: 'grey', $weight: 'medium');
           margin-top: rem(3);
         }
+      }
+
+
+    }
+
+    .horizontal_line {
+      @include iPadProp11 {
+        margin-top: rem(65);
+      }
+
+      @include MacBook {
+
+      }
+
+      @include Main {
+
       }
     }
   }
