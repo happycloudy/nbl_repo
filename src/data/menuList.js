@@ -16,57 +16,32 @@ export const menuList = [
   },
   {
     name: 'О нас',
-    link: './pp.html',
+    link: './about-us.html',
     subMenu: [
-      {name: 'Сферы применения', link: 'pp.html'},
+      {name: 'Сферы применения', link: './about-us__scope-application.html'},
       {name: 'Документы', link: '#about'},
-      {name: 'Вопросы-ответы', link: '#about'},
+      {name: 'Вопросы-ответы', link: './about-us__questions.html'},
       {name: 'Статьи', link: '#about'},
     ]
   },
   {
     name: 'Где купить',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './where-buy.html',
   },
   {
     name: 'Продукты',
     link: './product.html',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
   },
   {
     name: 'Доставка и оплата ',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './delivery.html',
   },
   {
     name: 'Контакты',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './contacts.html',
   },
   {
     name: 'Стать дилером',
-    link: '#about',
-    // subMenu: [
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    //   {name: 'About us', link: '#about'},
-    // ]
+    link: './dealer.html',
   },
 ]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scope-application</title>
+</head>
+<body>
+<header class="header">
+    <div id="menu" class="header__menu"></div>
+    <span class="header__line line"></span>
+    <div class="bred">
+        <div class="bred__house">
+            <svg>
+                <use href="#house"/>
+            </svg>
+        </div>
+        <div class="bred__item-text">О нас</div>
+    </div>
+</header>
+
+
+<section class="scope-application">
+    <div class="scope-application__title">Сферы применения</div>
+    <div class="scope-application__container">
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__stomach"/>
+            </svg>
+            <div class="scope-application__item--title">Пищеварительная система</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__immune-system"/>
+            </svg>
+            <div class="scope-application__item--title">Иммунная система</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__allergy"/>
+            </svg>
+            <div class="scope-application__item--title">Аллергия</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#articles"/>
+            </svg>
+            <div class="scope-application__item--title">Детям и новорожденным</div>
+        </div>
+
+
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__dysbiosis"/>
+            </svg>
+            <div class="scope-application__item--title">Дисбактериоз</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__urologist"/>
+            </svg>
+            <div class="scope-application__item--title">Урогенитальные инфекции</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__antibiotic"/>
+            </svg>
+            <div class="scope-application__item--title">Лечение антибиотиками</div>
+        </div>
+        <div class="scope-application__item">
+            <svg class="scope-application__item--svg">
+                <use href="#scope-application__pregnancy"/>
+            </svg>
+            <div class="scope-application__item--title">Беременность</div>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('../includes/footer.html').default)() %>
+
+</body>
+</html>
+
