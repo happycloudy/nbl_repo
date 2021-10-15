@@ -38,15 +38,13 @@
     }
     
     &--title {
-      @include text($size: 17, $transform: uppercase);
+      @include text(17, uppercase);
   
       margin-left: rem(45);
       
       @include iphone{
-        @include text($size: 27, $transform: uppercase);
-  
+        @include text(27, uppercase);
       }
     }
   }
-  
 }

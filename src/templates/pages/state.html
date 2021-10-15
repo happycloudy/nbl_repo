@@ -11,9 +11,7 @@
 
 
 <header class="header">
-    <div id="menu" class="header__menu">
-        <div class="logo--container"></div>
-    </div>
+    <div id="menu" class="header__menu"></div>
     <span class="header__line line"></span>
     <div class="bred">
         <div class="bred__house">
@@ -22,7 +20,6 @@
             </svg>
         </div>
         <div class="bred__item-text">О нас</div>
-        <div class="bred__item-text">Статьи</div>
     </div>
 </header>
 
@@ -296,6 +293,7 @@
     </section>
 </main>
 
+<%= _.template(require('../includes/footer.html').default)() %>
 </body>
 </html>
 

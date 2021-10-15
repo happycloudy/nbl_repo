@@ -31,7 +31,7 @@
     }
     
     &--list-title {
-      @include text($size: 27, $transform: uppercase, $color: 'black');
+      @include text(27, uppercase, 'black');
       margin-bottom: rem(22);
     }
   }
@@ -47,6 +47,7 @@
   &__container {
     overflow: hidden;
     margin-top: rem(20);
+    
     @include iPadProp11 {
       margin-top: rem(80);
     }
@@ -104,21 +105,20 @@
   padding-bottom: rem(10);
   border-bottom: 0 !important;
   line-height: rem(35) !important;
-  
 }
 
 .a-btn__text {
   @include text($transform: uppercase);
   
   @include iPadProp11 {
-    @include text($size: 17, $transform: uppercase)
+    @include text(17, uppercase)
   }
   
   @include MacBook {
-    @include text($size: 21, $transform: uppercase)
+    @include text(21, uppercase)
   }
   
   @include Main {
-    @include text($size: 25, $transform: uppercase)
+    @include text(25, uppercase)
   }
 }

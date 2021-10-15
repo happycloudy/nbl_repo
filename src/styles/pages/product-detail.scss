@@ -4,24 +4,12 @@
 
 
 .products-detail {
+  @include section-margin;
   @include flex($direction: column);
   border-bottom: $border;
-  margin: rem(150) rem(30) 0 rem(30);
   
-  @include iphone{
-    margin-top: rem(200);
-  }
-  @include iPadProp11 {
-    margin-left: rem(76);
-    margin-right: rem(76);
-  }
   @include MacBook {
     @include flex($direction: row);
-    margin-top: rem(200);
-  }
-  @include Main {
-    margin-left: rem(108);
-    margin-right: rem(108);
   }
   
   &__left {
@@ -56,7 +44,6 @@
     @include Main {
       @include flex($direction: column, $align-items: center);
       margin-top: 50%;
-      //margin-top: 35%;
     }
     @media (min-width: 1800px) {
       margin-top: 600px;
@@ -66,7 +53,7 @@
       display: none;
       
       @include MacBook {
-        display: flex;
+        @include flex;
         margin-bottom: rem(47);
       }
       @include Main {
@@ -147,7 +134,6 @@
     &--list {
       @include list;
       margin-top: rem(17);
-      //padding-bottom: rem(60);
       
       @include iPadProp11 {
         margin-top: rem(25);
@@ -249,7 +235,7 @@
       margin-top: rem(40);
       
       @include iPadProp11 {
-        display: flex;
+        @include flex;
         border: 0;
         width: rem(350);
         margin: 0;
@@ -281,7 +267,7 @@
     &--tab {
       display: none;
       @include iPadProp11 {
-        display: flex;
+        @include flex;
       }
     }
     
@@ -377,7 +363,7 @@
       display: none;
       position: absolute;
       @include iPadProp11 {
-        display: flex;
+        @include flex;
         right: 0;
         top: rem(60);
       }
@@ -392,8 +378,9 @@
       display: none;
       position: absolute;
       z-index: 3;
+      
       @include MacBook {
-        display: flex;
+        @include flex;
         right: 0;
         top: rem(93);
       }
@@ -408,8 +395,9 @@
       display: none;
       position: absolute;
       z-index: 3;
+      
       @include Main {
-        display: flex;
+        @include flex;
         right: 0;
         top: rem(118);
       }
@@ -424,8 +412,9 @@
       display: none;
       position: absolute;
       z-index: 3;
+      
       @media (min-width: 1800px) {
-        display: flex;
+        @include flex;
         right: 0;
         top: rem(118);
       }
@@ -437,7 +426,7 @@
       display: none;
       
       @include Main {
-        display: flex;
+        @include flex;
         position: absolute;
         width: rem(300);
         z-index: 3;
@@ -458,7 +447,7 @@
     
     &__title {
       &-text {
-        font-weight: var(--FontWeight-Regular);
+        @include headerUpperCase;
       }
       
       &-sub {
@@ -518,12 +507,11 @@
       &-text {
         @include text($transform: uppercase, $color: 'black');
         @include iPadProp11 {
-          @include text($size: 17, $transform: uppercase, $color: 'black');
+          @include text(17, uppercase, 'black');
         }
         @include Main {
-          @include text($size: 19, $transform: uppercase, $color: 'black');
+          @include text(19, uppercase, 'black');
         }
-        
       }
       
       &-arrow {
@@ -630,15 +618,8 @@
 }
 
 .reviews {
-  margin: rem(72) rem(30) 0 rem(30);
-  @include iPadProp11 {
-    margin-left: rem(76);
-    margin-right: rem(76);
-  }
-  @include Main {
-    margin-left: rem(108);
-    margin-right: rem(108);
-  }
+  @include section-margin($MacBook: false);
+  margin-top: rem(72) !important;
   
   &__title {
     @include headerUpperCase;
@@ -651,9 +632,10 @@
   }
   
   &__table {
-    justify-content: flex-start;
+    @include flex($justify: flex-start);
+    
     @include iPadProp11 {
-      justify-content: center;
+      @include flex($justify: center);
     }
     
     & label {
