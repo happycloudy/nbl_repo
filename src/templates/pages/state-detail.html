@@ -9,20 +9,8 @@
 </head>
 <body>
 
-
-<div class="honey_img__wrap">
-    <img
-            class="honey_img"
-            src="./src/resources/images/honey-big.png"
-            alt="nbl_atp__image_big"
-    />
-</div>
-
-
 <header class="header">
-    <div id="menu" class="header__menu">
-        <div class="logo--container"></div>
-    </div>
+    <div id="menu" class="header__menu"></div>
     <span class="header__line line"></span>
     <div class="bred">
         <div class="bred__house">
@@ -31,10 +19,15 @@
             </svg>
         </div>
         <div class="bred__item-text">О нас</div>
-        <div class="bred__item-text">Статьи</div>
     </div>
 </header>
-
+<div class="honey_img__wrap">
+    <img
+            class="honey_img"
+            src="./src/resources/images/honey-big.png"
+            alt="nbl_atp__image_big"
+    />
+</div>
 
 <main class="main">
     <section class="state">
@@ -148,6 +141,7 @@
     </section>
 </main>
 
+<%= _.template(require('../includes/footer.html').default)() %>
 </body>
 </html>
 
