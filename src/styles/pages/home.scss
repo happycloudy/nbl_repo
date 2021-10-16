@@ -307,58 +307,45 @@
   }
 }
 
+
+//Выживаемость бактерий
 .bacterial-survival {
-  @include flex();
-  justify-content: center;
-  padding-top: rem(20);
-  flex-wrap: wrap;
-  
-  @include padding-iPadProp11('padding');
-  @media (min-width: $break-MacBook) {
-    @include padding-MacBook('padding');
-  }
-  @media (min-width: $break-Main) {
-    @include padding-Main('padding');
-  }
+  @include section-margin($MacBook: false);
+  margin-top: rem(46) !important;
   
   &__header {
-    @include flex();
-    justify-content: center;
+    @include flex($justify: center, $direction: column, $align-items: center);
     height: rem(170);
-    width: 80%;
     
-    @media (max-width: $break-iPadProp11) {
-      width: 100%;
+    @include iPadProp11 {
+      @include flex($align-items: center, $direction: row);
       height: fit-content;
-      align-items: center;
-    }
-    @media (max-width: $break-iPhone8) {
-      flex-direction: column;
     }
     
-    &-title {
-      width: rem(300);
+    &--title {
+      @include headerUpperCase;
+      @include iPadProp11 {
+        width: 30%;
+        text-align: center;
+      }
+    }
+    
+    &--info {
       @include flex();
-      align-items: flex-start;
-      text-align: center;
-      text-transform: uppercase
-    }
-    
-    &-info {
-      align-self: flex-end;
+      margin-top: rem(8);
+      align-self: center;
       
-      @media (max-width: $break-iPhone8) {
-        padding-top: rem(8);
-        align-self: center;
+      @include iphone {
+        margin-top: rem(16);
       }
     }
     
     &-icon-box {
-      width: rem(45);
-      justify-content: space-around;
-      align-items: flex-end;
-      @media (max-width: $break-iPhone8) {
-        width: rem(30);
+      @include flex($justify: space-around, $align-items: flex-end);
+      width: rem(30);
+      
+      @include iphone {
+        width: rem(45);
       }
       
       & > span {
@@ -384,99 +371,80 @@
     }
     
     &-number {
-      color: var(--Color-Text-Green);
-      font-size: rem(125);
-      padding-left: rem(24);
+      @include text(80, false, 'green', 'light');
+      margin-left: rem(24);
       line-height: rem(65);
-      font-weight: 300;
       
-      @media (max-width: $break-iPadProp11) {
-        font-size: rem(110);
+      @include iPadProp11 {
+        @include text(110, false, 'green', 'light');
+        line-height: rem(95);
       }
-      @media (max-width: $break-iPhone8) {
-        font-size: rem(80);
-        padding-left: rem(5);
+      @include MacBook {
+        @include text(125, false, 'green', 'light');
+        line-height: rem(105);
       }
     }
     
     &-number-box {
-      height: rem(110);
-      justify-content: space-between;
-      @media (max-width: $break-iPadProp11) {
-        height: rem(100);
-      }
-      @media (max-width: $break-iPhone8) {
-        height: rem(80);
-      }
+      @include flex($justify: space-between, $direction: column);
     }
     
     &-text-number {
-      color: var(--Color-Text-Grey);
-      font-size: rem(20);
-      padding-left: rem(40);
+      @include text($size: 13, $color: 'grey');
+      margin-left: rem(45);
+      line-height: rem(30);
       
-      @media (max-width: $break-iPadProp11) {
-        font-size: rem(17);
+      @include iPadProp11 {
+        @include text($size: 17, $color: 'grey');
       }
-      @media (max-width: $break-iPhone8) {
-        font-size: rem(13);
-        padding-left: rem(10);
+      @include iphone {
+        @include text($size: 20, $color: 'grey');
       }
       
     }
     
     &-text-number2 {
-      color: var(--Color-Text-Grey);
-      font-size: rem(21);
-      text-transform: uppercase;
+      @include text(11, uppercase, 'grey');
       align-self: center;
-      padding-left: rem(14);
-      width: rem(260);
+      width: rem(132);
+      margin-left: rem(14);
+      line-height: rem(19);
       
-      @media (max-width: $break-iPadProp11) {
-        font-size: rem(17);
+      @include iPadProp11 {
+        @include text(17, uppercase, 'grey');
         width: rem(196);
       }
-      @media (max-width: $break-iPhone8) {
-        font-size: rem(11);
-        width: rem(132);
+      @include MacBook {
+        @include text(21, uppercase, 'grey');
+        width: rem(260);
       }
     }
   }
   
   &__body {
     width: 100%;
-    height: rem(182);
+    margin-top: rem(30);
     
-    @media (min-width: $break-iPhone8) {
-      padding-top: rem(30);
+    @include iPadProp11 {
+      margin-top: rem(40);
     }
-    
-    @media (min-width: $break-iPadProp11) {
-      padding-top: rem(40);
-      height: rem(320);
+    @include MacBook {
+      margin-top: rem(56);
     }
-    @media (min-width: $break-MacBook) {
-      padding-top: rem(56);
-      height: rem(500);
-    }
-    @media (min-width: $break-Main) {
-      padding-top: rem(58);
-      height: rem(600);
+    @include Main {
+      margin-top: rem(58);
     }
     
-    & > svg {
-      height: 100%;
+    & > img {
       width: 100%;
     }
   }
 }
 
-
-
 //Классификация пробиотиков
 .classification {
-  @include section-margin;
+  @include section-margin($MacBook: false);
+  margin-top: rem(46) !important;
   
   &__title {
     @include headerUpperCase;
@@ -590,7 +558,7 @@
     &--description {
       @include text($size: 13, $color: 'grey');
       line-height: rem(25);
-     
+      
       
       @include iPadProp11 {
         @include text($size: 15, $color: 'grey');
@@ -946,7 +914,7 @@
     @include flex($direction: column);
     
     &--img-box {
-      @include flex(wrap);
+      @include flex(wrap, $justify: space-between);
       width: 100%;
     }
     
@@ -967,6 +935,7 @@
       }
       @include MacBook {
         flex: 0 1 24%;
+        width: 24%;
       }
       @include MacBook {
         height: rem(400);
