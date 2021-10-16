@@ -95,6 +95,7 @@
             <div id="accordion" class="double-cover__details-accordion"></div>
         </div>
     </section>
+
     <section id="bacterial-survival" class="bacterial-survival">
         <div class="bacterial-survival__header">
             <div class="title__section bacterial-survival__header-title">Выживаемость бактерий</div>
@@ -118,52 +119,44 @@
             </svg>
         </div>
     </section>
-    <section id="classification" class="classification flex flex__justify-center flex__wrap">
-        <div class="w-100 title__section flex flex__justify-center">Классификация пробиотиков</div>
-        <div class="w-100 classification__list">
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">I</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">Без покрытия</div>
-                    <div class="classification__list-description">Большинство пробиотиков</div>
-                </div>
-            </div>
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">II</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">С кишечнорастворимой оболочкой</div>
-                    <div class="classification__list-description">Некоторые производители</div>
-                </div>
-            </div>
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">III</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">Микрокапсулированные</div>
-                    <div class="classification__list-description">Некоторые производители</div>
-                </div>
-            </div>
-        </div>
-        <div class="classification__age flex flex__wrap">
-            <div class="classification__age-title w-100 flex__justify-center">Поколение</div>
-            <div class="classification__age-box w-100 ">
-                <div class="flex__justify-center flex">
-                    <svg class="classification__age-img">
-                        <use href="#classification"></use>
-                    </svg>
-                    <span class="back-box">
-                        <svg class="back-box-img">
-                            <use href="#back3"></use>
-                        </svg>
-                    </span>
-                </div>
-                <div class="flex flex__justify-center text-align__center">NBL пробиотики с двойным покрытием. Штаммы
-                    пробиотиков NBL, были выделены из организма младенцев и женского грудного молока.
-                </div>
-            </div>
-        </div>
-    </section>
 
 </main>
+
+<section id="classification" class="classification">
+    <div class="classification__title">Классификация пробиотиков</div>
+    <div class="classification__list">
+        <div class="classification__list--item">
+            <span class="classification__list--number">I</span>
+            <div class="">
+                <div class="classification__list--title">Без покрытия</div>
+                <div class="classification__list--description">Большинство пробиотиков</div>
+            </div>
+        </div>
+        <div class="classification__list--item">
+            <span class="classification__list--number">II</span>
+            <div class="">
+                <div class="classification__list--title">С кишечнорастворимой оболочкой</div>
+                <div class="classification__list--description">Некоторые производители</div>
+            </div>
+        </div>
+        <div class="classification__list--item">
+            <span class="classification__list--number">III</span>
+            <div class="">
+                <div class="classification__list--title">Микрокапсулированные</div>
+                <div class="classification__list--description">Некоторые производители</div>
+            </div>
+        </div>
+    </div>
+    <div class="classification__age">
+        <div class="classification__age--title">Поколение</div>
+        <div class="classification__age--box ">
+            <img src="<%=require('../../resources/images/home__classification.png').default%>"/>
+            <div class="classification__age--description">NBL пробиотики с двойным покрытием. Штаммы
+                пробиотиков NBL, были выделены из организма младенцев и женского грудного молока.
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="nbl_atp">
     <div class="tab-js nbl_atp__container--tab">
@@ -372,7 +365,6 @@
         </div>
     </div>
 </section>
-
 
 <section class="doctor-recommendation">
     <div class="doctor-recommendation__title">ДОКТОРА РЕКОМЕНДУЮТ</div>

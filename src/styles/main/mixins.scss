@@ -151,6 +151,8 @@
     color: var(--Color-Light--100);
   } @else if ($color == 'black') {
     color: var(--Color-Black--100);
+  } @else if ($color == 'title') {
+    color: var(--Color-Lab2Pro);
   }
   
   @if ($weight == 'medium') {
