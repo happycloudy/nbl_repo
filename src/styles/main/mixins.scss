@@ -239,3 +239,30 @@
     }
   }
 }
+
+@mixin tabHeader {
+  @include text(11, uppercase, 'grey');
+  line-height: rem(21);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  @include iPadProp11{
+    @include text(13, uppercase, 'grey');
+    line-height: rem(21);
+  }
+  @include MacBook{
+    @include text(15, uppercase, 'grey');
+    line-height: rem(21);
+  }
+  
+  &--active:after {
+    content: '';
+    background-color: var(--Color-Text-Green);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3px;
+    width: rem(5);
+    height: rem(5);
+  }
+}

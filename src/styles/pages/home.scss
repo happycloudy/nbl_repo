@@ -634,12 +634,13 @@
     margin-right: 7%;
     
     &--item {
-      @include flex($justify: space-between);
+      justify-content: space-between;
     }
   }
   
   &__about {
     max-width: rem(252);
+    
     @include iphone {
       max-width: 40%;
     }
@@ -788,90 +789,6 @@
   
 }
 
-.tab-js {
-  @include flex($direction: row-reverse);
-  width: 100%;
-  
-  &__links-container {
-    @include flex($direction: column);
-  }
-  
-  
-  &__link {
-    $this: &;
-    position: relative;
-    margin: 0;
-    
-    @include iphone {
-      height: rem(100);
-      margin: rem(15) 0;
-    }
-    
-    
-    @include iPadProp11 {
-      margin: rem(20) 0;
-      max-width: rem(80);
-      height: rem(130);
-    }
-    
-    @include MacBook {
-      margin: rem(25) 0;
-      max-width: rem(105);
-      height: 100%;
-    }
-    
-    
-    &--arrow {
-      display: none;
-      position: absolute;
-      z-index: 3;
-      left: -100%;
-      top: 50%;
-      width: rem(100);
-      height: rem(5);
-      
-      @include iphone {
-        left: -180%;
-      }
-      
-      @include iPadProp11 {
-        left: -160%;
-      }
-      
-      & svg {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    
-    &--active {
-      & #{$this}--arrow {
-        @include flex();
-      }
-    }
-    
-    & img {
-      width: 100%;
-      height: 100%;
-    }
-    
-  }
-  
-  &__content-container {
-    width: 100%;
-  }
-  
-  &__content-item {
-    display: none;
-    width: 100%;
-    
-    &--active {
-      display: flex;
-    }
-  }
-  
-}
-
 
 .doctor-recommendation {
   $this: &;
@@ -1014,6 +931,91 @@
   }
 }
 
+.reviews {
+  @include section-margin($MacBook: false);
+  margin-top: rem(133) !important;
+  
+  
+  &__container {
+    @include flex($direction: column);
+    
+    &--img-box {
+      @include flex(wrap);
+      width: 100%;
+    }
+    
+    &--img-item {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 45%;
+      box-sizing: border-box;
+      padding: rem(15);
+      margin: rem(4.5);
+      background: var(--Color-Light--100);
+      height: rem(200);
+      
+      @include iPadProp11 {
+        width: 30%;
+        flex: 0 1 30%;
+        height: rem(320);
+      }
+      @include MacBook {
+        flex: 0 1 24%;
+      }
+      @include MacBook {
+        height: rem(400);
+      }
+      
+      //& img{
+      //  width: 100%;
+      //}
+    }
+    
+    & .tab-js {
+      &__links-container {
+        @include flex($direction: row, $justify: center);
+      }
+      
+      &__link {
+        @include tabHeader;
+        padding: rem(10);
+        margin-top: rem(0);
+        
+        &--active {
+          font-weight: var(--FontWeight-Bold);
+          color: var(--Color-Text-Green);
+        }
+      }
+      
+      &__content-item {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  
+  &__title {
+    @include headerUpperCase;
+    @include flex($justify: flex-start);
+    margin-bottom: rem(11);
+    
+    @include iPadProp11 {
+      @include flex($justify: center);
+    }
+  }
+  
+  &__fetch-more {
+    @include actionButton(11, 13, 13, 13);
+    @include flex($justify: flex-start);
+    margin-top: rem(32);
+    
+    @include iPadProp11 {
+      @include flex($justify: center);
+      margin-top: rem(56);
+    }
+  }
+}
+
 .states {
   @include section-margin($MacBook: false);
   margin-top: rem(133) !important;
@@ -1029,7 +1031,7 @@
     
     & img {
       width: 100%;
-      height: 100%;
+      //height: 100%;
       
       @include iphone {
         width: 80%;
@@ -1087,21 +1089,17 @@
       
       &:not(:first-child) {
         display: none;
-      }
-      
-      @include iphone {
-        &:not(:first-child) {
+        
+        @include iphone {
           @include flex()
         }
       }
       
       @include iphone {
         @include flex($direction: row);
-      }
-      
-      @include iphone {
         width: 50%;
       }
+      
       @include iPadProp11 {
         width: 45%;
       }
@@ -1124,13 +1122,26 @@
   }
   
   &-item {
+    &__img-box {
+      width: 100%;
+      @include iphone{
+        width: 40%;
+      }
+      
+      & img{
+        width: 100%;
+      }
+    }
     
     &__box {
       @include flex($direction: column);
+      width: 100%;
+      box-sizing: border-box;
       margin-top: rem(24);
       padding: 0 rem(15);
       
       @include iphone {
+        width: 60%;
         margin-left: rem(22);
         margin-top: 0;
       }
