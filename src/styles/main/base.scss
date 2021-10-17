@@ -3,6 +3,8 @@
 @import './mixins';
 
 $border: rem(1) solid var(--Color-Line);
+$sectionMarginTop: rem(50);
+
 
 :root {
   --BaseFontSize: 15px;
@@ -419,30 +421,6 @@ header {
   }
 }
 
-.back-box {
-  @include back-box;
-  
-  &-img {
-    position: absolute;
-    
-    @media (min-width: $break-iPhone8) {
-      width: rem(318);
-      height: rem(277);
-    }
-    @media (min-width: $break-iPadProp11) {
-      width: rem(487);
-      height: rem(426);
-    }
-    @media (min-width: $break-MacBook) {
-      width: rem(653);
-      height: rem(571);
-    }
-    @media (min-width: $break-Main) {
-      width: rem(650);
-      height: rem(568);
-    }
-  }
-}
 
 .table {
   @include flex($justify: space-between);

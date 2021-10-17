@@ -3,129 +3,122 @@
 @import '../includes/footer';
 @import '../includes/reviews';
 
-.main {
-  @include flex();
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  padding-top: rem(339);
-  box-sizing: border-box;
-  overflow: hidden;
-  background: url("../../resources/images/main-bcg.png") no-repeat center /cover;
-  
-  &:after {
-    content: '';
-    right: 0;
-    top: 0;
-    background: url("../../resources/images/circle.png") no-repeat center/cover;
-    position: absolute;
-    width: 100%;
-    height: rem(354);
-    
-    @media (min-width: $break-iPadProp11) {
-      width: rem(697);
-      height: rem(651);
-    }
-    @media (min-width: $break-MacBook) {
-      width: rem(849);
-      height: rem(792);
-    }
-    @media (min-width: $break-Main) {
-      width: rem(1023);
-      height: rem(954);
-    }
-  }
-  
-  @media (max-width: $break-iPhone8) {
-    padding-top: rem(107);
-  }
-}
 
 .effective {
-  align-content: flex-start;
-  @include padding-iPadProp11('padding');
-  @media (min-width: $break-MacBook) {
-    @include padding-MacBook('padding');
-  }
-  @media (min-width: $break-Main) {
-    @include padding-Main('padding');
+  @include section-margin;
+  @include flex($direction: column);
+  margin-top: rem(230);
+  
+  @include iPadProp11{
+    @include flex($direction: row)
   }
   
-  .description {
-    @include flex();
-    width: 50%;
-    z-index: 3;
-    
-    @media (max-width: $break-iPhone8) {
-      order: 1;
-      width: 100%;
-    }
-  }
   
-  .probiotic-group {
-    @include flex();
-    width: 50%;
-    z-index: 3;
+  &__main{
+    @include flex($direction: column);
+    width: 100%;
+    order: 1;
     
-    @media (max-width: $break-iPhone8) {
+    @include iPadProp11{
+      width: 50%;
       order: 0;
-      width: 100%;
     }
   }
   
-  .Lab2Pro {
-    @include flex();
-    color: var(--Color-Lab2Pro);
-    font-size: rem(72);
-    text-transform: uppercase;
-    font-weight: var(--FontWeight-Medium);
-    padding-top: rem(27);
+  &__title {
+    @include text(25, uppercase, 'black');
+    line-height: rem(35);
+    margin-top: rem(30);
     
-    @media (max-width: $break-iPhone8) {
-      order: 2;
+    @include iPadProp11 {
+      @include text(30, uppercase, 'black');
+      line-height: rem(40);
+      margin-top: 0;
     }
-    @media (min-width: $break-iPadProp11) {
-      font-size: rem(150);
-      padding-top: rem(68);
+    @include MacBook {
+      @include text(45, uppercase, 'black');
+      line-height: rem(60);
     }
-    @media (min-width: $break-MacBook) {
-      padding-top: rem(85);
-      font-size: rem(200);
+    @include MacBook {
+      @include text(50, uppercase, 'black');
+      line-height: rem(65);
     }
-    @media (min-width: $break-Main) {
-      font-size: rem(230);
+  }
+  
+  &__description {
+    @include text(13, false, 'grey');
+    line-height: rem(25);
+    margin-top: rem(30);
+    
+    @include MacBook {
+      @include text(15, false, 'grey');
+      line-height: rem(30);
+    }
+    @include MacBook {
+      @include text(17, false, 'grey');
+      line-height: rem(35);
+    }
+  }
+  
+  &__action {
+    @include actionButton;
+    margin-top: rem(25);
+    
+    @include Main{
+      margin-top: rem(40);
+    }
+  }
+  
+  &__img-box {
+    @include flex();
+    width: 100%;
+    
+    @include iPadProp11{
+      width: 50%;
+    }
+    
+    & img{
+      width: 100%;
     }
   }
 }
 
-.probiotic-group {
-  height: rem(169);
-  width: 100%;
-  background: url("../../resources/images/probiotic-group-iPhone8.png") no-repeat center/contain;
+.Lab2Pro {
+  @include section-margin;
+  @include flex($justify: center, $align-items: flex-end);
+  @include text(72, uppercase, 'title');
+  margin-top: rem(27)!important;
+  text-align: center;
+  position: relative;
   
-  @media (max-width: $break-iPhone8) {
-    width: 50%;
+  @include iPadProp11{
+    @include text(150, uppercase, 'title');
+    margin-top: rem(68)!important;
   }
-  @media (min-width: $break-iPadProp11) {
-    height: rem(197);
-    background: url("../../resources/images/probiotic-group-iPadProp11.png") no-repeat center/contain;
+  @include MacBook{
+    @include text(200, uppercase, 'title');
+    margin-top: rem(85)!important;
   }
-  @media (min-width: $break-MacBook) {
-    height: rem(268);
-    background: url("../../resources/images/probiotic-group-macBook.png") no-repeat center/contain;
+  @include Main{
+    @include text(230, uppercase, 'title');
   }
-  @media (min-width: $break-Main) {
-    height: rem(331);
-    background: url("../../resources/images/probiotic-group-main.png") no-repeat center/contain;
+  
+  & svg{
+    display: none;
+    position: absolute;
+    transform: rotate(90deg);
+    width: rem(100);
+    
+    @include iPadProp11{
+      display: flex;
+    }
   }
 }
+
 
 //ЖИЗНЕСПОСОБНОСТЬ
 .viability {
-  @include section-margin($MacBook: false);
+  @include section-margin;
   
   &__title {
     @include headerUpperCase;
@@ -210,12 +203,12 @@
       @include flex($direction: column);
       width: 100%;
       
-      @include iphone{
+      @include iphone {
         @include flex(wrap, row);
-  
+        
       }
       
-      @include iPadProp11{
+      @include iPadProp11 {
         display: none;
       }
     }
@@ -235,7 +228,7 @@
     }
     
     &--row {
-      @include flex($direction: column,$justify: space-around);
+      @include flex($direction: column, $justify: space-around);
       margin-left: rem(8);
     }
     
@@ -260,11 +253,10 @@
   }
 }
 
-
 //Почему важно двойное покрытие?
 .double-cover {
   $this: &;
-  @include section-margin($MacBook: false);
+  @include section-margin;
   
   &__title {
     @include headerUpperCase;
@@ -399,8 +391,7 @@
 
 //Выживаемость бактерий
 .bacterial-survival {
-  @include section-margin($MacBook: false);
-  margin-top: rem(46) !important;
+  @include section-margin;
   
   &__header {
     @include flex($justify: center, $direction: column, $align-items: center);
@@ -532,8 +523,7 @@
 
 //Классификация пробиотиков
 .classification {
-  @include section-margin($MacBook: false);
-  margin-top: rem(46) !important;
+  @include section-margin;
   
   &__title {
     @include headerUpperCase;
@@ -663,7 +653,7 @@
 
 //АТП
 .nbl_atp {
-  @include section-margin($MacBook: false);
+  @include section-margin;
   @include flex($justify: center);
   margin-top: rem(133) !important;
   
@@ -761,6 +751,7 @@
   &__img-burger {
     @include flex();
     position: relative;
+    
     @include iphone {
       height: rem(360);
     }
@@ -795,6 +786,26 @@
       height: 95%;
       width: 95%;
       z-index: 3;
+    }
+    
+    &:before{
+      content: 'nbl';
+      display: none;
+      position: absolute;
+      
+      @include iPadProp11{
+        @include text(150, uppercase, 'title');
+        display: flex;
+        bottom: -25%;
+        right: -15%;
+      }
+      @include MacBook{
+        @include text(210, uppercase, 'title');
+      }
+      @include Main{
+        @include text(320, uppercase, 'title');
+        bottom: -40%;
+      }
     }
   }
   
@@ -851,7 +862,7 @@
 //Доктора рекомендуют
 .doctor-recommendation {
   $this: &;
-  @include section-margin($MacBook: false);
+  @include section-margin;
   margin-top: rem(133) !important;
   
   @include iphone {
@@ -992,9 +1003,8 @@
 
 //Отзывы
 .reviews {
-  @include section-margin($MacBook: false);
+  @include section-margin;
   margin-top: rem(133) !important;
-  
   
   &__container {
     @include flex($direction: column);
@@ -1079,7 +1089,7 @@
 
 //Наука
 .states {
-  @include section-margin($MacBook: false);
+  @include section-margin;
   margin-top: rem(133) !important;
   
   &__science {

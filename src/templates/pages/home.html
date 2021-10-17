@@ -24,23 +24,25 @@
 </header>
 
 
-<main class="main">
-    <section id="effective" class="effective flex flex__wrap">
-        <div class="flex flex__column flex__self-start description">
-            <div class="title__main">Бактерии, которые дойдут до цели</div>
-            <div class="title__main-text">До 60% клеток иммунитета находится в кишечнике.
-                Эффективность каждого пробиотика зависит
-                от кол-ва доставленных в кишечник бактерий
-            </div>
-            <div class="title__main-action">Узнать больше</div>
+<section id="effective" class="effective">
+    <div class="effective__main">
+        <div class="effective__title">Бактерии, которые дойдут до цели</div>
+        <div class="effective__description">До 60% клеток иммунитета находится
+            в кишечнике. Эффективность каждого
+            пробиотика зависит от кол-ва
+            доставленных в кишечник бактерий
         </div>
-        <div class="flex__self-start probiotic-group"></div>
-        <div class="w-100 flex flex__justify-center Lab2Pro">Lab2Pro</div>
-    </section>
-
-
-</main>
-
+        <div class="effective__action">Узнать больше</div>
+    </div>
+    <div class="effective__img-box">
+        <img src="<%=require('../../resources/images/probiotic-group-main.png').default%>"/>
+    </div>
+</section>
+<section class="Lab2Pro">Lab2Pro
+    <svg>
+        <use href="#Arrow-1"></use>
+    </svg>
+</section>
 
 <!--ЖИЗНЕСПОСОБНОСТЬ-->
 <section id="effective1" class="viability">
@@ -50,9 +52,12 @@
     </div>
     <div class="viability__details">
         <div class="viability__details--img-box">
-            <img class="viability__details--img-iPhone" src="<%=require('../../resources/images/home__viability--iPhone.png').default%>"/>
-            <img class="viability__details--img-iPad" src="<%=require('../../resources/images/home__viability--iPad.png').default%>"/>
-            <img class="viability__details--img-main" src="<%=require('../../resources/images/home__viability.png').default%>"/>
+            <img class="viability__details--img-iPhone"
+                 src="<%=require('../../resources/images/home__viability--iPhone.png').default%>"/>
+            <img class="viability__details--img-iPad"
+                 src="<%=require('../../resources/images/home__viability--iPad.png').default%>"/>
+            <img class="viability__details--img-main"
+                 src="<%=require('../../resources/images/home__viability.png').default%>"/>
         </div>
         <div class="viability__details--content-box">
             <div class="viability__details--item">
@@ -99,7 +104,6 @@
         </div>
     </div>
 </section>
-
 
 <!--Почему важно двойное покрытие?-->
 <section id="double-cover" class="double-cover">

@@ -618,7 +618,7 @@
 }
 
 .reviews {
-  @include section-margin($MacBook: false);
+  @include section-margin;
   margin-top: rem(72) !important;
   
   &__title {
