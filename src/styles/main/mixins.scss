@@ -151,6 +151,8 @@
     color: var(--Color-Light--100);
   } @else if ($color == 'black') {
     color: var(--Color-Black--100);
+  } @else if ($color == 'title') {
+    color: var(--Color-Lab2Pro);
   }
   
   @if ($weight == 'medium') {
@@ -188,56 +190,43 @@
 
 @mixin description {
   line-height: rem(25);
-  @include text($size: 13, $color: 'grey', $weight: 'light');
+  @include text(13, false, 'grey', 'light');
   @include MacBook {
-    @include text($size: 15, $color: 'grey', $weight: 'light');
+    @include text(15, false, 'grey', 'light');
     line-height: rem(30);
   }
   @include Main {
-    @include text($size: 17, $color: 'grey', $weight: 'light');
+    @include text(17, false, 'grey', 'light');
     line-height: rem(32);
   }
 }
 
 @mixin headerUpperCase {
-  @include text($size: 25, $color: 'black', $weight: 'medium', $transform: uppercase);
+  @include text(25, uppercase, 'black', 'medium');
   line-height: rem(40);
   
   @include iPadProp11 {
-    @include text($size: 30, $color: 'black', $weight: 'medium', $transform: uppercase);
+    @include text(30, uppercase, 'black', 'medium');
   }
   
   @include MacBook {
-    @include text($size: 45, $color: 'black', $weight: 'medium', $transform: uppercase);
+    @include text(45, uppercase, 'black', 'medium');
     line-height: rem(65);
   }
 }
 
-@mixin section-margin($iPhone8: true, $iPadProp11: true, $MacBook: true, $Main: true) {
-  margin: rem(150) rem(30) 0 rem(30);
+@mixin section-margin {
+  margin: $sectionMarginTop rem(30) 0 rem(30);
   
-  @if $iPhone8 {
-    @include iphone {
-      margin-top: rem(200);
-    }
-  }
-  @if $iPadProp11 {
     @include iPadProp11 {
       margin-left: rem(76);
       margin-right: rem(76);
     }
-  }
-  @if $MacBook {
-    @include MacBook {
-      margin-top: rem(200);
-    }
-  }
-  @if $Main {
+  
     @include Main {
       margin-left: rem(108);
       margin-right: rem(108);
     }
-  }
 }
 
 @mixin tabHeader {
