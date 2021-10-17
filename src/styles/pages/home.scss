@@ -123,16 +123,32 @@
   }
 }
 
+//ЖИЗНЕСПОСОБНОСТЬ
 .viability {
-  @include padding-iPadProp11('padding');
+  @include section-margin($MacBook: false);
   
-  @media (min-width: $break-MacBook) {
-    @include padding-MacBook('padding');
-    height: rem(480);
+  &__title {
+    @include headerUpperCase;
+    @include iPadProp11 {
+      text-align: center;
+    }
   }
-  @media (min-width: $break-Main) {
-    @include padding-Main('padding');
-    height: rem(600);
+  
+  &__description {
+    @include text($size: 13, $color: 'grey');
+    line-height: rem(25);
+    
+    @include iPadProp11 {
+      @include text($size: 15, $color: 'grey');
+      line-height: rem(30);
+      text-align: center;
+      padding: 0 10%;
+    }
+    @include MacBook {
+      @include text($size: 17, $color: 'grey');
+      line-height: rem(35);
+      padding: 0 20%;
+    }
   }
   
   &--number {
@@ -147,124 +163,98 @@
     }
   }
   
-  &__title {
-    @include section-title;
-  }
-  
   &__details {
-    padding-top: rem(15);
-    @include flex();
-    justify-content: space-between;
-    position: relative;
-    align-items: baseline;
+    @include flex($align-items: center, $direction: column);
+    margin-top: rem(15);
     
-    @media (max-width: $break-iPhone8) {
-      flex-direction: column;
-    }
-    @media (min-width: $break-iPadProp11) {
-      height: rem(250);
-    }
-    @media (min-width: $break-MacBook) {
-      height: rem(353);
-    }
-    @media (min-width: $break-Main) {
-      height: rem(442);
-    }
-    
-    &-title {
-      font-weight: var(--FontWeight-Medium);
-      font-size: rem(13);
-      text-transform: uppercase;
+    &--img-box {
+      @include flex($justify: center);
+      padding: 0 5%;
+      max-width: rem(300);
       
-      @media (min-width: $break-MacBook) {
-        font-size: rem(15);
-      }
-      @media (min-width: $break-Main) {
-        font-size: rem(17);
-      }
-    }
-    
-    &-description {
-      color: var(--Color-Text-Green);
-      font-size: rem(11);
-      padding-top: rem(3);
-      padding-bottom: rem(10);
-      
-      @media (min-width: $break-MacBook) {
-        font-size: rem(13);
-      }
-      @media (min-width: $break-Main) {
-        font-size: rem(15);
-      }
-    }
-    
-    &-list {
-      @include list
-    }
-    
-    &-img-box {
-      @media (max-width: $break-iPhone8) {
-        order: 0;
-        position: relative;
-      }
-    }
-    
-    &-img {
-      background: url("../../resources/images/viability-probiotic-v2.png") no-repeat center/contain;
-      width: rem(236);
-      height: rem(182);
-      
-      @media (max-width: $break-iPhone8) {
-        background: url("../../resources/images/viability-probiotic-min.png") no-repeat center/contain;
-        width: rem(271);
-        height: rem(182);
-      }
-      @media (min-width: $break-iPadProp11) {
-        width: rem(255);
-        height: rem(260);
-      }
-      @media (min-width: $break-MacBook) {
-        width: rem(461);
-        height: rem(353);
-      }
-      @media (min-width: $break-Main) {
-        width: rem(577);
-        height: rem(442);
+      @include iPadProp11 {
+        max-width: fit-content;
       }
       
-      &-min {
+      & img {
+        width: 100%;
+      }
+    }
+    
+    &--img-iPhone {
+      display: flex;
+      @include iPadProp11 {
         display: none;
-        @media (max-width: $break-iPhone8) {
-          background: url("../../resources/images/viability-probiotic-min.png") no-repeat center/contain;
-          display: block;
-          width: rem(271);
-          height: rem(182);
-        }
       }
     }
     
-    &-item {
-      padding-top: 10%;
-    }
-    
-    &-first {
-      @media (max-width: $break-iPhone8) {
-        order: 1;
+    &--img-iPad {
+      display: none;
+      @include iPadProp11 {
+        display: flex;
+      }
+      @include MacBook {
+        display: none;
       }
     }
     
-    &-second {
-      @media (max-width: $break-iPhone8) {
-        order: 2;
+    &--img-main {
+      display: none;
+      @include MacBook {
+        display: flex;
       }
     }
     
-    &-third {
-      align-self: flex-end;
-      margin-right: 20%;
-      @media (max-width: $break-iPhone8) {
-        order: 3;
-        align-self: flex-start;
+    
+    &--content-box {
+      @include flex($direction: column);
+      width: 100%;
+      
+      @include iphone{
+        @include flex(wrap, row);
+  
+      }
+      
+      @include iPadProp11{
+        display: none;
+      }
+    }
+    
+    &--item {
+      @include flex($direction: column);
+      margin-top: rem(26);
+      flex: 1 1 33%;
+    }
+    
+    &--header {
+      @include flex();
+    }
+    
+    &--number {
+      @include text(35)
+    }
+    
+    &--row {
+      @include flex($direction: column,$justify: space-around);
+      margin-left: rem(8);
+    }
+    
+    &--title {
+      @include text(13, uppercase, 'black')
+    }
+    
+    &--description {
+      @include text(11, false, 'green');
+    }
+    
+    
+    &--list {
+      @include list;
+      margin-top: rem(13);
+      padding-left: rem(20);
+      
+      & ul li {
+        line-height: rem(20);
       }
     }
   }
@@ -278,7 +268,7 @@
   
   &__title {
     @include headerUpperCase;
-    @include iPadProp11{
+    @include iPadProp11 {
       text-align: center;
     }
   }
