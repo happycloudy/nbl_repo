@@ -270,43 +270,142 @@
   }
 }
 
+
+//Почему важно двойное покрытие?
 .double-cover {
-  //height: rem(900)!important;
-  
-  @include padding-iPadProp11('padding');
-  
-  @media (min-width: $break-MacBook) {
-    @include padding-MacBook('padding');
-    //height: rem(480);
-  }
-  @media (min-width: $break-Main) {
-    @include padding-Main('padding');
-    //height: rem(600);
-  }
+  $this: &;
+  @include section-margin($MacBook: false);
   
   &__title {
-    @include section-title;
+    @include headerUpperCase;
+    @include iPadProp11{
+      text-align: center;
+    }
   }
   
-  &__details {
-    &-tab {
-      display: none;
-      @media (min-width: $break-iPhone8) {
-        display: block;
-      }
+  &__description {
+    @include text($size: 13, $color: 'grey');
+    line-height: rem(25);
+    
+    @include iPadProp11 {
+      @include text($size: 15, $color: 'grey');
+      line-height: rem(30);
+      text-align: center;
+      padding: 0 10%;
+    }
+    @include MacBook {
+      @include text($size: 17, $color: 'grey');
+      line-height: rem(35);
+      padding: 0 20%;
     }
   }
   
   &__details {
-    &-accordion {
+    @include flex($direction: column);
+    
+    &--tab {
       display: none;
-      @media (max-width: $break-iPhone8) {
+      @include iphone {
         display: block;
+      }
+    }
+    
+    &--accordion {
+      @include flex($direction: column);
+      @include iphone {
+        display: none;
+      }
+      
+      & .new-accordion__button {
+        @include text(35);
+        display: flex;
+        width: 100%;
+        opacity: .15;
+        padding-left: 0;
+        padding-right: 0;
+        border-top: $border;
+        border-bottom: 0;
+        
+        &--active {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &--links {
+      @include flex($direction: row, $justify: space-between, $align-items: center);
+      
+      & .tab-js__link {
+        @include text(35);
+        width: auto;
+        max-width: fit-content;
+        opacity: .15;
+        
+        @include iPadProp11 {
+          @include text(45);
+        }
+        
+        @include MacBook {
+          @include text(55);
+        }
+        @include MacBook {
+          @include text(70);
+        }
+        
+        &--active {
+          opacity: 1;
+        }
+      }
+      
+      & svg {
+        height: rem(10);
+        flex-grow: 1;
+        margin: 0 rem(20);
+      }
+    }
+    
+    &--content {
+      align-items: center;
+      justify-content: space-around;
+      
+      & #{$this}__content {
+        &--img {
+          @include flex();
+          width: 100%;
+          
+          @include iphone {
+            width: 65%;
+          }
+          
+          & img {
+            width: 100%;
+          }
+        }
+        
+        &--description {
+          @include flex($align-items: center);
+          @include text(11, uppercase, 'grey');
+          
+          line-height: rem(18);
+          width: 100%;
+          
+          @include iphone {
+            @include text(11, uppercase, 'grey');
+            border-left: $border;
+            padding-left: rem(30);
+            line-height: rem(20);
+            width: 20%;
+          }
+          
+          @include MacBook {
+            @include text(13, uppercase, 'grey');
+            line-height: rem(30);
+          }
+        }
       }
     }
   }
 }
-
 
 //Выживаемость бактерий
 .bacterial-survival {
@@ -559,7 +658,6 @@
       @include text($size: 13, $color: 'grey');
       line-height: rem(25);
       
-      
       @include iPadProp11 {
         @include text($size: 15, $color: 'grey');
         line-height: rem(30);
@@ -570,9 +668,7 @@
         line-height: rem(35);
       }
     }
-    
   }
-  
 }
 
 //АТП
