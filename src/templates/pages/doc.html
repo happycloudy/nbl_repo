@@ -37,61 +37,140 @@
         </div>
 
         <div class="documents__main">
-            <div class="documents__main_description">
-                <div class="documents__main_description_header">
-                    Запатентованная технология нанесения покрытий
+            <div class="tab-js nbl_atp__container--tab">
+                <div class="tab-js__links-container">
+                    <button class="tab-js__link" data-target="London" data-active="true">
+                        <svg class="tab-js__link--arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                        <img src="<%=require('../../resources/images/doc1.png').default%>"/>
+                    </button>
+                    <button class="tab-js__link" data-target="Paris" data-active="false">
+                        <svg class="tab-js__link--arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                        <img src="<%=require('../../resources/images/doc2.png').default%>"/>
+                    </button>
+                    <button class="tab-js__link" data-target="Tokyo" data-active="false">
+                        <svg class="tab-js__link--arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                        <img src="<%=require('../../resources/images/doc3.png').default%>"/>
+                    </button>
+                    <button class="tab-js__link" data-target="Moscow" data-active="false">
+                        <svg class="tab-js__link--arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                        <img src="<%=require('../../resources/images/doc4.png').default%>"/>
+                    </button>
                 </div>
-                <div class="documents__main_description_text">
-                    Наша ультрасовременная технология двойного покрытия запатентована во всем мире, включая Южную Корею, Соединенные Штаты, Европу, Китай и Японию.
-                </div>
-                <div class="documents__main_description_text">
-                    Различные глобальные сертификаты позволяют нам экспортировать продукцию более чем в сорок стран.
+                <div class="tab-js__content-container nbl_atp__tab-content">
+                    <div id="London" class="tab-js__content-item nbl_atp__tab-content--item tab-js__content-item--active">
+                        <div class="documents__main_description">
+                            <div class="documents__main_description_header">
+                                Запатентованная технология нанесения покрытий1
+                            </div>
+                            <div class="documents__main_description_text">
+                                Наша ультрасовременная технология двойного покрытия запатентована во всем мире, включая Южную Корею, Соединенные Штаты, Европу, Китай и Японию.
+                            </div>
+                            <div class="documents__main_description_text">
+                                Различные глобальные сертификаты позволяют нам экспортировать продукцию более чем в сорок стран.
+                            </div>
+                        </div>
+                        <div class="nbl_atp__img-burger">
+                            <img
+                                    class="nbl_atp__img-burger--img-front"
+                                    src="<%=require('../../resources/images/doc.png').default%>"
+                                    alt="nbl_atp__image_big"
+                            />
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                            <div class="documents__dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Paris" class="tab-js__content-item nbl_atp__tab-content--item">
+                        <div class="documents__main_description">
+                            <div class="documents__main_description_header">
+                                Запатентованная технология нанесения покрытий2
+                            </div>
+                            <div class="documents__main_description_text">
+                                Наша ультрасовременная технология двойного покрытия запатентована во всем мире, включая Южную Корею, Соединенные Штаты, Европу, Китай и Японию.
+                            </div>
+                            <div class="documents__main_description_text">
+                                Различные глобальные сертификаты позволяют нам экспортировать продукцию более чем в сорок стран.
+                            </div>
+                        </div>
+                        <div class="nbl_atp__img-burger">
+                            <img
+                                    class="nbl_atp__img-burger--img-front"
+                                    src="<%=require('../../resources/images/doc.png').default%>"
+                                    alt="nbl_atp__image_big"
+                            />
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                        </div>
+                    </div>
+
+                    <div id="Tokyo" class="tab-js__content-item nbl_atp__tab-content--item">
+                        <div class="documents__main_description">
+                            <div class="documents__main_description_header">
+                                Запатентованная технология нанесения покрытий3
+                            </div>
+                            <div class="documents__main_description_text">
+                                Наша ультрасовременная технология двойного покрытия запатентована во всем мире, включая Южную Корею, Соединенные Штаты, Европу, Китай и Японию.
+                            </div>
+                            <div class="documents__main_description_text">
+                                Различные глобальные сертификаты позволяют нам экспортировать продукцию более чем в сорок стран.
+                            </div>
+                        </div>
+                        <div class="nbl_atp__img-burger">
+                            <img
+                                    class="nbl_atp__img-burger--img-front"
+                                    src="<%=require('../../resources/images/doc.png').default%>"
+                                    alt="nbl_atp__image_big"
+                            />
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                            <div class="nbl_atp__img-burger--img-back"></div
+                        </div>
+                    </div>
+
+                    <div id="Moscow" class="tab-js__content-item nbl_atp__tab-content--item">
+                        <div class="documents__main_description">
+                            <div class="documents__main_description_header">
+                                Запатентованная технология нанесения покрытий3
+                            </div>
+                            <div class="documents__main_description_text">
+                                Наша ультрасовременная технология двойного покрытия запатентована во всем мире, включая Южную Корею, Соединенные Штаты, Европу, Китай и Японию.
+                            </div>
+                            <div class="documents__main_description_text">
+                                Различные глобальные сертификаты позволяют нам экспортировать продукцию более чем в сорок стран.
+                            </div>
+                        </div>
+                        <div class="nbl_atp__img-burger">
+                            <img
+                                    class="nbl_atp__img-burger--img-front"
+                                    src="<%=require('../../resources/images/doc.png').default%>"
+                                    alt="nbl_atp__image_big"
+                            />
+                            <div class="nbl_atp__img-burger--img-back"></div>
+                            <div class="nbl_atp__img-burger--img-back"></div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="documents__main_image_big">
-                <img
-                        src="./src/resources/images/doc.png"
-                        alt="doc"
-                        class="documents__main_image_big_img"
-                />
-
-                <div class="documents__main_image_big_bg"></div>
-                <div class="documents__main_image_big_bg"></div>
-                <div class="documents__main_image_big_bg"></div>
-                <div class="documents__main_image_big_arrow">
-                    <svg>
-                        <use href="#Arrow-2"/>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="documents__main_images">
-                <div class="documents__main_images_image">
-                    <img
-                            src="./src/resources/images/doc1.png"
-                            alt="doc"
-                    />
-                </div>
-                <div class="documents__main_images_image">
-                    <img
-                            src="./src/resources/images/doc2.png"
-                            alt="doc"
-                    />
-                </div>
-                <div class="documents__main_images_image">
-                    <img
-                            src="./src/resources/images/doc3.png"
-                            alt="doc"
-                    />
-                </div>
-                <div class="documents__main_images_image">
-                    <img
-                            src="./src/resources/images/doc4.png"
-                            alt="doc"
-                    />
-                </div>
-            </div>
+        <div class="documents__nlb_img-wrap">
+            <img
+                    src="<%=require('../../resources/images/nlb.png').default%>"
+                    alt="NLB"
+            />
         </div>
     </section>
 </main>
