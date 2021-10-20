@@ -5,6 +5,7 @@
 
 .questions {
   @include section-margin;
+  margin-top: rem(200);
   
   &__title {
     @include headerUpperCase
@@ -12,31 +13,32 @@
   
   &__container {
     @include flex($wrap: wrap, $justify: space-between);
-    margin-top: rem(10);
+    margin-top: rem(38);
   }
 }
 
-.a-btn__text {
-  @include text(27, uppercase, 'black');
+.new-accordion__button {
+  @include text(27, uppercase, 'black', 'light');
+  padding-left: 0;
+  line-height: rem(43);
+  text-align: start;
+  border-bottom: 0;
+  
+  &:first-child{
+    border-top: 0;
+  }
+  &--active{
+    @include text(27, uppercase, 'black');
+  }
 }
 
-.a-panel {
+.new-accordion__panel {
   @include text($size: 17, $color: 'grey');
   border-top: $border;
   line-height: rem(35);
-  padding: 0;
-}
-
-.accordion .a-container .a-btn__text {
-  @include text(27, uppercase, 'black', 'light');
-  opacity: 1;
-}
-
-.accordion .a-container.active .a-btn__text {
-  @include text(27, uppercase, 'black');
-}
-
-.accordion .a-container.active .a-panel {
-  padding-bottom: rem(20);
-  padding-top: rem(20);
+  
+  &--active{
+    padding: rem(28) 0;
+    border-bottom: $border;
+  }
 }

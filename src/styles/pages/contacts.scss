@@ -5,7 +5,7 @@
 
 .contacts {
   @include section-margin;
-  margin-bottom: rem(100);
+  margin-top: rem(200);
   
   &__title {
     @include headerUpperCase;
@@ -32,6 +32,7 @@
 
 .сontact-details {
   @include flex($direction: column);
+  margin-top: rem(100);
   
   @include iPadProp11 {
     @include flex(wrap, row);
@@ -72,43 +73,37 @@
   }
 }
 
-.accordion .a-container .a-btn__text {
-  opacity: 1 !important;
-  font-weight: var(--FontWeight-Light) !important;
-  color: var(--Color-Black--100);
-}
 
-.accordion .a-container {
-  &:first-child {
-    border-top: $border;
+.new-accordion__button {
+  padding-left: 0!important;
+  line-height: rem(43)!important;
+  text-align: start;
+  border-bottom: 0!important;
+  color: var(--Color-Black--100)!important;
+  font-weight: var(--FontWeight-Light)!important;
+  font-size: rem(25)!important;
+  
+  &--active {
+    font-weight: var(--FontWeight-Medium)!important;
   }
 }
 
-.accordion .a-container.active .a-btn__text {
-  font-weight: var(--FontWeight-Medium) !important;
-}
-
-.a-panel {
-  @include list($Main: 17);
-  padding-bottom: rem(10);
-  border-bottom: 0 !important;
-  line-height: rem(35) !important;
+.new-accordion__panel {
+  @include list;
+  @include text($size: 15, $color: 'grey');
+  border-top: $border;
+  line-height: rem(35);
   
-}
-
-.a-btn__text {
-  @include text($transform: uppercase);
-  
-  @include iPadProp11 {
-    @include text(17, uppercase)
+  & ul li {
+    line-height: rem(35);
+    margin-left: rem(15);
   }
   
-  @include MacBook {
-    @include text(21, uppercase)
-  }
-  
-  @include Main {
-    @include text(25, uppercase)
+  &--active {
+    padding-bottom: rem(28);
+    padding-left: 0;
+    border-bottom: $border;
+    border-top: 0!important;
   }
 }
 

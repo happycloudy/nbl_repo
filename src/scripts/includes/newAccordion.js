@@ -12,6 +12,7 @@ export const newAcc = () => {
         acc[i].classList.remove('new-accordion__button--active');
         const panel1 = acc[i].nextElementSibling;
         panel1.style.maxHeight = null;
+        panel1.classList.remove('new-accordion__panel--active')
         this.classList.add("new-accordion__button--active");
       }
       
@@ -28,9 +29,11 @@ export const newAcc = () => {
       const panel = this.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
+        panel.classList.remove('new-accordion__panel--active')
       }
       else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = "initial";
+        panel.classList.add('new-accordion__panel--active')
       }
     });
   }

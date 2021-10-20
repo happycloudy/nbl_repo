@@ -5,7 +5,7 @@
 
 .dealer {
   @include section-margin;
-  margin-bottom: rem(216);
+  margin-top: rem(200);
   
   &__title {
     @include headerUpperCase
@@ -15,19 +15,21 @@
     line-height: rem(35);
     margin-top: rem(47);
   }
-  &__description{
+  
+  &__description {
     @include text($size: 17, $color: 'grey', $weight: 'light');
     
   }
+  
   &__form {
     width: 100%;
-    padding-top: rem(62);
+    margin-top: rem(62);
     
     @include iPadProp11 {
       width: 70%;
     }
     
-    &--title{
+    &--title {
       @include text($size: 27, $transform: uppercase, $color: 'black');
     }
   }
