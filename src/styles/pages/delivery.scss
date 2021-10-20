@@ -52,36 +52,61 @@
       margin-top: rem(80);
     }
   }
-}
-
-.mytabs {
-  display: none;
   
-  @include iPadProp11 {
-    @include flex();
+  &__tab {
+    flex-direction: column;
+    display: none;
+    
+    @include iPadProp11 {
+      @include flex();
+    }
+  }
+  
+  &__links {
+    @include flex($direction: row, $align-items: center);
+    border-bottom: $border;
   }
 }
 
-.tab {
-  @include list($Main: 17);
-  border-bottom: 0 !important;
-  padding-top: rem(42) !important;
-  line-height: rem(35) !important;
-}
-
-.tab ul {
-  margin-left: rem(17) !important;
+.tab-js__link {
+  @include text(25, uppercase, 'grey', 'light');
+  margin-right: rem(20);
+  margin-bottom: rem(10);
+  width: auto;
+  max-width: fit-content;
   
-  li {
-    line-height: rem(35) !important;
+  &--active {
+    @include text(25, uppercase, 'green');
+    @include flex($justify: center);
+    position: relative;
+    
+    &:after {
+      content: '';
+      background-color: var(--Color-Text-Green);
+      border-radius: 50%;
+      position: absolute;
+      bottom: -13px;
+      width: rem(5);
+      height: rem(5);
+    }
   }
 }
 
-.mytabs label {
-  padding-top: rem(15) !important;
-  padding-bottom: rem(15) !important;
+.tab-js__content-item--active {
+  @include flex($direction: column);
+  @include list;
+  line-height: rem(35);
+  
+  & ul li {
+    line-height: rem(35);
+    margin-left: rem(15);
+  }
+  
 }
 
+.tab-js__content-item--active{
+  padding-top: rem(20);
+}
 
 .accordion {
   @include flex();
@@ -91,34 +116,35 @@
   }
 }
 
-.accordion .a-container .a-btn__text {
-  opacity: 1 !important;
-  font-weight: var(--FontWeight-Light) !important;
-}
-
-.accordion .a-container.active .a-btn__text {
-  font-weight: var(--FontWeight-Medium) !important;
-}
-
-.a-panel {
-  @include list($Main: 17);
-  padding-bottom: rem(10);
-  border-bottom: 0 !important;
-  line-height: rem(35) !important;
-}
-
-.a-btn__text {
-  @include text($transform: uppercase);
+.new-accordion__button {
+  @include text(15, uppercase, 'grey', 'light');
+  padding-left: 0;
+  line-height: rem(43);
+  text-align: start;
+  border-bottom: 0;
   
-  @include iPadProp11 {
-    @include text(17, uppercase)
+  &:first-child {
+    border-top: 0;
   }
   
-  @include MacBook {
-    @include text(21, uppercase)
+  &--active {
+    @include text(15, uppercase, 'green');
+  }
+}
+
+.new-accordion__panel {
+  @include list;
+  @include text($size: 15, $color: 'grey');
+  border-top: $border;
+  line-height: rem(35);
+  
+  & ul li {
+    line-height: rem(35);
+    margin-left: rem(15);
   }
   
-  @include Main {
-    @include text(25, uppercase)
+  &--active {
+    padding: rem(28) 0;
+    border-bottom: $border;
   }
 }

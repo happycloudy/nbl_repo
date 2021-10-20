@@ -7,10 +7,9 @@
 .effective {
   @include section-margin;
   @include flex($direction: column);
-  margin-top: rem(230);
   
   @include iPadProp11{
-    @include flex($direction: row)
+    @include flex($direction: row);
   }
   
   
@@ -119,6 +118,7 @@
 //ЖИЗНЕСПОСОБНОСТЬ
 .viability {
   @include section-margin;
+  margin-top: rem(80)!important;
   
   &__title {
     @include headerUpperCase;
@@ -787,22 +787,22 @@
       width: 95%;
       z-index: 3;
     }
-    
-    &:before{
+  
+    &:before {
       content: 'nbl';
       display: none;
       position: absolute;
-      
-      @include iPadProp11{
+    
+      @include iPadProp11 {
         @include text(150, uppercase, 'title');
         display: flex;
         bottom: -25%;
         right: -15%;
       }
-      @include MacBook{
+      @include MacBook {
         @include text(210, uppercase, 'title');
       }
-      @include Main{
+      @include Main {
         @include text(320, uppercase, 'title');
         bottom: -40%;
       }

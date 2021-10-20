@@ -216,17 +216,20 @@
 }
 
 @mixin section-margin {
-  margin: $sectionMarginTop rem(30) 0 rem(30);
+  margin-top: rem(150);
+  margin-left: rem(30);
+  margin-right: rem(30);
   
-    @include iPadProp11 {
-      margin-left: rem(76);
-      margin-right: rem(76);
-    }
+  @include iPadProp11 {
+    margin-top: rem(200);
+    margin-left: rem(76);
+    margin-right: rem(76);
+  }
   
-    @include Main {
-      margin-left: rem(108);
-      margin-right: rem(108);
-    }
+  @include Main {
+    margin-left: rem(108);
+    margin-right: rem(108);
+  }
 }
 
 @mixin tabHeader {
@@ -236,11 +239,11 @@
   justify-content: center;
   position: relative;
   
-  @include iPadProp11{
+  @include iPadProp11 {
     @include text(13, uppercase, 'grey');
     line-height: rem(21);
   }
-  @include MacBook{
+  @include MacBook {
     @include text(15, uppercase, 'grey');
     line-height: rem(21);
   }

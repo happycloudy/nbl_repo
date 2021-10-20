@@ -8,18 +8,7 @@
     <title>about-us</title>
 </head>
 <body>
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
-        </div>
-        <div class="bred__item-text">О нас</div>
-    </div>
-</header>
+<%= _.template(require('../includes/header.html').default)() %>
 
 
 <section class="about-us">

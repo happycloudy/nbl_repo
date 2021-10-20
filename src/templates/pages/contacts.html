@@ -10,18 +10,7 @@
 <body>
 
 
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
-        </div>
-        <div class="bred__item-text">О нас</div>
-    </div>
-</header>
+<%= _.template(require('../includes/header.html').default)() %>
 
 
 <section class="contacts">
@@ -51,52 +40,33 @@
 </section>
 
 <section class="map">
-    <img
-            class="map__img"
-            src="./src/resources/images/map.png"
-            alt="map"
-    />
+    <img class="map__img" src="<%=require('../../resources/images/map.png').default%>" alt="map"/>
+
 </section>
 
 <section class="contacts">
     <div class="contacts__form--title">Список дилеров в России</div>
     <div class="contacts__container">
         <div class="accordion">
-            <div class="a-container active">
-                <p class="a-btn">
-                    <span class="a-btn__text">Чувашия</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
-                    ...
-                </div>
+            <button class="new-accordion__button">Татарстан</button>
+            <div class="new-accordion__panel">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolore ea incidunt itaque, nam quam sit.
+                Adipisci dicta dignissimos ea odio repellendus. Ab aspernatur at, culpa eos fuga tempora temporibus.
             </div>
-            <div class="a-container">
-                <p class="a-btn">
-                    <span class="a-btn__text">Татарстан</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
-                    ...
-                </div>
+
+            <button class="new-accordion__button">Чувашия</button>
+            <div class="new-accordion__panel">
+                ...
             </div>
-            <div class="a-container">
-                <p class="a-btn">
-                    <span class="a-btn__text">Нижний Новгород</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
-                    ...
-                </div>
+
+            <button class="new-accordion__button">Нижний Новгород</button>
+            <div class="new-accordion__panel">
+...
             </div>
-            <div class="a-container">
-                <p class="a-btn">
-                    <span class="a-btn__text">Ульяновск</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
-                    ...
-                </div>
+
+            <button class="new-accordion__button">Ульяновск</button>
+            <div class="new-accordion__panel">
+                ...
             </div>
         </div>
     </div>

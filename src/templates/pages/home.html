@@ -9,20 +9,9 @@
 </head>
 <body>
 
+<%= _.template(require('../includes/header.html').default)() %>
 
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
-        </div>
-        <div class="bred__item-text">О нас</div>
-    </div>
-</header>
-
+<img class="circle" src="<%=require('../../resources/images/circle.png').default%>"/>
 
 <section id="effective" class="effective">
     <div class="effective__main">

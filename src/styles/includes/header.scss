@@ -82,7 +82,12 @@ $headerHeightM: 48 + $headerPaddingTopM;
 
 .menu {
   @include flex($justify: space-between, $wrap: wrap);
+  border-bottom: $border;
   width: 100%;
+  
+  &:hover{
+    border-bottom: 0;
+  }
 }
 
 .menu-list {
@@ -148,7 +153,6 @@ $headerHeightM: 48 + $headerPaddingTopM;
   @include flex($wrap: wrap, $justify: center, $align-items: center);
   border-bottom: $border;
   color: var(--Color-Black--100);
-  background: var(--Color-Light--100);
   display: none;
   left: 0;
   width: 100%;
