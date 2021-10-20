@@ -485,16 +485,16 @@ header {
   
   &__img-box {
     @include flex();
-    width: rem(103);
-    height: rem(132);
     
     @include iPadProp11 {
-      width: 100%;
       height: rem(245);
     }
     @include Main {
-      width: 100%;
       height: rem(258);
+    }
+    
+    & img{
+      height: 100%;
     }
   }
   

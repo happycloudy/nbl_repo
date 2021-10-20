@@ -21,25 +21,12 @@
     </div>
 </header>
 
-<svg class="info-iPad__box-img" width="382" height="406" viewBox="0 0 382 406">
-    <use href="#probiotic-gold"></use>
-</svg>
-<svg class="info-MacBook__box-img" width="545" height="498" viewBox="0 0 545 498">
-    <use href="#probiotic-gold"></use>
-</svg>
-<svg class="info-Main__box-img" width="674" height="574" viewBox="0 0 674 574">
-    <use href="#probiotic-gold"></use>
-</svg>
-<svg class="info-Desktop__box-img" width="701" height="590" viewBox="0 0 674 574">
-    <use href="#probiotic-gold"></use>
-</svg>
+
 <section class="products-detail">
     <div class="products-detail__left">
-        <div class="info__first">
+        <div id="info__first" class="info__first">
             <div class="info-iPhone8__box-img">
-                <svg>
-                    <use href="#probiotic-gold"></use>
-                </svg>
+                <img src="<%=require('../../resources/images/product-detail__main-img.png').default%>"/>
             </div>
             <div class="info__container-second">
                 <div class="info-iPhone8__title">
@@ -61,16 +48,30 @@
                     </div>
                 </div>
                 <div class="info__action-buy">Купить</div>
-            </div>
-            <div class="info__first__box-save">
-                <svg class="info-iPhone8__box-save-icon">
-                    <use href="#paper"></use>
-                </svg>
-                <div class="info-iPhone8__box-save-box">
-                    <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
-                    <svg class="info-iPhone8__box-save-arrow">
-                        <use href="#Arrow-1"></use>
+                <div class="products-detail__right--box-save-iphone">
+                    <svg class="info-iPhone8__box-save-icon">
+                        <use href="#paper"></use>
                     </svg>
+                    <div class="info-iPhone8__box-save-box">
+                        <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
+                        <svg class="info-iPhone8__box-save-arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="products-detail__right--any-1">
+                <img src="<%=require('../../resources/images/product-detail__main-img.png').default%>"/>
+                <div class="products-detail__right--box-save">
+                    <svg class="info-iPhone8__box-save-icon">
+                        <use href="#paper"></use>
+                    </svg>
+                    <div class="info-iPhone8__box-save-box">
+                        <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
+                        <svg class="info-iPhone8__box-save-arrow">
+                            <use href="#Arrow-1"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -252,17 +253,6 @@
             </div>
         </div>
         <div class="info__main--center-container">
-            <div class="info-desktop__box-save">
-                <svg class="info-iPhone8__box-save-icon">
-                    <use href="#paper"></use>
-                </svg>
-                <div class="info-iPhone8__box-save-box">
-                    <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
-                    <svg class="info-iPhone8__box-save-arrow">
-                        <use href="#Arrow-1"></use>
-                    </svg>
-                </div>
-            </div>
             <div class="info__main--tab double-cover__details-tab">
                 <div class="mytabs">
                     <input type="radio" id="tabfree" name="mytabs" checked="checked">
@@ -468,24 +458,27 @@
         </div>
     </div>
     <div class="products-detail__right">
-        <div class="products-detail__right__box-save">
-            <svg class="info-iPhone8__box-save-icon">
-                <use href="#paper"></use>
-            </svg>
-            <div class="info-iPhone8__box-save-box">
-                <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
-                <svg class="info-iPhone8__box-save-arrow">
-                    <use href="#Arrow-1"></use>
+
+        <div id="products-detail__right--box-save" class="products-detail__right--any">
+            <img src="<%=require('../../resources/images/product-detail__main-img.png').default%>"/>
+            <div class="products-detail__right--box-save">
+                <svg class="info-iPhone8__box-save-icon">
+                    <use href="#paper"></use>
                 </svg>
+                <div class="info-iPhone8__box-save-box">
+                    <div class="info-iPhone8__box-save-text">Скачать брошюру</div>
+                    <svg class="info-iPhone8__box-save-arrow">
+                        <use href="#Arrow-1"></use>
+                    </svg>
+                </div>
             </div>
+
         </div>
         <div class="info__product-line">
             <div class="info__product-line--title">Линейка продуктов</div>
             <div class="product-detail-item">
                 <div class="product-detail-item__img-box">
-                    <svg>
-                        <use href="#d11"></use>
-                    </svg>
+                    <img src="<%=require('../../resources/images/product-detail__item--atp.png').default%>"/>
                 </div>
                 <div class="product-detail-item__container">
                     <div class="product-detail-item__text-box">
@@ -501,9 +494,7 @@
             </div>
             <div class="product-detail-item">
                 <div class="product-detail-item__img-box">
-                    <svg>
-                        <use href="#d11"></use>
-                    </svg>
+                    <img src="<%=require('../../resources/images/product-detail__item--gold.png').default%>"/>
                 </div>
                 <div class="product-detail-item__container">
                     <div class="product-detail-item__text-box">
@@ -519,9 +510,7 @@
             </div>
             <div class="product-detail-item">
                 <div class="product-detail-item__img-box">
-                    <svg>
-                        <use href="#d11"></use>
-                    </svg>
+                    <img src="<%=require('../../resources/images/product-detail__item--ginob.png').default%>"/>
                 </div>
                 <div class="product-detail-item__container">
                     <div class="product-detail-item__text-box">
@@ -539,153 +528,92 @@
     </div>
 
 </section>
+
+<!--Отзывы-->
 <section class="reviews">
     <div class="reviews__title">Отзывы</div>
-    <div class="mytabs reviews__table">
-        <input type="radio" id="s1" name="mytabs1" checked="checked">
-        <label class="reviews__table--label" for="s1">все</label>
-        <div class="tab reviews__table--body">
-            <div class="reviews__table--content">
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-            </div>
-            <div class="reviews__table--fetch-more">Смотреть все</div>
+    <div class="tab-js reviews__container">
+        <div class="tab-js__links-container">
+            <button class="tab-js__link" data-target="all" data-active="true">
+                все
+            </button>
+            <button class="tab-js__link" data-target="instagram" data-active="false">
+                instagram
+            </button>
+            <button class="tab-js__link" data-target="facebook" data-active="false">
+                facebook
+            </button>
+            <button class="tab-js__link" data-target="vk" data-active="false">
+                Вконтакте
+            </button>
+            <button class="tab-js__link" data-target="Whatsupp" data-active="false">
+                Whatsupp
+            </button>
         </div>
-        <input type="radio" id="s2" name="mytabs1" checked="checked">
-        <label for="s2">instagram</label>
-        <div class="tab reviews__table--body">
-            <div class="reviews__table--content">
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
+        <div class="tab-js__content-container">
+            <div id="all" class="tab-js__content-item tab-js__content-item--active">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-            <div class="reviews__table--fetch-more">Смотреть все</div>
-        </div>
 
-        <input type="radio" id="s3" name="mytabs1" checked="checked">
-        <label for="s3">facebook</label>
-        <div class="tab reviews__table--body">
-            <div class="reviews__table--content">
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
+            <div id="instagram" class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-            <div class="reviews__table--fetch-more">Смотреть все</div>
-        </div>
 
-        <input type="radio" id="s4" name="mytabs1" checked="checked">
-        <label for="s4">Вконтакте</label>
-        <div class="tab reviews__table--body">
-            <div class="reviews__table--content">
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
+            <div id="facebook" class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-            <div class="reviews__table--fetch-more">Смотреть все</div>
-        </div>
-
-        <input type="radio" id="s5" name="mytabs1" checked="checked">
-        <label for="s5">Whatsupp</label>
-        <div class="tab reviews__table--body">
-            <div class="reviews__table--content">
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-                <img
-                        class="reviews__table--item"
-                        src="./src/resources/images/probiotic-atp-large.png"
-                        alt="Science"
-                />
-            </div>
-            <div class="reviews__table--fetch-more">Смотреть все</div>
         </div>
     </div>
-
-
 </section>
+
 <section class="questions">
-    <div class="reviews__title">Вопросы и ответы</div>
+    <div class="reviews__title">Вопросы и ответы
+        <svg>
+            <use href="#Arrow-1"></use>
+        </svg>
+    </div>
     <div class="questions__body">
         <div class="questions__item">
             Как часто стоит их употреблять?
@@ -700,7 +628,7 @@
             Как часто стоит их употреблять?
         </div>
     </div>
-    <div class="reviews__table--fetch-more">Смотреть все</div>
+    <div class="reviews__fetch-more">Смотреть все</div>
 </section>
 
 

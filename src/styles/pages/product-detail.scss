@@ -7,6 +7,7 @@
   @include section-margin;
   @include flex($direction: column);
   border-bottom: $border;
+  margin-top: rem(210);
   
   @include MacBook {
     @include flex($direction: row);
@@ -31,38 +32,61 @@
     
     @include iPadProp11 {
       @include flex($direction: row);
-      margin-top: 0;
       padding: rem(68) 0;
     }
     
     @include MacBook {
       @include flex($direction: column, $align-items: center);
       width: 35%;
-      margin-top: 42%;
       padding: 0 0 rem(56) 0;
     }
     @include Main {
       @include flex($direction: column, $align-items: center);
-      margin-top: 50%;
-    }
-    @media (min-width: 1800px) {
-      margin-top: 600px;
     }
     
-    &__box-save {
-      display: none;
+    &--box-save {
+      @include flex($align-items: center);
+      margin-top: rem(70);
       
-      @include MacBook {
-        @include flex;
-        margin-bottom: rem(47);
+      &-iphone {
+        @include flex($align-items: center);
+        padding: rem(30) 0;
+        margin-top: rem(70);
+        border-top: $border;
+        border-bottom: $border;
+        @include iPadProp11 {
+          display: none;
+        }
       }
-      @include Main {
+    }
+    
+    &--any-1 {
+      @include flex($direction: column, $align-items: center);
+      display: none;
+      @include iPadProp11 {
+        display: flex;
+      }
+      @include MacBook {
         display: none;
+      }
+      
+      & img {
+        width: 140%;
+      }
+    }
+    
+    &--any {
+      @include flex($direction: column, $align-items: center);
+      display: none;
+      @include iPadProp11 {
+        display: flex;
+      }
+      
+      & img {
+        width: 133%;
       }
     }
   }
-  
-  
 }
 
 
@@ -184,7 +208,7 @@
   &__product-line {
     @include flex($direction: column);
     width: 100%;
-    padding-top: rem(40);
+    margin-top: rem(100);
     position: relative;
     
     @include iPadProp11 {
@@ -215,14 +239,7 @@
     width: 100%;
     
     @include iPadProp11 {
-      @include flex($direction: row, $align-items: flex-end);
-      margin-bottom: 5%;
-    }
-    @include MacBook {
-      @include flex($direction: row, $align-items: flex-end);
-    }
-    @include Main {
-      margin-bottom: 10%;
+      @include flex($direction: row);
     }
     
     &__box-save {
@@ -443,6 +460,10 @@
       @include iPadProp11 {
         display: none;
       }
+      
+      & img {
+        height: 100%;
+      }
     }
     
     &__title {
@@ -586,107 +607,104 @@
     }
   }
   
-  &-iPadProp11 {
-    &__box-img {
-      position: absolute;
-      display: none;
-      right: 0;
+}
+
+//Отзывы
+.reviews {
+  @include section-margin;
+  margin-top: rem(133) !important;
+  
+  &__container {
+    @include flex($direction: column);
+    
+    &--img-box {
+      @include flex(wrap, $justify: space-between);
+      width: 100%;
+    }
+    
+    &--img-item {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 45%;
+      box-sizing: border-box;
+      padding: rem(15);
+      margin: rem(4.5);
+      background: var(--Color-Light--100);
+      height: rem(200);
       
       @include iPadProp11 {
-        background: url("../../resources/images/probiotic-gold-iPad-gold.png") no-repeat center/cover;
-        display: flex;
-        width: 40%;
-        height: rem(406);
+        width: 30%;
+        flex: 0 1 30%;
+        height: rem(320);
       }
       @include MacBook {
-        height: rem(498);
+        flex: 0 1 24%;
+        width: 24%;
       }
       @include MacBook {
-        height: rem(498);
-      }
-      @include MacBook {
-        height: rem(574);
+        height: rem(400);
       }
       
-      svg {
-        width: 100%;
-        height: 100%;
+      //& img{
+      //  width: 100%;
+      //}
+    }
+    
+    & .tab-js {
+      &__links-container {
+        @include flex($wrap: wrap, $direction: row, $justify: flex-start);
+        @include iPadProp11 {
+          @include flex($wrap: wrap, $direction: row, $justify: center);
+        }
+      }
+      
+      &__link {
+        @include tabHeader;
+        padding: rem(10);
+        margin-top: rem(0);
+        
+        &--active {
+          font-weight: var(--FontWeight-Bold);
+          color: var(--Color-Text-Green);
+        }
+      }
+      
+      &__content-item {
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
-  
-}
-
-.reviews {
-  @include section-margin;
-  margin-top: rem(72) !important;
   
   &__title {
     @include headerUpperCase;
     @include flex($justify: flex-start);
     margin-bottom: rem(11);
     
+    & svg {
+      display: none;
+      width: rem(200);
+      margin-left: rem(50);
+    }
+    
     @include iPadProp11 {
-      @include flex($justify: center);
+      @include flex($justify: center, $align-items: center);
+      & svg {
+        display: flex;
+      }
     }
   }
   
-  &__table {
+  &__fetch-more {
+    @include actionButton(11, 13, 13, 13);
     @include flex($justify: flex-start);
+    margin-top: rem(32);
     
     @include iPadProp11 {
       @include flex($justify: center);
-    }
-    
-    & label {
-      padding: rem(10) !important;
-    }
-    
-    &--body {
-      @include flex($direction: column, $align-items: flex-start);
-      border: 0 !important;
-      
-      @include iPadProp11 {
-        @include flex($direction: column, $align-items: center);
-      }
-    }
-    
-    &--content {
-      @include flex($wrap: wrap, $justify: space-between);
-      margin-top: rem(50);
-    }
-    
-    &--item {
-      @include flex();
-      height: rem(189);
-      width: 49%;
-      margin: rem(4) 0;
-      
-      @include iPadProp11 {
-        height: rem(299);
-        width: 32%;
-      }
-      @include MacBook {
-        height: rem(292);
-        width: 24%;
-      }
-      @include Main {
-        height: rem(364);
-      }
-    }
-    
-    &--fetch-more {
-      @include actionButton(11, 13, 13, 13);
-      @include flex($justify: flex-start);
-      margin-top: rem(32);
-      
-      @include iPadProp11 {
-        @include flex($justify: center);
-        margin-top: rem(56);
-      }
+      margin-top: rem(56);
     }
   }
-  
 }
 
 .questions {
