@@ -8,18 +8,8 @@
     <title>Product-detail</title>
 </head>
 <body>
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
-        </div>
-        <div class="bred__item-text">О нас</div>
-    </div>
-</header>
+
+<%= _.template(require('../includes/header.html').default)() %>
 
 
 <section class="products-detail">
@@ -34,7 +24,7 @@
                     <div class="info-iPhone8__title-sub">Саше</div>
                 </div>
                 <div class="info__description">
-                    <div class="title__main-text">
+                    <div class="info__description--text">
                         Пробиотики — это живые микроорганизмы, которые положительно влияют на хозяина при приеме в
                         достаточном
                         количестве.
@@ -311,7 +301,7 @@
                     <input type="radio" id="tabsilver" name="mytabs">
                     <label for="tabsilver">Состав</label>
                     <div class="tab info__main--composition">
-                        <div class="flex flex__justify-center">
+                        <div style="display: flex; justify-content: center">
                             <div class="info-iPhone8__accordion-content-row">
                                 <div class="info-iPhone8__accordion-content-icon">
                                     <svg>

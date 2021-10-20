@@ -14,7 +14,7 @@ const contentLoaded = () => {
   
   function resize() {
     const size = document.body.clientWidth;
-    if(size <= 1152){
+    if(size < 1152){
       boxSave.style.display = 'none'
       infoFirst.style.height = 'auto';
     }else {

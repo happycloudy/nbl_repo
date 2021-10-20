@@ -5,7 +5,6 @@
 
 .scope-application {
   @include section-margin;
-  margin-top: rem(200);
   
   &__title {
     @include headerUpperCase

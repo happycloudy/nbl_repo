@@ -4,10 +4,14 @@
 
 
 .products {
-  margin-top: rem(250);
+  margin-top: rem(150);
+  
+  @include iphone{
+    margin-top: rem(200);
+  }
   
   &__first {
-    @include flex($direction: column-reverse);
+    @include flex($direction: column-reverse, $justify: space-between);
     padding: 0 rem(29);
     
     @include iPadProp11 {
@@ -23,9 +27,11 @@
     
     &--description-container {
       @include flex($direction: column);
+      width: 65%;
       margin-top: rem(18);
       
       @include iPadProp11 {
+        width: auto;
         margin-top: rem(20);
       }
       @include MacBook {
@@ -48,26 +54,36 @@
     
     &--img-container {
       @include flex($justify: center);
-      height: rem(169);
-      width: 100%;
+      position: relative;
+      height: 80%;
+      max-height: rem(331);
       margin-bottom: rem(42);
       
-      svg {
-        width: 100%;
-        height: 100%;
+      &:after {
+        @include text(160, uppercase, 'title');
+        display: none;
+        content: 'nlb';
+        position: absolute;
+        bottom: -40%;
+        left: -10%;
+        z-index: -1;
+        
+        @include iPadProp11 {
+          display: flex;
+        }
+        
+        @include MacBook {
+          bottom: -50%;
+          font-size: rem(220);
+        }
+        @include Main {
+          font-size: rem(230);
+        }
       }
       
-      @include iPadProp11 {
-        width: 50%;
-        height: rem(197);
-      }
-      @include MacBook {
-        width: 60%;
-        height: rem(268);
-      }
-      @include Main {
-        width: 60%;
-        height: rem(331);
+      & img {
+        height: 100%;
+        width: 100%;
       }
     }
     
@@ -100,7 +116,7 @@
     @include flex();
     position: relative;
     padding: rem(35) 0;
-    @include iPadProp11{
+    @include iPadProp11 {
       padding: rem(49) 0;
     }
     
@@ -152,13 +168,13 @@
         height: 100%;
       }
     }
-  
+    
     &--img-arrow {
       @include flex();
       height: rem(4);
       width: 50%;
       margin-top: rem(27);
-    
+      
       @include iPadProp11 {
         display: none;
       }
@@ -199,7 +215,7 @@
       height: rem(4);
       display: none;
       
-      @include iphone{
+      @include iphone {
         width: rem(75);
         margin-top: rem(28);
       }

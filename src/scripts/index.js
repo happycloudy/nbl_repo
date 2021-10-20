@@ -71,6 +71,9 @@ const contentLoaded = () => {
     initAcc('.accordion', true);
     tab();
     newAcc();
+    
+    
+    document.body.insertAdjacentHTML('afterbegin', '<img class="main__bcg" src="images/main__bcg.png" />')
   };
 
 document.addEventListener('DOMContentLoaded', contentLoaded);
