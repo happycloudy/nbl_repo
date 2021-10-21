@@ -39,7 +39,6 @@
     
     &--title {
       @include text(17, uppercase);
-  
       margin-left: rem(45);
       
       @include iphone{

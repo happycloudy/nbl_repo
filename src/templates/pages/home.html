@@ -9,162 +9,247 @@
 </head>
 <body>
 
+<%= _.template(require('../includes/header.html').default)() %>
 
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
+<img class="circle" src="<%=require('../../resources/images/circle.png').default%>"/>
+
+<section id="effective" class="effective">
+    <div class="effective__main">
+        <div class="effective__title">Бактерии, которые дойдут до цели</div>
+        <div class="effective__description">До 60% клеток иммунитета находится
+            в кишечнике. Эффективность каждого
+            пробиотика зависит от кол-ва
+            доставленных в кишечник бактерий
         </div>
-        <div class="bred__item-text">О нас</div>
+        <div class="effective__action">Узнать больше</div>
     </div>
-</header>
+    <div class="effective__img-box">
+        <img src="<%=require('../../resources/images/probiotic-group-main.png').default%>"/>
+    </div>
+</section>
+<section class="Lab2Pro">Lab2Pro
+    <svg>
+        <use href="#Arrow-1"></use>
+    </svg>
+</section>
 
-
-<main class="main">
-    <section id="effective" class="effective flex flex__wrap">
-        <div class="flex flex__column flex__self-start description">
-            <div class="title__main">Бактерии, которые дойдут до цели</div>
-            <div class="title__main-text">До 60% клеток иммунитета находится в кишечнике.
-                Эффективность каждого пробиотика зависит
-                от кол-ва доставленных в кишечник бактерий
-            </div>
-            <div class="title__main-action">Узнать больше</div>
+<!--ЖИЗНЕСПОСОБНОСТЬ-->
+<section id="effective1" class="viability">
+    <div class="viability__title">Жизнеспособность</div>
+    <div class="viability__description">Запатентованная технология двойного покрытия Lab2Pro, обеспечивает
+        выживаемость полезных бактерий в кишечной микрофлоре
+    </div>
+    <div class="viability__details">
+        <div class="viability__details--img-box">
+            <img class="viability__details--img-iPhone"
+                 src="<%=require('../../resources/images/home__viability--iPhone.png').default%>"/>
+            <img class="viability__details--img-iPad"
+                 src="<%=require('../../resources/images/home__viability--iPad.png').default%>"/>
+            <img class="viability__details--img-main"
+                 src="<%=require('../../resources/images/home__viability.png').default%>"/>
         </div>
-        <div class="flex__self-start probiotic-group"></div>
-        <div class="w-100 flex flex__justify-center Lab2Pro">Lab2Pro</div>
-    </section>
-    <section id="effective1" class="viability">
-        <div class="viability__title">
-            <div class="title__section">Жизнеспособность</div>
-            <div class="title__section-text">Запатентованная технология двойного покрытия Lab2Pro, обеспечивает
-                выживаемость полезных бактерий в кишечной микрофлоре
+        <div class="viability__details--content-box">
+            <div class="viability__details--item">
+                <div class="viability__details--header">
+                    <span class="viability__details--number">1</span>
+                    <div class="viability__details--row">
+                        <div class="viability__details--title">ПЕПТИДный слой</div>
+                        <div class="viability__details--description">защищает живые бактерии от:</div>
+                    </div>
+                </div>
+                <div class="viability__details--list">
+                    <ul>
+                        <li>Соляной кислоты;</li>
+                        <li> Солей желчных кислот;</li>
+                        <li>Пищеварительных ферментов;</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="viability__details">
-            <div class="viability__details-item viability__details-first">
-                <div class="w-100 flex">
-                    <div class="viability--number">1</div>
-                    <div class="flex flex__column">
-                        <div class="viability__details-title">Пептидный слой</div>
-                        <div class="viability__details-description">защищает живые бактерии от:</div>
-                        <div class="viability__details-list">
-                            <ul>
-                                <li>Соляной кислоты;</li>
-                                <li>Солей желчных кислот;</li>
-                                <li>Пищеварительных ферментов;</li>
-                            </ul>
-                        </div>
+            <div class="viability__details--item">
+                <div class="viability__details--header">
+                    <span class="viability__details--number">2</span>
+                    <div class="viability__details--row">
+                        <div class="viability__details--title">ПОЛИСАХАРИДНЫЙ Слой</div>
+                        <div class="viability__details--description">защищает живые бактерии от:</div>
+                    </div>
+                </div>
+                <div class="viability__details--list">
+                    <ul>
+                        <li>Влаги;</li>
+                        <li>Температуры;</li>
+                        <li>Механического давления;</li>
+                        <li>Увеличивает стабильность;</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="viability__details--item">
+                <div class="viability__details--header">
+                    <span class="viability__details--number">3</span>
+                    <div class="viability__details--row">
+                        <div class="viability__details--title">пробиотики</div>
                     </div>
                 </div>
             </div>
-            <div class="w-100 flex flex__justify-center absolute viability__details-img-box">
-                <div class="viability__details-img"></div>
+        </div>
+    </div>
+</section>
+
+<!--Почему важно двойное покрытие?-->
+<section id="double-cover" class="double-cover">
+    <div class="double-cover__title">Почему важно двойное покрытие?</div>
+    <div class="double-cover__description">Cистема двойного покрытия Lab2Pro защищает пробиотики от агрессивных факторов
+        организма, и высвобождают их в кишечнике по pH-зависимому механизму
+    </div>
+    <div class="double-cover__details">
+        <div class="tab-js double-cover__details--tab">
+            <div class="tab-js__links-container double-cover__details--links">
+                <button class="tab-js__link" data-target="PH2.0" data-active="true">
+                    PH2.0
+                </button>
+                <svg>
+                    <use href="#Arrow-1"></use>
+                </svg>
+                <button class="tab-js__link" data-target="PH4.0" data-active="false">
+                    PH4.0
+                </button>
+                <svg>
+                    <use href="#Arrow-1"></use>
+                </svg>
+                <button class="tab-js__link" data-target="PH7.0" data-active="false">
+                    PH7.0
+                </button>
             </div>
-            <div class="viability__details-item viability__details-second">
-                <div class="w-100 flex">
-                    <div class="viability--number">2</div>
-                    <div class="flex flex__column">
-                        <div class="viability__details-title">Полисахаридный слой</div>
-                        <div class="viability__details-description">защищает живые бактерии от:</div>
-                        <div class="viability__details-list">
-                            <ul>
-                                <li>Влаги;</li>
-                                <li>Температуры;</li>
-                                <li>Маханического давления;</li>
-                                <li>Увеличивает стабильность;</li>
-                            </ul>
-                        </div>
+            <div class="tab-js__content-container">
+                <div id="PH2.0"
+                     class="tab-js__content-item tab-js__content-item--active double-cover__details--content">
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
+                    </div>
+                </div>
+
+                <div id="PH4.0"
+                     class="tab-js__content-item double-cover__details--content">
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
+                    </div>
+                </div>
+                <div id="PH7.0"
+                     class="tab-js__content-item double-cover__details--content">
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="double-cover" class="double-cover">
-        <div class="double-cover__title">
-            <div class="title__section">Почему важно двойное покрытие?</div>
-            <div class="title__section-text">Запатентованная технология двойного покрытия Lab2Pro, обеспечивает
-                выживаемость полезных бактерий в кишечной микрофлоре
-            </div>
-        </div>
-        <div class="double-cover__details">
-            <div id="tab" class="double-cover__details-tab"></div>
-            <div id="accordion" class="double-cover__details-accordion"></div>
-        </div>
-    </section>
-    <section id="bacterial-survival" class="bacterial-survival">
-        <div class="bacterial-survival__header">
-            <div class="title__section bacterial-survival__header-title">Выживаемость бактерий</div>
-            <div class="bacterial-survival__header-info flex">
-                <div class="flex bacterial-survival__header-icon-box">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="flex flex__column bacterial-survival__header-number-box">
-                    <div class="bacterial-survival__header-number">100</div>
-                    <div class="bacterial-survival__header-text-number">раз выше</div>
-                </div>
-                <div class="bacterial-survival__header-text-number2">чем у пробиотиков без покрытия</div>
-            </div>
-        </div>
-        <div class="bacterial-survival__body">
-            <svg>
-                <use href="#table"></use>
-            </svg>
-        </div>
-    </section>
-    <section id="classification" class="classification flex flex__justify-center flex__wrap">
-        <div class="w-100 title__section flex flex__justify-center">Классификация пробиотиков</div>
-        <div class="w-100 classification__list">
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">I</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">Без покрытия</div>
-                    <div class="classification__list-description">Большинство пробиотиков</div>
-                </div>
-            </div>
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">II</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">С кишечнорастворимой оболочкой</div>
-                    <div class="classification__list-description">Некоторые производители</div>
-                </div>
-            </div>
-            <div class="classification__list-item flex">
-                <span class="classification__list-number">III</span>
-                <div class="flex flex__column flex__justify-center">
-                    <div class="classification__list-title">Микрокапсулированные</div>
-                    <div class="classification__list-description">Некоторые производители</div>
-                </div>
-            </div>
-        </div>
-        <div class="classification__age flex flex__wrap">
-            <div class="classification__age-title w-100 flex__justify-center">Поколение</div>
-            <div class="classification__age-box w-100 ">
-                <div class="flex__justify-center flex">
-                    <svg class="classification__age-img">
-                        <use href="#classification"></use>
-                    </svg>
-                    <span class="back-box">
-                        <svg class="back-box-img">
-                            <use href="#back3"></use>
-                        </svg>
-                    </span>
-                </div>
-                <div class="flex flex__justify-center text-align__center">NBL пробиотики с двойным покрытием. Штаммы
-                    пробиотиков NBL, были выделены из организма младенцев и женского грудного молока.
-                </div>
-            </div>
-        </div>
-    </section>
 
-</main>
+        <div class="double-cover__details--accordion">
+            <button class="new-accordion__button">PH2.0</button>
+            <div class="new-accordion__panel nbl_atp__accordion--content">
+                <div class="double-cover__details--content">
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
+                    </div>
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
+                </div>
+            </div>
 
+            <button class="new-accordion__button">PH4.0</button>
+            <div class="new-accordion__panel double-cover__details--content">
+                <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                    остается неповрежденным
+                </div>
+                <div class="double-cover__content--img">
+                    <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                </div>
+            </div>
+
+            <button class="new-accordion__button">PH7.0</button>
+            <div class="new-accordion__panel double-cover__details--content">
+                <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                    остается неповрежденным
+                </div>
+                <div class="double-cover__content--img">
+                    <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!--Выживаемость бактерий-->
+<section class="bacterial-survival">
+    <div class="bacterial-survival__header">
+        <div class="bacterial-survival__header--title">Выживаемость бактерий</div>
+        <div class="bacterial-survival__header--info">
+            <div class="bacterial-survival__header-icon-box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="bacterial-survival__header-number-box">
+                <div class="bacterial-survival__header-number">100</div>
+                <div class="bacterial-survival__header-text-number">раз выше</div>
+            </div>
+            <div class="bacterial-survival__header-text-number2">чем у пробиотиков без покрытия</div>
+        </div>
+    </div>
+    <div class="bacterial-survival__body">
+        <img src="<%=require('../../resources/images/home__bacterial-survival--table.png').default%>"/>
+    </div>
+</section>
+
+<!--Классификация пробиотиков-->
+<section id="classification" class="classification">
+    <div class="classification__title">Классификация пробиотиков</div>
+    <div class="classification__list">
+        <div class="classification__list--item">
+            <span class="classification__list--number">I</span>
+            <div class="">
+                <div class="classification__list--title">Без покрытия</div>
+                <div class="classification__list--description">Большинство пробиотиков</div>
+            </div>
+        </div>
+        <div class="classification__list--item">
+            <span class="classification__list--number">II</span>
+            <div class="">
+                <div class="classification__list--title">С кишечнорастворимой оболочкой</div>
+                <div class="classification__list--description">Некоторые производители</div>
+            </div>
+        </div>
+        <div class="classification__list--item">
+            <span class="classification__list--number">III</span>
+            <div class="">
+                <div class="classification__list--title">Микрокапсулированные</div>
+                <div class="classification__list--description">Некоторые производители</div>
+            </div>
+        </div>
+    </div>
+    <div class="classification__age">
+        <div class="classification__age--title">Поколение</div>
+        <div class="classification__age--box ">
+            <img src="<%=require('../../resources/images/home__classification.png').default%>"/>
+            <div class="classification__age--description">NBL пробиотики с двойным покрытием. Штаммы
+                пробиотиков NBL, были выделены из организма младенцев и женского грудного молока.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--АТП-->
 <section class="nbl_atp">
     <div class="tab-js nbl_atp__container--tab">
         <div class="tab-js__links-container">
@@ -373,6 +458,7 @@
     </div>
 </section>
 
+<!--Доктора рекомендуют-->
 <section class="doctor-recommendation">
     <div class="doctor-recommendation__title">ДОКТОРА РЕКОМЕНДУЮТ</div>
     <div class="doctor-recommendation__container">
@@ -497,7 +583,87 @@
         </div>
     </div>
 </section>
-<%= _.template(require('../includes/reviews.html').default)() %>
+
+<!--Отзывы-->
+<section class="reviews">
+    <div class="reviews__title">Отзывы</div>
+    <div class="tab-js reviews__container">
+        <div class="tab-js__links-container">
+            <button class="tab-js__link" data-target="all" data-active="true">
+                все
+            </button>
+            <button class="tab-js__link" data-target="instagram" data-active="false">
+                instagram
+            </button>
+            <button class="tab-js__link" data-target="facebook" data-active="false">
+                facebook
+            </button>
+            <button class="tab-js__link" data-target="vk" data-active="false">
+                Вконтакте
+            </button>
+            <button class="tab-js__link" data-target="Whatsupp" data-active="false">
+                Whatsupp
+            </button>
+        </div>
+        <div class="tab-js__content-container">
+            <div id="all" class="tab-js__content-item tab-js__content-item--active">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+
+            <div id="instagram" class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+
+            <div id="facebook" class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Наука-->
 <section class="states">
     <div class="states__title">Наука
         <div class="states__science">
@@ -511,7 +677,9 @@
     </div>
     <div class="states__container">
         <div class="states__container--item">
-            <img src="<%=require('../../resources/images/state1.png').default%>"/>
+            <div class="states-item__img-box">
+                <img src="<%=require('../../resources/images/state1.png').default%>"/>
+            </div>
             <div class="states-item__box">
                 <div class="states-item__box--date">03.06</div>
                 <div class="states-item__box--title">Пробиотики и пребиотики:
@@ -523,7 +691,9 @@
             </div>
         </div>
         <div class="states__container--item">
-            <img src="<%=require('../../resources/images/state1.png').default%>"/>
+            <div class="states-item__img-box">
+                <img src="<%=require('../../resources/images/state1.png').default%>"/>
+            </div>
             <div class="states-item__box">
                 <div class="states-item__box--date">03.06</div>
                 <div class="states-item__box--title">Пробиотики и пребиотики:

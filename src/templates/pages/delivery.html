@@ -8,18 +8,7 @@
     <title>delivery</title>
 </head>
 <body>
-<header class="header">
-    <div id="menu" class="header__menu"></div>
-    <span class="header__line line"></span>
-    <div class="bred">
-        <div class="bred__house">
-            <svg>
-                <use href="#house"/>
-            </svg>
-        </div>
-        <div class="bred__item-text">О нас</div>
-    </div>
-</header>
+<%= _.template(require('../includes/header.html').default)() %>
 
 <section class="delivery">
     <div class="delivery__title">Доставка и оплата</div>
@@ -39,83 +28,27 @@
         </div>
     </div>
     <div class="payment__container">
-        <div class="mytabs">
-            <input type="radio" id="tabfree" name="mytabs" checked="checked">
-            <label for="tabfree">Оплата картой</label>
-            <div class="tab">
-                Онлайн-оплата банковской картой через системы электронных платежей. <br>
-                Мы принимаем платежи с сайта по следующим банковским картам
+        <div class="tab-js payment__tab">
+            <div class="tab-js__links-container payment__links">
+                <button class="tab-js__link" data-target="PH2.0" data-active="true">Оплата картой </button>
+                <button class="tab-js__link" data-target="PH4.0" data-active="false">Наличными</button>
+                <button class="tab-js__link" data-target="PH7.0" data-active="false">С банковского счета</button>
             </div>
-
-            <input type="radio" id="tabsilver" name="mytabs">
-            <label for="tabsilver">Наличными </label>
-            <div class="tab flex__column">
-                Оплата при получении:
-                <br>
-                <ul>
-                    <li> Самовывозом;</li>
-                    <li>При получении курьером.</li>
-                </ul>
-            </div>
-            <input type="radio" id="tabgold" name="mytabs">
-            <label for="tabgold">С банковского счета</label>
-            <div class="tab">
-                Для юридических лиц оплата производится только по безналичному расчету путем перечисления денежных<br>
-                средств с расчетного счета покупателя на расчетный счет ООО «Корейское Здоровье».
-                <br>
-                <br>
-                — Минимальная сумма заказа для выставления счёта составляет 3 500 рублей.<br>
-                — Счет на оплату товара Вы получите по электронной почте, указанной в заказе.<br>
-                — Счет действителен в течение 3 банковских дней.<br>
-                — Перед оплатой внимательно проверьте реквизиты организации.
-                <br>
-                <br>
-                После оплаты счета с вами свяжется оператор «Корейское Здоровье» для уточнения даты доставки.<br>
-                Если товар находится на удаленном складе, ближайшая дата доставки возможна на пятый день после<br>
-                поступления денежных средств.
-
-                При получении заказа необходимо иметь при себе главную печать организации или доверенность (формы
-                М-2)<br>
-                с главной печатью организации. Вместе с товаром Вы получите все необходимые документы: счет,
-                счет-фактура<br>
-                и накладная.
-                <br>
-                <br>
-                Оплата производится только в российских рублях.
-            </div>
-        </div>
-
-        <div class="accordion">
-            <div class="a-container active">
-                <p class="a-btn">
-                    <span class="a-btn__text">Оплата картой</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
+            <div class="tab-js__content-container">
+                <div id="PH2.0" class="tab-js__content-item tab-js__content-item--active">
                     Онлайн-оплата банковской картой через системы электронных платежей. <br>
                     Мы принимаем платежи с сайта по следующим банковским картам
                 </div>
-            </div>
-            <div class="a-container">
-                <p class="a-btn">
-                    <span class="a-btn__text">Наличными</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
+
+                <div id="PH4.0" class="tab-js__content-item">
                     Оплата при получении:
                     <br>
                     <ul>
-                        <li> Самовывозом;</li>
+                        <li>Самовывозом;</li>
                         <li>При получении курьером.</li>
                     </ul>
                 </div>
-            </div>
-            <div class="a-container">
-                <p class="a-btn">
-                    <span class="a-btn__text">С банковского счета</span>
-                    <span class="a-btn__icon"></span>
-                </p>
-                <div class="a-panel">
+                <div id="PH7.0" class="tab-js__content-item">
                     Для юридических лиц оплата производится только по безналичному расчету путем перечисления
                     денежных<br>
                     средств с расчетного счета покупателя на расчетный счет ООО «Корейское Здоровье».
@@ -140,6 +73,58 @@
                     <br>
                     Оплата производится только в российских рублях.
                 </div>
+            </div>
+        </div>
+
+
+        <div class="accordion">
+            <button class="new-accordion__button">
+                Оплата картой
+            </button>
+            <div class="new-accordion__panel">
+                Онлайн-оплата банковской картой через системы электронных платежей. <br>
+                Мы принимаем платежи с сайта по следующим банковским картам
+            </div>
+
+            <button class="new-accordion__button">
+                Наличными
+            </button>
+            <div class="new-accordion__panel">
+                Оплата при получении:
+                <br>
+                <ul>
+                    <li>Самовывозом;</li>
+                    <li>При получении курьером.</li>
+                </ul>
+            </div>
+
+            <button class="new-accordion__button">
+                С банковского счета
+            </button>
+            <div class="new-accordion__panel">
+                Для юридических лиц оплата производится только по безналичному расчету путем перечисления
+                денежных<br>
+                средств с расчетного счета покупателя на расчетный счет ООО «Корейское Здоровье».
+                <br>
+                <br>
+                — Минимальная сумма заказа для выставления счёта составляет 3 500 рублей.<br>
+                — Счет на оплату товара Вы получите по электронной почте, указанной в заказе.<br>
+                — Счет действителен в течение 3 банковских дней.<br>
+                — Перед оплатой внимательно проверьте реквизиты организации.
+                <br>
+                <br>
+                После оплаты счета с вами свяжется оператор «Корейское Здоровье» для уточнения даты доставки.<br>
+                Если товар находится на удаленном складе, ближайшая дата доставки возможна на пятый день после<br>
+                поступления денежных средств.
+
+                При получении заказа необходимо иметь при себе главную печать организации или доверенность (формы
+                М-2)<br>
+                с главной печатью организации. Вместе с товаром Вы получите все необходимые документы: счет,
+                счет-фактура<br>
+                и накладная.
+                <br>
+                <br>
+                Оплата производится только в российских рублях.
             </div>
         </div>
     </div>

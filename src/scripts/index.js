@@ -6,7 +6,6 @@ import {initAcc} from "./includes/accordion";
 import {contactsSlider} from "./includes/contactsSlider";
 import {tab} from "./includes/tab";
 import {newAcc} from "./includes/newAccordion";
-import {tabsLibraryExec} from "./includes/tabsLibraryExec";
 
 /**
  * Загрузка svg иконок для возможность использования через use
@@ -72,7 +71,9 @@ const contentLoaded = () => {
     initAcc('.accordion', true);
     tab();
     newAcc();
-    tabsLibraryExec()
+    
+    
+    document.body.insertAdjacentHTML('afterbegin', '<img class="main__bcg" src="images/main__bcg.png" />')
   };
 
 document.addEventListener('DOMContentLoaded', contentLoaded);

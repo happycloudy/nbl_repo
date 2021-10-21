@@ -3,6 +3,8 @@
 @import './mixins';
 
 $border: rem(1) solid var(--Color-Line);
+$sectionMarginTop: rem(50);
+
 
 :root {
   --BaseFontSize: 15px;
@@ -85,174 +87,29 @@ header {
   }
 }
 
-.hidden {
-  display: none !important;
+.main__bcg {
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+  left: 0;
+  top: 0;
 }
 
-.line {
-  width: 100%;
-  border-bottom: rem(1) solid var(--Color-Line);
+.circle{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80%;
+  max-width: rem(1000);
+  @include iPadProp11{
+    display: flex;
+  }
 }
+
 
 .active {
   display: flex;
-}
-
-.title {
-  text-transform: uppercase;
-  
-  &__extra {
-    font-size: rem(45);
-    line-height: rem(65);
-    
-    @media (min-width: $break-MacBook) {
-      font-size: rem(55);
-      line-height: rem(65);
-    }
-    @media (min-width: $break-Main) {
-      font-size: rem(70);
-      line-height: rem(65);
-    }
-  }
-  
-  &__main {
-    font-size: rem(25);
-    line-height: rem(35);
-    font-weight: var(--FontWeight-Medium);
-    
-    @media (min-width: $break-iPadProp11) {
-      font-size: rem(30);
-      line-height: rem(40);
-    }
-    @media (min-width: $break-MacBook) {
-      font-size: rem(45);
-      line-height: rem(60);
-    }
-    @media (min-width: $break-Main) {
-      font-size: rem(50);
-      line-height: rem(65);
-    }
-    
-    &-text {
-      font-size: rem(13);
-      line-height: rem(25);
-      color: var(--Color-Text-Grey);
-      font-weight: var(--FontWeight-Light);
-      padding-top: rem(19);
-      
-      @media (min-width: $break-MacBook) {
-        font-size: rem(15);
-        line-height: rem(30);
-        padding-top: rem(37);
-      }
-      @media (min-width: $break-Main) {
-        font-size: rem(17);
-        line-height: rem(35);
-        padding-top: rem(33);
-      }
-    }
-    
-    &-action {
-      width: fit-content;
-      font-size: rem(11);
-      cursor: pointer;
-      text-transform: uppercase;
-      color: var(--Color-Text-Green);
-      font-weight: var(--FontWeight-Medium);
-      padding-top: rem(19);
-      
-      @media (min-width: $break-iPadProp11) {
-        font-size: rem(13);
-        padding-top: rem(26);
-      }
-      
-      @media (min-width: $break-Main) {
-        padding-top: rem(42);
-      }
-    }
-  }
-  
-  &__section {
-    font-size: rem(20);
-    font-weight: var(--FontWeight-Medium);
-    
-    @media (min-width: $break-iPadProp11) {
-      font-size: rem(30);
-    }
-    @media (min-width: $break-MacBook) {
-      font-size: rem(35);
-    }
-    
-    &-text {
-      font-size: rem(13);
-      color: var(--Color-Text-Grey);
-      padding-top: rem(15);
-      
-      @media (max-width: $break-iPhone8) {
-        text-align: left;
-      }
-      @media (min-width: $break-iPadProp11) {
-        font-size: rem(15);
-        padding-top: rem(21);
-      }
-      @media (min-width: $break-MacBook) {
-        font-size: rem(15);
-        padding-top: rem(14);
-      }
-    }
-  }
-  
-  &__text {
-    font-size: rem(13);
-  }
-}
-
-.flex {
-  display: flex;
-  
-  &__wrap {
-    flex-wrap: wrap;
-  }
-  
-  &__column {
-    flex-direction: column;
-  }
-  
-  &__self {
-    &-start {
-      align-self: flex-start;
-    }
-  }
-  
-  
-  &__justify {
-    &-center {
-      justify-content: center;
-    }
-  }
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.full-size {
-  width: 100%;
-  height: 100%;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.text-align {
-  &__center {
-    text-align: center;
-  }
 }
 
 .tab {
@@ -419,30 +276,6 @@ header {
   }
 }
 
-.back-box {
-  @include back-box;
-  
-  &-img {
-    position: absolute;
-    
-    @media (min-width: $break-iPhone8) {
-      width: rem(318);
-      height: rem(277);
-    }
-    @media (min-width: $break-iPadProp11) {
-      width: rem(487);
-      height: rem(426);
-    }
-    @media (min-width: $break-MacBook) {
-      width: rem(653);
-      height: rem(571);
-    }
-    @media (min-width: $break-Main) {
-      width: rem(650);
-      height: rem(568);
-    }
-  }
-}
 
 .table {
   @include flex($justify: space-between);
@@ -507,16 +340,16 @@ header {
   
   &__img-box {
     @include flex();
-    width: rem(103);
-    height: rem(132);
     
     @include iPadProp11 {
-      width: 100%;
       height: rem(245);
     }
     @include Main {
-      width: 100%;
       height: rem(258);
+    }
+    
+    & img {
+      height: 100%;
     }
   }
   
@@ -675,5 +508,85 @@ header {
   }
 }
 
-
+.tab-js {
+  @include flex($direction: row-reverse);
+  width: 100%;
+  
+  &__links-container {
+    @include flex($direction: column);
+  }
+  
+  &__link {
+    $this: &;
+    position: relative;
+    margin: 0;
+    
+    @include iphone {
+      //height: rem(100);
+      margin: rem(15) 0;
+    }
+    
+    
+    @include iPadProp11 {
+      margin: rem(20) 0;
+      max-width: rem(80);
+      //height: rem(130);
+    }
+    
+    @include MacBook {
+      margin: rem(25) 0;
+      max-width: rem(105);
+      height: 100%;
+    }
+    
+    
+    &--arrow {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      left: -100%;
+      top: 50%;
+      width: rem(100);
+      height: rem(5);
+      
+      @include iphone {
+        left: -180%;
+      }
+      
+      @include iPadProp11 {
+        left: -160%;
+      }
+      
+      & svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    &--active {
+      & #{$this}--arrow {
+        @include flex();
+      }
+    }
+    
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+    
+  }
+  
+  &__content-container {
+    width: 100%;
+  }
+  
+  &__content-item {
+    display: none;
+    width: 100%;
+    
+    &--active {
+      display: flex;
+    }
+  }
+}
 
