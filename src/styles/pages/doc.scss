@@ -26,7 +26,6 @@
   display: block;
 }
 
-
 body > main > section > div.documents__select.tabs > div.documents__select_item.tab.active {
   opacity: 1;
 }
@@ -35,11 +34,12 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
   @include flex();
   width: 100%;
   max-width: 100%;
-  min-height: 100vh;
-  padding-top: rem(339);
+  //min-height: 100vh;
+  @include section-margin();
+  margin-left: 0!important;
   box-sizing: border-box;
   overflow: hidden;
-  background: url("../../resources/images/main-bcg.png") no-repeat center /cover;
+  //background: url("../../resources/images/main-bcg.png") no-repeat center /cover;
 }
 
 .documents {
@@ -118,6 +118,7 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
 
 
     @include iPadProp11 {
+      width: 100%;
       margin-top: rem(52);
     }
 
@@ -127,10 +128,11 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
 
     @include Main {
       margin-top: rem(34);
+      width: 95%;
     }
 
     &_description {
-      width: 90%;
+      width: 100%;
       @include iPadProp11 {
         width: 40%;
       }
@@ -146,9 +148,10 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
 
       &_header {
         @include text($size: 17, $weight: 'light', $color: 'black');
-
+        margin-top: rem(32);
         @include iPadProp11 {
           @include text($size: 20, $weight: 'light', $color: 'black');
+          margin-top: rem(0);
         }
 
         @include MacBook {
@@ -163,10 +166,12 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
       &_text {
         @include text($size: 13, $color: 'black');
         line-height: rem(25);
+        margin-top: rem(40);
 
         @include iPadProp11 {
           @include text($size: 15, $color: 'black');
           line-height: rem(30);
+          margin-top: 0;
         }
 
         @include Main {
@@ -255,27 +260,29 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
 
   &__dots {
     @include flex($justify: center);
-    transform: translateY(rem(52));
-
+    transform: translateY(rem(15));
+    z-index: 100;
 
     .dot {
       @include iPadProp11 {
         width: rem(6);
         height: rem(6);
-        background: var(--Color-Text-Green);
+        background: var(--Color-Text-Grey);
+        border-radius: 10px;
+        margin: 0 rem(10);
       }
 
       @include MacBook {
-
+        margin: 0 rem(15);
       }
 
       @include Main {
-
+        margin: 0 rem(20);
       }
 
       &_active {
         @include iPadProp11 {
-          background: var(--Color-Text-Grey);
+          background: var(--Color-Text-Green);
         }
       }
     }
@@ -316,81 +323,105 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
   margin-right: rem(30);
 }
 
+.nbl_atp {
+  @include flex($justify: center);
+  margin: 0 rem(30) 0 rem(30);
 
-.nbl_atp__img-burger {
-  @include flex($direction: column);
-  position: relative;
-  @include iphone {
-    height: rem(382+20);
-  }
-  @include iPadProp11 {
-    height: rem(393+36);
-  }
-  @include MacBook {
-    height: rem(516+47);
-  }
-
-  @include Main {
-    height: rem(629+57);
-  }
-
-  &--img-back {
-    position: absolute;
-    height: 95%;
-    width: 95%;
-
-    &:nth-child(2) {
-      transform: translate(10px, 10px);
-      z-index: 3;
-      background: var(--Color-Light--100);
-      box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
-    }
-
-    &:nth-child(3) {
-      transform: translate(20px, 20px);
-      z-index: 2;
-      background: var(--Color-Light--100);
-      box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  &--img-front {
-    height: 95%;
-    width: 95%;
-    z-index: 4;
-    box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
-  }
-}
-
-.nbl_atp__tab-content {
-  @include flex();
-  margin-right: 7%;
-
-  &--item {
-    @include flex($justify: space-between);
-  }
-}
-
-.nbl_atp__container {
-  &--tab {
-    display: none !important;
-    width: 85% !important;
-
-    @include iPadProp11 {
-      display: flex !important;
-      width: 100% !important;
-    }
-  }
-
-  &--accordion {
+  &__img-burger {
     @include flex($direction: column);
-    width: 100%;
-
+    position: relative;
+    @include iphone {
+      height: rem(382+20);
+    }
     @include iPadProp11 {
-      display: none !important;
+      height: rem(393+36);
+    }
+    @include MacBook {
+      height: rem(516+47);
+    }
+
+    @include Main {
+      height: rem(629+57);
+    }
+
+    &--img-back {
+      position: absolute;
+      height: 95%;
+      width: 95%;
+
+      &:nth-child(2) {
+        transform: translate(10px, 10px);
+        z-index: 3;
+        background: var(--Color-Light--100);
+        box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
+      }
+
+      &:nth-child(3) {
+        transform: translate(20px, 20px);
+        z-index: 2;
+        background: var(--Color-Light--100);
+        box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &--img-front {
+      height: 95%;
+      width: 95%;
+      z-index: 4;
+      box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
     }
   }
 
+  &__img-dots{
+    @include iphone {
+      height: rem(382+20);
+    }
+    @include iPadProp11 {
+      height: rem(393+36+25);
+    }
+    @include MacBook {
+      height: rem(516+47+30);
+    }
+
+    @include Main {
+      height: rem(629+57+35);
+    }
+  }
+
+  &__tab-content {
+    @include flex();
+    margin-right: 7%;
+
+    &--item {
+      @include flex($justify: space-between);
+    }
+  }
+
+  &__container {
+    &--tab {
+      display: none !important;
+      width: 85% !important;
+
+      @include iPadProp11 {
+        display: flex !important;
+        width: 100% !important;
+      }
+    }
+
+    &--accordion {
+      @include flex($direction: column);
+      width: 100%;
+
+      @include iPadProp11 {
+        display: none !important;
+      }
+    }
+
+  }
+
+  &__accordion-content--list {
+    margin-top: rem(35);
+  }
 }
 
 .tab-js {
@@ -445,7 +476,11 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
       }
 
       @include iPadProp11 {
-        left: -160%;
+        left: -200%;
+      }
+
+      @include MacBook{
+        left: -170%;
       }
 
       & svg {
@@ -490,4 +525,68 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
     }
   }
 
+}
+
+.new-accordion__button {
+  padding-left: 0 !important;
+  display: flex!important;
+  &:nth-child(3){
+    margin-top: rem(60);
+  }
+}
+
+.new-accordion__slider {
+  margin-top: rem(25);
+
+  &-big_image {
+    width: 100%;
+    box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.1);
+    display: none;
+
+    &-active{
+      display: flex;
+    }
+  }
+
+  &-arrows {
+    @include flex($justify: space-between, $align-items: flex-start);
+    position: relative;
+  }
+
+  &-arrow {
+    transform: rotate(90deg) translate(rem(-15));
+    opacity: 0;
+    width: rem(70);
+    height: rem(100);
+    top: 0;
+
+    &-active {
+      opacity: 1;
+    }
+  }
+
+  &-arrow:first-child {
+    transform: rotate(90deg) translate(rem(-15), rem(10));
+  }
+
+  &-images {
+    margin-top: rem(9);
+    @include flex($justify: space-between);
+
+    img {
+      height: rem(66);
+    }
+  }
+}
+
+
+.nbl_atp__accordion-header {
+  &--button-title {
+    @include text(13, uppercase, 'black');
+  }
+
+  &--button-img {
+    width: rem(40);
+    height: rem(54);
+  }
 }
