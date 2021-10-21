@@ -11,7 +11,7 @@ header {
     @include iPadProp11 {
       margin-top: rem(62);
     }
-    
+
     @include MacBook {
       margin-top: rem(80);
     }
@@ -24,131 +24,131 @@ header {
   margin-left: rem(30);
   display: flex;
   flex-direction: column;
-  
+
   @include iPadProp11 {
     flex-direction: row-reverse;
     margin-left: rem(40);
     margin-top: rem(130);
   }
-  
+
   @include MacBook {
     margin-left: rem(69);
     margin-top: rem(150);
   }
-  
+
   @include Main {
     margin-left: rem(108);
   }
-  
+
   .vitamins__image_wrap {
     width: 100%;
     display: flex;
     justify-content: center;
-    
+
     @include iPadProp11 {
       flex-direction: row-reverse;
       width: 50%;
     }
-    
+
     .vitamins__img {
       width: 100%;
       @include iPadProp11 {
         margin-top: rem(55);
       }
-      
+
       @include MacBook {
         margin-top: rem(75);
       }
-      
+
       img {
         height: rem(166);
         width: rem(315);
         // width: 315px; // это ок отображается
-        
+
         @include iPadProp11 {
           height: rem(322);
           width: auto;
           float: right;
         }
-        
+
         @include MacBook {
           height: rem(420);
         }
-        
+
         @include Main {
           height: rem(470);
         }
       }
     }
   }
-  
+
   &__header {
     margin-top: rem(27);
-    
+
     @include iPadProp11 {
       width: 50%;
       //margin-top: rem(90+57);
       margin-top: rem(90+13);
     }
-    
+
     @include MacBook {
       margin-top: rem(90+55);
     }
     @include Main {
       margin-top: rem(90+50);
     }
-    
+
     &-text-date {
       @include text($size: 13, $color: 'black');
       @include iPadProp11 {
         @include text($size: 15, $color: 'black');
       }
-      
+
       @include MacBook {
         @include text($size: 17, $color: 'black');
       }
     }
-    
+
     &-text-big {
       @include headerUpperCase();
       margin-top: rem(20);
-      
+
       @include iPadProp11 {
         margin-top: rem(31);
       }
-      
+
       @include MacBook {
         margin-top: rem(43);
       }
     }
-    
+
     &-description {
       @include description();
       margin-top: rem(8);
-      
+
       @include iPadProp11 {
         margin-top: rem(27);
       }
-      
+
       @include MacBook {
         margin-top: rem(53);
       }
     }
-    
+
     &-description-iphone-only {
       @include iPadProp11 {
         display: none;
       }
     }
-    
+
     &-more-btn {
       @include actionButton();
       margin-top: rem(35);
-      
+
       @include iPadProp11 {
         margin-top: rem(35);
       }
-      
+
       @include MacBook {
         margin-top: rem(42);
       }
@@ -160,7 +160,7 @@ header {
 .states {
   @include section-margin;
   margin-top: rem(133) !important;
-  
+
   &__science {
     @include flex($align-items: center);
     position: absolute;
@@ -169,16 +169,16 @@ header {
     left: 0;
     top: rem(-50);
     z-index: -1;
-    
+
     & img {
       width: 100%;
-      
-      @include iphone {
+
+      @include iPadProp11 {
         width: 80%;
       }
     }
-    
-    @include iphone {
+
+    @include iPadProp11 {
       height: rem(134);
       top: rem(-100);
     }
@@ -189,28 +189,24 @@ header {
       height: rem(223);
     }
   }
-  
-  
+
+
   &__container {
-    @include flex($direction: column);
+    @include flex($direction: column, $justify: space-around);
     margin-top: rem(20);
-    
-    @include iphone {
+
+    @include iPadProp11 {
       @include flex($direction: row, $justify: space-around);
     }
-    
+
     &--item {
       @include flex($direction: column);
       width: 100%;
       margin-bottom: rem(20);
-      
-      @include iphone {
+
+      @include iPadProp11 {
         @include flex($direction: row);
         width: 50%;
-      }
-      
-      @include iPadProp11 {
-        width: 45%;
       }
       @include MacBook {
         width: 40%;
@@ -219,54 +215,56 @@ header {
         width: 35%;
       }
     }
-    
+
     &--action {
       @include actionButton();
       margin-top: rem(20);
       align-self: center;
-      
+
       @include iphone {
         display: none;
       }
     }
   }
-  
+
   &-item {
     &__img-box {
       width: 100%;
-      @include iphone {
+      @include iPadProp11 {
         width: 40%;
       }
-      
+
       & img {
         width: 100%;
       }
     }
-    
+
     &__box {
       @include flex($direction: column);
       width: 100%;
       box-sizing: border-box;
       margin-top: rem(24);
       padding: 0 rem(15);
-      
+
       @include iphone {
+
+      }
+
+      @include iPadProp11 {
+        //margin-left: rem(36);
         width: 60%;
         margin-left: rem(22);
         margin-top: 0;
       }
-      @include iPadProp11 {
-        margin-left: rem(36);
-      }
       @include MacBook {
         margin-left: rem(46);
       }
-      
+
       &--date {
         @include text($weight: 'bold');
         line-height: rem(23);
         position: relative;
-        
+
         &:before {
           content: '';
           position: absolute;
@@ -278,21 +276,28 @@ header {
           background: var(--Color-Text-Green);
           opacity: .5;
         }
-        
+
         @include iphone {
+          //&:before {
+          //  left: rem(-20);
+          //  width: rem(16);
+          //}
+        }
+
+        @include iPadProp11 {
           &:before {
             left: rem(-20);
             width: rem(16);
           }
         }
       }
-      
+
       &--title {
         @include text(13, uppercase, 'black');
         line-height: rem(23);
         margin-top: rem(7);
       }
-      
+
       &--description {
         @include text(13, none, 'grey');
         line-height: rem(21);
@@ -307,76 +312,76 @@ header {
   @include section-margin;
   @include flex($justify: center);
   margin-top: rem(63) !important;
-  
+
   &__container {
     &--tab {
       display: none !important;
       width: 85% !important;
-      
+
       @include iPadProp11 {
         display: flex !important;
         width: 100%;
       }
     }
-    
+
     &--accordion {
       @include flex($direction: column);
       width: 100%;
-      
+
       @include iPadProp11 {
         display: none !important;
       }
     }
   }
-  
+
   &__tab-content {
     @include flex();
     margin-right: 7%;
-    
+
     &--item {
       justify-content: space-between;
     }
   }
-  
+
   &__about {
     max-width: rem(252);
-    
+
     @include iphone {
       max-width: 40%;
     }
-    
-    
+
+
     &--title {
       @include text(50, uppercase, 'black', 'bold');
       @include MacBook {
         @include text(55, uppercase, 'black', 'bold');
       }
-      
+
       @include Main {
         @include text(60, uppercase, 'black', 'bold');
       }
     }
-    
+
     &--description {
       @include text($size: 13, $color: 'green',);
       margin-top: rem(7);
       @include MacBook {
         @include text($size: 15, $color: 'green');
       }
-      
+
       @include Main {
         @include text($size: 17, $color: 'green');
         margin-top: rem(10);
       }
     }
-    
+
     &--list {
       @include list;
       margin-top: rem(10);
-      
+
       & ul li {
         line-height: rem(25);
-        
+
         @include iphone {
           line-height: rem(19);
         }
@@ -388,17 +393,17 @@ header {
         }
       }
     }
-    
+
     &--action {
       @include actionButton(11, 13, 13, 13);
       margin-top: rem(20);
-      
+
       @include MacBook {
         margin-top: rem(25);
       }
     }
   }
-  
+
   &__img-burger {
     @include flex();
     position: relative;
@@ -411,19 +416,19 @@ header {
     @include MacBook {
       height: rem(583);
     }
-    
+
     &--img-back {
       position: absolute;
       height: 95%;
       width: 95%;
-      
+
       &:nth-child(2) {
         transform: translate(10px, 10px);
         z-index: 2;
         background: var(--Color-Light--100);
         box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
       }
-      
+
       &:nth-child(3) {
         transform: translate(20px, 20px);
         z-index: 1;
@@ -431,61 +436,61 @@ header {
         box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
       }
     }
-    
+
     &--img-front {
       height: 95%;
       width: 95%;
       z-index: 3;
     }
   }
-  
-  
+
+
   &__accordion-content {
     @include flex($direction: column);
     margin-bottom: rem(30);
-    
+
     &--img {
       align-self: center;
       width: rem(316);
       height: rem(300);
       margin-top: rem(21);
     }
-    
+
     &--title {
       @include text(50, uppercase, 'black', 'bold');
     }
-    
+
     &--description {
       @include text($size: 13, $color: 'green',);
       margin-top: rem(7);
     }
-    
+
     &--list {
       @include list;
       margin-top: rem(21);
-      
+
       & ul li {
         line-height: rem(25);
       }
     }
-    
+
     &--action {
       @include actionButton(11);
       margin-top: rem(20);
     }
   }
-  
+
   &__accordion-header {
     &--button-title {
       @include text(13, uppercase, 'black');
       margin-left: rem(22);
     }
-    
+
     &--button-img {
       width: rem(40);
       height: rem(54);
     }
   }
-  
+
 }
 
