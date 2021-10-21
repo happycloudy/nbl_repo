@@ -164,18 +164,18 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
       }
 
       &_text {
-        @include text($size: 13, $color: 'black');
+        @include text($size: 13, $color: 'grey');
         line-height: rem(25);
         margin-top: rem(40);
 
         @include iPadProp11 {
-          @include text($size: 15, $color: 'black');
+          @include text($size: 15, $color: 'grey');
           line-height: rem(30);
           margin-top: 0;
         }
 
         @include Main {
-          @include text($size: 17, $color: 'black');
+          @include text($size: 17, $color: 'grey');
           line-height: rem(35);
         }
 

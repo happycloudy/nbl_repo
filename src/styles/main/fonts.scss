@@ -1,29 +1,53 @@
+//@font-face {
+//  font-family: 'Idealist Sans';
+//  src: url('../../resources/fonts/IdealistSans-Light.woff2') format('woff2'),
+//  url('../../resources/fonts/IdealistSans-Light.woff') format('woff'),
+//  url('../../resources/fonts/IdealistSans-Light.ttf') format('truetype');
+//  font-weight: 300;
+//  font-style: normal;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'Idealist Sans';
+//  src: url('../../resources/fonts/IdealistSans.woff2') format('woff2'),
+//  url('../../resources/fonts/IdealistSans.woff') format('woff'),
+//  url('../../resources/fonts/IdealistSans.ttf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'Jost';
+//  src: url('../../resources/fonts/Jost-Regular.woff2') format('woff2'),
+//  url('../../resources/fonts/Jost-Regular.woff') format('woff'),
+//  url('../../resources/fonts/Jost-Regular.ttf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//  font-display: swap;
+//}
+
 @font-face {
-  font-family: 'Idealist Sans';
-  src: url('../../resources/fonts/IdealistSans-Light.woff2') format('woff2'),
-  url('../../resources/fonts/IdealistSans-Light.woff') format('woff'),
-  url('../../resources/fonts/IdealistSans-Light.ttf') format('truetype');
+  font-family: 'Mont';
+  src: url('../../resources/fonts/mont_extralightdemo.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Idealist Sans';
-  src: url('../../resources/fonts/IdealistSans.woff2') format('woff2'),
-  url('../../resources/fonts/IdealistSans.woff') format('woff'),
-  url('../../resources/fonts/IdealistSans.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Mont';
+  src: url('../../resources/fonts/mont_regular.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Jost';
-  src: url('../../resources/fonts/Jost-Regular.woff2') format('woff2'),
-  url('../../resources/fonts/Jost-Regular.woff') format('woff'),
-  url('../../resources/fonts/Jost-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Mont';
+  src: url('../../resources/fonts/mont_heavydemo.ttf') format('truetype');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }

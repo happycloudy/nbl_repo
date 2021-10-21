@@ -9,14 +9,16 @@ $sectionMarginTop: rem(50);
 :root {
   --BaseFontSize: 15px;
   
-  --FontFamily: 'Idealist Sans', 'Jost', Helvetica, Arial, -apple-system,
-  system-ui, BlinkMacSystemFont, 'Segoe UI',
-  'Helvetica Neue', sans-serif;
+  --FontFamily: 'Mont';
   
+  //--FontFamilyJost: 'Jost', 'Idealist Sans', Helvetica, Arial, -apple-system,
+  //system-ui, BlinkMacSystemFont, 'Segoe UI',
+  //'Helvetica Neue', sans-serif;
+
   --FontFamilyJost: 'Jost', 'Idealist Sans', Helvetica, Arial, -apple-system,
   system-ui, BlinkMacSystemFont, 'Segoe UI',
   'Helvetica Neue', sans-serif;
-  
+
   --FontWeight-Light: 300;
   --FontWeight-Regular: 400;
   --FontWeight-Medium: 600;
