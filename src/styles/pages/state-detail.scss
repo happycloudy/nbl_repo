@@ -8,9 +8,8 @@ body {
 }
 
 .honey_img__wrap {
-
   width: 100%;
-  margin-top: rem(90+25);
+  margin-top: rem(133+25);
   margin-left: rem(30);
 
   @include iPadProp11 {
@@ -43,29 +42,22 @@ body {
 }
 
 header {
-  padding: 0 !important;
-
   .bred {
-    margin-left: rem(30);
-
     @include iPadProp11 {
-      margin-left: rem(40);
       margin-top: rem(370+22);
     }
 
     @include MacBook {
       margin-top: rem(510+25);
-      margin-left: rem(70);
+      padding-left: rem(70) !important;
     }
 
     @include Main {
       margin-top: rem(650+16);
-      margin-left: rem(100);
     }
 
   }
 }
-
 
 .horizontal_line {
   width: 90%;
@@ -103,9 +95,13 @@ main {
 
   .vertical-hr {
     @include MacBook {
-      height: 100%;
+      height: 106%;
       width: rem(1);
       background: rgba(85, 85, 85, 0.2);
+    }
+
+    @include Main {
+      height: 108%;
     }
   }
 
@@ -295,9 +291,12 @@ main {
 
         &__arrow {
           margin-top: rem(16);
-          margin-left: rem(15);
           width: rem(100);
           height: rem(5);
+
+          @include iPadProp11 {
+            margin-left: rem(15);
+          }
         }
       }
     }
@@ -349,23 +348,24 @@ main {
 
         &_date {
           @include text($size: 15, $color: 'green', $weight: 'bold');
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: rem(-20);
+            top: 0;
+            height: rem(1);
+            width: rem(29);
+            transform: rotate(135deg);
+            background: var(--Color-Text-Green);
+            opacity: .5;
+          }
         }
 
         &_big {
-          @include text($size: 13, $color: 'black', $weight: 'medium');
+          @include text($size: 13, $color: 'black', $weight: 'medium',$transform: uppercase);
           margin-top: rem(7);
-
-          @include iPadProp11{
-
-          }
-
-          @include MacBook{
-
-          }
-
-          @include Main{
-
-          }
         }
 
         &_small {
