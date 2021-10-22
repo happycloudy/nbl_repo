@@ -476,11 +476,11 @@ body > main > section > div.documents__select.tabs > div.documents__select_item.
       }
 
       @include iPadProp11 {
-        left: -200%;
+        left: -240%;
       }
 
       @include MacBook{
-        left: -170%;
+        left: -200%;
       }
 
       & svg {
