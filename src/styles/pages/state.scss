@@ -352,13 +352,13 @@ header {
 
 
     &--title {
-      @include text(50, uppercase, 'black', 'bold');
+      @include text(50, uppercase, 'black', 'medium');
       @include MacBook {
-        @include text(55, uppercase, 'black', 'bold');
+        @include text(55, uppercase, 'black', 'medium');
       }
 
       @include Main {
-        @include text(60, uppercase, 'black', 'bold');
+        @include text(60, uppercase, 'black', 'medium');
       }
     }
 
