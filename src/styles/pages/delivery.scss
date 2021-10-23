@@ -51,6 +51,35 @@
     @include iPadProp11 {
       margin-top: rem(80);
     }
+    
+    & .tab-js {
+      flex-direction: column;
+      display: none;
+      
+      @include iPadProp11 {
+        @include flex();
+      }
+      
+      &__links-container {
+        @include flex($direction: row);
+        
+        & .tab-js__link {
+          @include text(25, uppercase, 'grey', 'light');
+          @include tabHeader;
+          font-size: rem(25) !important;
+          padding: rem(30);
+          margin: 0;
+          width: auto;
+          max-width: fit-content;
+        }
+        
+        .active {
+          @include flex($justify: center);
+          font-weight: var(--FontWeight-Bold) !important;
+          color: var(--Color-Text-Green) !important;
+        }
+      }
+    }
   }
   
   &__tab {
@@ -68,34 +97,11 @@
   }
 }
 
-.tab-js__link {
-  @include text(25, uppercase, 'grey', 'light');
-  margin-right: rem(20);
-  margin-bottom: rem(10);
-  width: auto;
-  max-width: fit-content;
-  
-  &--active {
-    @include text(25, uppercase, 'green');
-    @include flex($justify: center);
-    position: relative;
-    
-    &:after {
-      content: '';
-      background-color: var(--Color-Text-Green);
-      border-radius: 50%;
-      position: absolute;
-      bottom: -13px;
-      width: rem(5);
-      height: rem(5);
-    }
-  }
-}
-
-.tab-js__content-item--active {
+.tab-js__content-container .active {
   @include flex($direction: column);
   @include list;
   line-height: rem(35);
+  padding-top: rem(62);
   
   & ul li {
     line-height: rem(35);
@@ -104,9 +110,6 @@
   
 }
 
-.tab-js__content-item--active{
-  padding-top: rem(20);
-}
 
 .accordion {
   @include flex();

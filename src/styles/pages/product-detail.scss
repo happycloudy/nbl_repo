@@ -115,7 +115,8 @@
 
 .info {
   @include flex($direction: column);
-  margin-top: rem(150);
+  @include sectionTop;
+  
   padding: 0 rem(30);
   position: relative;
   
@@ -246,7 +247,6 @@
   &__product-line {
     @include flex($direction: column);
     width: 100%;
-    margin-top: rem(100);
     position: relative;
     
     @include iPadProp11 {
@@ -254,11 +254,11 @@
     }
     @include MacBook {
       @include flex($direction: column, $align-items: center);
-      padding-top: rem(100);
+      margin-top: rem(200);
     }
     @include Main {
       @include flex($direction: column, $align-items: center);
-      margin-top: rem(150);
+      margin-top: rem(300);
     }
     
     &--title {
@@ -650,7 +650,7 @@
 //Отзывы
 .reviews {
   @include section-margin;
-  margin-top: rem(133) !important;
+  @include sectionTop;
   
   &__container {
     @include flex($direction: column);
@@ -746,21 +746,18 @@
 }
 
 .questions {
+  @include section-margin;
+  @include sectionTop;
   @include flex($direction: column);
-  margin: rem(72) rem(30) 0 rem(30);
   
   @include iPadProp11 {
     @include flex($align-items: center);
-    margin-left: rem(76);
-    margin-right: rem(76);
-  }
-  @include Main {
-    margin-left: rem(108);
-    margin-right: rem(108);
   }
   
   &__body {
     @include flex($direction: column);
+    width: 100%;
+    
     @include iPadProp11 {
       @include flex($wrap: wrap, $direction: row)
     }

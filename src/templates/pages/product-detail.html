@@ -524,24 +524,14 @@
     <div class="reviews__title">Отзывы</div>
     <div class="tab-js reviews__container">
         <div class="tab-js__links-container">
-            <button class="tab-js__link" data-target="all" data-active="true">
-                все
-            </button>
-            <button class="tab-js__link" data-target="instagram" data-active="false">
-                instagram
-            </button>
-            <button class="tab-js__link" data-target="facebook" data-active="false">
-                facebook
-            </button>
-            <button class="tab-js__link" data-target="vk" data-active="false">
-                Вконтакте
-            </button>
-            <button class="tab-js__link" data-target="Whatsupp" data-active="false">
-                Whatsupp
-            </button>
+            <button class="tab-js__link active">все</button>
+            <button class="tab-js__link">instagram</button>
+            <button class="tab-js__link">facebook</button>
+            <button class="tab-js__link">Вконтакте</button>
+            <button class="tab-js__link">Whatsupp</button>
         </div>
         <div class="tab-js__content-container">
-            <div id="all" class="tab-js__content-item tab-js__content-item--active">
+            <div class="tab-js__content-item active">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
@@ -558,8 +548,7 @@
                 </div>
                 <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-
-            <div id="instagram" class="tab-js__content-item">
+            <div class="tab-js__content-item">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
@@ -576,8 +565,41 @@
                 </div>
                 <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-
-            <div id="facebook" class="tab-js__content-item">
+            <div class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+            <div class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+            <div class="tab-js__content-item">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>

@@ -103,25 +103,14 @@
     <div class="double-cover__details">
         <div class="tab-js double-cover__details--tab">
             <div class="tab-js__links-container double-cover__details--links">
-                <button class="tab-js__link" data-target="PH2.0" data-active="true">
-                    PH2.0
-                </button>
-                <svg>
-                    <use href="#Arrow-1"></use>
-                </svg>
-                <button class="tab-js__link" data-target="PH4.0" data-active="false">
-                    PH4.0
-                </button>
-                <svg>
-                    <use href="#Arrow-1"></use>
-                </svg>
-                <button class="tab-js__link" data-target="PH7.0" data-active="false">
-                    PH7.0
-                </button>
+                <button class="tab-js__link active"> PH2.0 </button>
+                <svg><use href="#Arrow-1"></use></svg>
+                <button class="tab-js__link"> PH4.0</button>
+                <svg><use href="#Arrow-1"></use></svg>
+                <button class="tab-js__link">PH7.0</button>
             </div>
             <div class="tab-js__content-container">
-                <div id="PH2.0"
-                     class="tab-js__content-item tab-js__content-item--active double-cover__details--content">
+                <div class="tab-js__content-item active double-cover__details--content">
                     <div class="double-cover__content--img">
                         <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
                     </div>
@@ -130,8 +119,7 @@
                     </div>
                 </div>
 
-                <div id="PH4.0"
-                     class="tab-js__content-item double-cover__details--content">
+                <div class="tab-js__content-item double-cover__details--content">
                     <div class="double-cover__content--img">
                         <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
                     </div>
@@ -139,8 +127,8 @@
                         остается неповрежденным
                     </div>
                 </div>
-                <div id="PH7.0"
-                     class="tab-js__content-item double-cover__details--content">
+
+                <div class="tab-js__content-item double-cover__details--content">
                     <div class="double-cover__content--img">
                         <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
                     </div>
@@ -163,24 +151,26 @@
                     </div>
                 </div>
             </div>
-
             <button class="new-accordion__button">PH4.0</button>
-            <div class="new-accordion__panel double-cover__details--content">
-                <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
-                    остается неповрежденным
-                </div>
-                <div class="double-cover__content--img">
-                    <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+            <div class="new-accordion__panel nbl_atp__accordion--content">
+                <div class="double-cover__details--content">
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
+                    </div>
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
                 </div>
             </div>
-
             <button class="new-accordion__button">PH7.0</button>
-            <div class="new-accordion__panel double-cover__details--content">
-                <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
-                    остается неповрежденным
-                </div>
-                <div class="double-cover__content--img">
-                    <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+            <div class="new-accordion__panel nbl_atp__accordion--content">
+                <div class="double-cover__details--content">
+                    <div class="double-cover__content--description">Благодаря пептидно-белковой матрице покрытие
+                        остается неповрежденным
+                    </div>
+                    <div class="double-cover__content--img">
+                        <img src="<%=require('../../resources/images/double-cover__stomach.png').default%>"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -253,19 +243,19 @@
 <section class="nbl_atp">
     <div class="tab-js nbl_atp__container--tab">
         <div class="tab-js__links-container">
-            <button class="tab-js__link" data-target="London" data-active="true">
+            <button class="tab-js__link active">
                 <svg class="tab-js__link--arrow">
                     <use href="#Arrow-1"></use>
                 </svg>
                 <img src="<%=require('../../resources/images/probiotic-atp-small.png').default%>"/>
             </button>
-            <button class="tab-js__link" data-target="Paris" data-active="false">
+            <button class="tab-js__link">
                 <svg class="tab-js__link--arrow">
                     <use href="#Arrow-1"></use>
                 </svg>
                 <img src="<%=require('../../resources/images/probiotic-atp-small.png').default%>"/>
             </button>
-            <button class="tab-js__link" data-target="Tokyo" data-active="false">
+            <button class="tab-js__link">
                 <svg class="tab-js__link--arrow">
                     <use href="#Arrow-1"></use>
                 </svg>
@@ -273,7 +263,7 @@
             </button>
         </div>
         <div class="tab-js__content-container nbl_atp__tab-content">
-            <div id="London" class="tab-js__content-item nbl_atp__tab-content--item tab-js__content-item--active">
+            <div class="tab-js__content-item nbl_atp__tab-content--item active">
                 <div class="nbl_atp__about">
                     <div class="nbl_atp__about--title">NBL ATP</div>
                     <div class="nbl_atp__about--description">рекомендовано при:</div>
@@ -301,8 +291,7 @@
                     <div class="nbl_atp__img-burger--img-back"></div>
                 </div>
             </div>
-
-            <div id="Paris" class="tab-js__content-item nbl_atp__tab-content--item">
+            <div class="tab-js__content-item nbl_atp__tab-content--item">
                 <div class="nbl_atp__about">
                     <div class="nbl_atp__about--title">NBL ATP</div>
                     <div class="nbl_atp__about--description">рекомендовано при:</div>
@@ -330,8 +319,7 @@
                     <div class="nbl_atp__img-burger--img-back"></div>
                 </div>
             </div>
-
-            <div id="Tokyo" class="tab-js__content-item nbl_atp__tab-content--item">
+            <div class="tab-js__content-item nbl_atp__tab-content--item">
                 <div class="nbl_atp__about">
                     <div class="nbl_atp__about--title">NBL ATP</div>
                     <div class="nbl_atp__about--description">рекомендовано при:</div>
@@ -589,24 +577,14 @@
     <div class="reviews__title">Отзывы</div>
     <div class="tab-js reviews__container">
         <div class="tab-js__links-container">
-            <button class="tab-js__link" data-target="all" data-active="true">
-                все
-            </button>
-            <button class="tab-js__link" data-target="instagram" data-active="false">
-                instagram
-            </button>
-            <button class="tab-js__link" data-target="facebook" data-active="false">
-                facebook
-            </button>
-            <button class="tab-js__link" data-target="vk" data-active="false">
-                Вконтакте
-            </button>
-            <button class="tab-js__link" data-target="Whatsupp" data-active="false">
-                Whatsupp
-            </button>
+            <button class="tab-js__link active">все</button>
+            <button class="tab-js__link">instagram</button>
+            <button class="tab-js__link">facebook</button>
+            <button class="tab-js__link">Вконтакте</button>
+            <button class="tab-js__link">Whatsupp</button>
         </div>
         <div class="tab-js__content-container">
-            <div id="all" class="tab-js__content-item tab-js__content-item--active">
+            <div class="tab-js__content-item active">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
@@ -623,8 +601,7 @@
                 </div>
                 <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-
-            <div id="instagram" class="tab-js__content-item">
+            <div class="tab-js__content-item">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
@@ -641,8 +618,41 @@
                 </div>
                 <div class="reviews__fetch-more">Смотреть все</div>
             </div>
-
-            <div id="facebook" class="tab-js__content-item">
+            <div class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+            <div class="tab-js__content-item">
+                <div class="reviews__container--img-box">
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-2.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-3.png').default%>"/>
+                    </div>
+                    <div class="reviews__container--img-item">
+                        <img src="<%=require('../../resources/images/reviews-4.png').default%>"/>
+                    </div>
+                </div>
+                <div class="reviews__fetch-more">Смотреть все</div>
+            </div>
+            <div class="tab-js__content-item">
                 <div class="reviews__container--img-box">
                     <div class="reviews__container--img-item">
                         <img src="<%=require('../../resources/images/reviews-1.png').default%>"/>
