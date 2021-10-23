@@ -41,7 +41,7 @@
       @include text(17, uppercase);
       margin-left: rem(45);
       
-      @include iphone {
+      @include iPadProp11 {
         @include text(27, uppercase);
       }
     }
