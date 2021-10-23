@@ -2,8 +2,23 @@
 @import '../includes/header';
 @import '../includes/footer';
 
+
+.img {
+  display: none;
+  height: 100%;
+  position: fixed;
+  right: -30%;
+  top: -20%;
+  z-index: -1;
+  
+  @include iPadProp11 {
+    display: block;
+  }
+}
+
 .about-us {
   @include section-margin;
+  position: relative;
   
   &__title {
     @include headerUpperCase
@@ -18,9 +33,9 @@
     @include flex($align-items: center);
     flex: 1 1 100%;
     height: rem(70);
-  
-  
-    @include iphone {
+    
+    
+    @include iPadProp11 {
       flex: 1 1 50%;
       margin-bottom: rem(54);
       height: rem(90);
@@ -31,7 +46,7 @@
       width: rem(40);
       height: 100%;
       
-      @include iphone {
+      @include iPadProp11 {
         width: rem(80);
         
       }
@@ -41,7 +56,7 @@
       @include text(17, uppercase);
       margin-left: rem(45);
       
-      @include iphone{
+      @include iPadProp11 {
         @include text(27, uppercase);
       }
     }

@@ -2,6 +2,20 @@
 @import '../includes/header';
 @import '../includes/footer';
 
+
+.img {
+  display: none;
+  height: 100%;
+  position: fixed;
+  right: -30%;
+  top: -20%;
+  z-index: -1;
+  
+  @include iPadProp11 {
+    display: block;
+  }
+}
+
 .where-buy {
   @include section-margin;
   
@@ -17,7 +31,6 @@
 
 
 .tab-label__main-title {
-  @include text(25, uppercase);
   line-height: rem(50);
 }
 
@@ -96,8 +109,13 @@ input:checked {
 }
 
 .tab-label__main-title {
-  @include text($size: 25, $transform: uppercase);
+  @include text($size: 17, $transform: uppercase);
   line-height: rem(50);
+  
+  @include iPadProp11 {
+    @include text($size: 25, $transform: uppercase);
+  }
+  
 }
 
 .tab-label__main-subtitle {

@@ -8,17 +8,17 @@
   @include section-margin;
   @include flex($direction: column);
   
-  @include iPadProp11{
+  @include iPadProp11 {
     @include flex($direction: row);
   }
   
   
-  &__main{
+  &__main {
     @include flex($direction: column);
     width: 100%;
     order: 1;
     
-    @include iPadProp11{
+    @include iPadProp11 {
       width: 50%;
       order: 0;
     }
@@ -63,7 +63,7 @@
     @include actionButton;
     margin-top: rem(25);
     
-    @include Main{
+    @include Main {
       margin-top: rem(40);
     }
   }
@@ -72,11 +72,11 @@
     @include flex();
     width: 100%;
     
-    @include iPadProp11{
+    @include iPadProp11 {
       width: 50%;
     }
     
-    & img{
+    & img {
       width: 100%;
     }
   }
@@ -86,29 +86,29 @@
   @include section-margin;
   @include flex($justify: center, $align-items: flex-end);
   @include text(72, uppercase, 'title');
-  margin-top: rem(27)!important;
+  margin-top: rem(27) !important;
   text-align: center;
   position: relative;
   
-  @include iPadProp11{
+  @include iPadProp11 {
     @include text(150, uppercase, 'title');
-    margin-top: rem(68)!important;
+    margin-top: rem(68) !important;
   }
-  @include MacBook{
+  @include MacBook {
     @include text(200, uppercase, 'title');
-    margin-top: rem(85)!important;
+    margin-top: rem(85) !important;
   }
-  @include Main{
+  @include Main {
     @include text(230, uppercase, 'title');
   }
   
-  & svg{
+  & svg {
     display: none;
     position: absolute;
     transform: rotate(90deg);
     width: rem(70);
     
-    @include iPadProp11{
+    @include iPadProp11 {
       display: flex;
     }
   }
@@ -118,7 +118,7 @@
 //ЖИЗНЕСПОСОБНОСТЬ
 .viability {
   @include section-margin;
-  margin-top: rem(80)!important;
+  @include sectionTop;
   
   &__title {
     @include headerUpperCase;
@@ -203,7 +203,7 @@
       @include flex($direction: column);
       width: 100%;
       
-      @include iphone {
+      @include iPadProp11 {
         @include flex(wrap, row);
         
       }
@@ -257,6 +257,7 @@
 .double-cover {
   $this: &;
   @include section-margin;
+  @include sectionTop;
   
   &__title {
     @include headerUpperCase;
@@ -287,14 +288,17 @@
     
     &--tab {
       display: none;
-      @include iphone {
+      
+      @include iPadProp11 {
         display: block;
       }
     }
     
     &--accordion {
       @include flex($direction: column);
-      @include iphone {
+      margin-top: rem(23);
+      
+      @include iPadProp11 {
         display: none;
       }
       
@@ -334,7 +338,7 @@
           @include text(70);
         }
         
-        &--active {
+        & .active {
           opacity: 1;
         }
       }
@@ -355,8 +359,8 @@
           @include flex();
           width: 100%;
           
-          @include iphone {
-            width: 65%;
+          @include iPadProp11 {
+            width: 50%;
           }
           
           & img {
@@ -371,7 +375,7 @@
           line-height: rem(18);
           width: 100%;
           
-          @include iphone {
+          @include iPadProp11 {
             @include text(11, uppercase, 'grey');
             border-left: $border;
             padding-left: rem(30);
@@ -392,6 +396,7 @@
 //Выживаемость бактерий
 .bacterial-survival {
   @include section-margin;
+  @include sectionTop;
   
   &__header {
     @include flex($justify: center, $direction: column, $align-items: center);
@@ -524,11 +529,12 @@
 //Классификация пробиотиков
 .classification {
   @include section-margin;
+  @include sectionTop;
   
   &__title {
     @include headerUpperCase;
     
-    @include iphone {
+    @include iPadProp11 {
       text-align: center;
     }
   }
@@ -655,7 +661,7 @@
 .nbl_atp {
   @include section-margin;
   @include flex($justify: center);
-  margin-top: rem(133) !important;
+  @include sectionTop;
   
   &__container {
     &--tab {
@@ -696,13 +702,13 @@
     
     
     &--title {
-      @include text(50, uppercase, 'black', 'bold');
+      @include text(50, uppercase, 'black');
       @include MacBook {
-        @include text(55, uppercase, 'black', 'bold');
+        @include text(55, uppercase, 'black');
       }
       
       @include Main {
-        @include text(60, uppercase, 'black', 'bold');
+        @include text(60, uppercase, 'black');
       }
     }
     
@@ -724,11 +730,8 @@
       margin-top: rem(10);
       
       & ul li {
-        line-height: rem(25);
+        line-height: rem(19);
         
-        @include iphone {
-          line-height: rem(19);
-        }
         @include iPadProp11 {
           line-height: rem(30);
         }
@@ -751,10 +754,8 @@
   &__img-burger {
     @include flex();
     position: relative;
+    height: rem(360);
     
-    @include iphone {
-      height: rem(360);
-    }
     @include iPadProp11 {
       height: rem(460);
     }
@@ -787,12 +788,12 @@
       width: 95%;
       z-index: 3;
     }
-  
+    
     &:before {
-      content: 'nbl';
+      content: 'nlb';
       display: none;
       position: absolute;
-    
+      
       @include iPadProp11 {
         @include text(150, uppercase, 'title');
         display: flex;
@@ -809,7 +810,6 @@
     }
   }
   
-  
   &__accordion-content {
     @include flex($direction: column);
     margin-bottom: rem(30);
@@ -822,7 +822,7 @@
     }
     
     &--title {
-      @include text(50, uppercase, 'black', 'bold');
+      @include text(50, uppercase, 'black');
     }
     
     &--description {
@@ -863,9 +863,9 @@
 .doctor-recommendation {
   $this: &;
   @include section-margin;
-  margin-top: rem(133) !important;
+  @include sectionTop;
   
-  @include iphone {
+  @include iPadProp11 {
     margin-right: 0 !important;
   }
   
@@ -874,7 +874,7 @@
     text-align: left;
     position: relative;
     
-    @include iphone {
+    @include iPadProp11 {
       text-align: center;
     }
   }
@@ -920,11 +920,12 @@
     
     & label {
       @include flex($align-items: center);
-      @include text(11, uppercase);
+      font-size: rem(11) !important;
+      color: var(--Color-Text-Grey);
       font-weight: var(--FontWeight-Medium) !important;
       padding: rem(10) rem(20) !important;
       
-      @include iphone {
+      @include iPadProp11 {
         font-size: rem(13) !important;
       }
       @include MacBook {
@@ -933,7 +934,6 @@
     }
     
     & input[type="radio"]:checked + label {
-      font-size: rem(13) !important;
       font-weight: var(--FontWeight-Bold) !important;
     }
   }
@@ -944,7 +944,7 @@
     padding-top: 15%;
     position: relative;
     
-    @include iphone {
+    @include iPadProp11 {
       padding-top: 5%;
     }
     
@@ -962,7 +962,7 @@
         font-weight: var(--FontWeight-Light) !important;
       }
       
-      @include iphone {
+      @include iPadProp11 {
         width: 30%;
         flex: 20 1 30%;
         transform: translateY(-6%);
@@ -1001,96 +1001,10 @@
   }
 }
 
-//Отзывы
-.reviews {
-  @include section-margin;
-  margin-top: rem(133) !important;
-  
-  &__container {
-    @include flex($direction: column);
-    
-    &--img-box {
-      @include flex(wrap, $justify: space-between);
-      width: 100%;
-    }
-    
-    &--img-item {
-      display: flex;
-      justify-content: center;
-      flex: 0 1 45%;
-      box-sizing: border-box;
-      padding: rem(15);
-      margin: rem(4.5);
-      background: var(--Color-Light--100);
-      height: rem(200);
-      
-      @include iPadProp11 {
-        width: 30%;
-        flex: 0 1 30%;
-        height: rem(320);
-      }
-      @include MacBook {
-        flex: 0 1 24%;
-        width: 24%;
-      }
-      @include MacBook {
-        height: rem(400);
-      }
-      
-      //& img{
-      //  width: 100%;
-      //}
-    }
-    
-    & .tab-js {
-      &__links-container {
-        @include flex($direction: row, $justify: center);
-      }
-      
-      &__link {
-        @include tabHeader;
-        padding: rem(10);
-        margin-top: rem(0);
-        
-        &--active {
-          font-weight: var(--FontWeight-Bold);
-          color: var(--Color-Text-Green);
-        }
-      }
-      
-      &__content-item {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  }
-  
-  &__title {
-    @include headerUpperCase;
-    @include flex($justify: flex-start);
-    margin-bottom: rem(11);
-    
-    @include iPadProp11 {
-      @include flex($justify: center);
-    }
-  }
-  
-  &__fetch-more {
-    @include actionButton(11, 13, 13, 13);
-    @include flex($justify: flex-start);
-    margin-top: rem(32);
-    
-    @include iPadProp11 {
-      @include flex($justify: center);
-      margin-top: rem(56);
-    }
-  }
-}
-
 //Наука
 .states {
   @include section-margin;
-  margin-top: rem(133) !important;
+  @include sectionTop;
   
   &__science {
     @include flex($align-items: center);
