@@ -72,9 +72,8 @@
   @include text(25, uppercase, 'grey', 'light');
   margin-right: rem(20);
   margin-bottom: rem(10);
-  width: auto;
-  max-width: fit-content;
-  
+  max-width: none;
+
   &--active {
     @include text(25, uppercase, 'green');
     @include flex($justify: center);

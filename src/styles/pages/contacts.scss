@@ -51,6 +51,10 @@
       @include text($size: 17, $color: 'black', $weight: 'light');
     }
   }
+
+  &__strong{
+    font-weight: var(--FontWeight-Medium);
+  }
 }
 
 .map {
