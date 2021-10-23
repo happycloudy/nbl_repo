@@ -1,41 +1,19 @@
-export const tab = () => {
-  let i;
-  
-  const dActive = document.querySelectorAll('[data-active]')
-  
-  dActive.forEach((el) => {
-    if (el.getAttribute('data-active') === 'true') {
-      el.classList.add('tab-js__link--active')
-    } else {
-      el.classList.remove('tab-js__link--active')
+export const tab = () => document.querySelectorAll('.tab-js').forEach((tab) => {
+    
+    let btns = tab.querySelectorAll('.tab-js__link');
+    let items = tab.querySelectorAll('.tab-js__content-item');
+    
+    for(let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', () => {
+        change([btns, items], i)
+      })
     }
   })
-  
-  document.addEventListener('click', (evt) => {
-    let myElem = evt.target.closest('button')
-    if (!myElem) return
-    
-    const targetName = myElem.getAttribute('data-target')
-    const dTarget = document.querySelectorAll('[data-target]')
-  
-    dTarget.forEach((el) => {
-      if (el.getAttribute('data-target') !== targetName) {
-        el.removeAttribute('data-active')
-        el.classList.remove('tab-js__link--active')
-      }
-      else {
-        el.setAttribute('data-active', 'true');
-        el.classList.add('tab-js__link--active')
-      }
-    })
-    
-   const tabcontent = document.getElementsByClassName("tab-js__content-item");
-    for (i = 0; i < tabcontent.length; i++) {
-      if (tabcontent[i].id !== targetName) {
-        tabcontent[i].classList.remove('tab-js__content-item--active')
-      } else {
-        tabcontent[i].classList.add('tab-js__content-item--active')
-      }
-    }
+
+
+function change(arr, i) {
+  arr.forEach( item => {
+    item.forEach( i => {i.classList.remove('active')})
+    item[i].classList.add('active')
   })
 }

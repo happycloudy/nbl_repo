@@ -87,6 +87,10 @@
       }
     }
     
+    &--title{
+      @include headerUpperCase;
+    }
+    
     &--description {
       @include description;
     }

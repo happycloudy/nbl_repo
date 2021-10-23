@@ -248,7 +248,7 @@
     line-height: rem(21);
   }
   
-  &--active:after {
+  &.active:after {
     content: '';
     background-color: var(--Color-Text-Green);
     border-radius: 50%;
@@ -256,5 +256,13 @@
     bottom: -3px;
     width: rem(5);
     height: rem(5);
+  }
+}
+
+@mixin sectionTop($mobile: 20, $desktop: 50){
+  margin-top: rem($mobile)!important;
+  
+  @include MacBook{
+    margin-top: rem($desktop)!important;
   }
 }

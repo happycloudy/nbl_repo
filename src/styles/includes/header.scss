@@ -107,7 +107,7 @@ $headerHeightM: 48 + $headerPaddingTopM;
   &__item {
     &-link {
       @include flex();
-      @include text($size: 17, $color: 'black', $weight: 'medium');
+      @include text($size: 17, $color: 'black',);
       position: relative;
       line-height: rem(22);
       
@@ -175,14 +175,15 @@ $headerHeightM: 48 + $headerPaddingTopM;
     
     &-link {
       @include flex($justify: center);
-      color: var(--Color-Text-Green);
+      color: var(--Color-Text-Grey);
       font-size: rem(13.8);
+      font-weight: var(--FontWeight-Light);
       line-height: rem(18);
       text-transform: uppercase;
       
       &:hover {
+        color: var(--Color-Text-Green);
         font-weight: var(--FontWeight-Medium);
-        
         &:after {
           content: '';
           height: rem(7);
@@ -212,7 +213,7 @@ $headerHeightM: 48 + $headerPaddingTopM;
 }
 
 .tab-menu label {
-  @include text($size: 16, $color: 'black', $weight: 'medium');
+  @include text($size: 16, $color: 'black');
   padding: rem(10) rem(20) rem(10) 0;
   cursor: pointer;
   
@@ -242,7 +243,7 @@ $headerHeightM: 48 + $headerPaddingTopM;
   }
   
   & a {
-    @include text($size: 16, $color: 'black', $weight: 'light');
+    @include text($size: 16, $color: 'black');
     @include flex($align-items: center);
     margin-right: rem(10);
     

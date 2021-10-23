@@ -69,6 +69,10 @@ section, main {
   z-index: 1;
 }
 
+input {
+  background: transparent;
+}
+
 header {
   @include padding-iPadProp11('padding');
   @media (min-width: $break-MacBook) {
@@ -89,14 +93,14 @@ header {
   top: 0;
 }
 
-.circle{
+.circle {
   display: none;
   position: absolute;
   right: 0;
   top: 0;
   width: 80%;
   max-width: rem(1000);
-  @include iPadProp11{
+  @include iPadProp11 {
     display: flex;
   }
 }
@@ -451,7 +455,6 @@ header {
   }
 }
 
-
 .new-accordion {
   &__button {
     @include flex($align-items: center);
@@ -516,10 +519,8 @@ header {
     margin: 0;
     
     @include iphone {
-      //height: rem(100);
       margin: rem(15) 0;
     }
-    
     
     @include iPadProp11 {
       margin: rem(20) 0;
@@ -532,7 +533,6 @@ header {
       max-width: rem(105);
       height: 100%;
     }
-    
     
     &--arrow {
       display: none;
@@ -557,9 +557,9 @@ header {
       }
     }
     
-    &--active {
+    &.active {
       & #{$this}--arrow {
-        @include flex();
+        display: flex;
       }
     }
     
@@ -577,10 +577,93 @@ header {
   &__content-item {
     display: none;
     width: 100%;
-    
-    &--active {
-      display: flex;
-    }
   }
 }
 
+.active {
+  display: flex;
+  opacity: 1 !important;
+}
+
+//Отзывы
+.reviews {
+  @include section-margin;
+  @include sectionTop;
+  
+  &__container {
+    @include flex($direction: column);
+    
+    &--img-box {
+      @include flex(wrap, $justify: space-between);
+      width: 100%;
+    }
+    
+    &--img-item {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 45%;
+      box-sizing: border-box;
+      padding: rem(15);
+      margin: rem(4.5);
+      background: var(--Color-Light--100);
+      height: rem(200);
+      
+      @include iPadProp11 {
+        width: 30%;
+        flex: 0 1 30%;
+        height: rem(320);
+      }
+      @include MacBook {
+        flex: 0 1 24%;
+        width: 24%;
+      }
+      @include MacBook {
+        height: rem(400);
+      }
+      
+    }
+    
+    & .tab-js {
+      &__links-container {
+        @include flex($direction: row, $justify: center);
+        
+        .active {
+          font-weight: var(--FontWeight-Bold) !important;
+          color: var(--Color-Text-Green) !important;
+        }
+      }
+      
+      &__link {
+        @include tabHeader;
+        padding: rem(10);
+        margin-top: rem(0);
+      }
+      
+      &__content-item {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  
+  &__title {
+    @include headerUpperCase;
+    @include flex($justify: flex-start);
+    margin-bottom: rem(11);
+    
+    @include iPadProp11 {
+      @include flex($justify: center);
+    }
+  }
+  
+  &__fetch-more {
+    @include actionButton(11, 13, 13, 13);
+    @include flex($justify: flex-start);
+    margin-top: rem(32);
+    
+    @include iPadProp11 {
+      @include flex($justify: center);
+      margin-top: rem(56);
+    }
+  }
+}
