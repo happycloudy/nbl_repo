@@ -672,6 +672,10 @@
         display: flex !important;
         width: 100%;
       }
+      
+      & .tab-js__link img {
+        width: auto;
+      }
     }
     
     &--accordion {
@@ -816,8 +820,6 @@
     
     &--img {
       align-self: center;
-      width: rem(316);
-      height: rem(300);
       margin-top: rem(21);
     }
     
@@ -853,7 +855,6 @@
     
     &--button-img {
       width: rem(40);
-      height: rem(54);
     }
   }
   
